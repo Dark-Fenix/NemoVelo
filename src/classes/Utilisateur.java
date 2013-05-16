@@ -184,4 +184,9 @@ public class Utilisateur {
         this.fk_id_velo = fk_id_velo;
     }
     
+    @Override
+    public String toString(){
+        return "plop";
+    }
+    
 }

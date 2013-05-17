@@ -8,7 +8,7 @@ package classes;
 public class Station {
     
     private int id_station = 0;
-    private String etat = "";
+    private String etat = "off";
     
     public Station(){
     }

@@ -8,9 +8,9 @@ package classes;
 public class Compte {
     
     private int id_compte = 0;
-    private String typeCompte = "";
+    private String typeCompte = "abonnement";
     private double solde = 0;
-    private String dateCreation = "";
+    private String dateCreation = "2000-01-01";
     private int fk_id_utilisateur = 0;
     
     public Compte(){
@@ -66,7 +66,7 @@ public class Compte {
     
     @Override
     public String toString(){
-        String temp = "Compte "+this.id_compte+", type du compte : "+this.typeCompte+", date de creation : "+this.dateCreation+", solde :"+this.solde;
+        String temp = "Compte "+this.id_compte+", type du compte : "+this.typeCompte+", date de creation : "+this.dateCreation+", solde : "+this.solde;
         if(this.fk_id_utilisateur==-1){
             temp+=", pas de detenteur.";
         }

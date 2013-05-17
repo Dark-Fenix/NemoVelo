@@ -8,7 +8,7 @@ package classes;
 public class Borne {
     
     private int id_borne = 0;
-    private String etat = "";
+    private String etat = "off";
     private int fk_id_station = -1;
     
     public Borne(){

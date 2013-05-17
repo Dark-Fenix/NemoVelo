@@ -8,16 +8,16 @@ package classes;
 public class Velo {
 
     private int id_velo = 0;
-    private String serialNumber = "";
-    private String dateMiseEnService = "";
-    private String kmParcourus = "";
-    private String etat = "";
+    private String serialNumber = "CK00000000";
+    private String dateMiseEnService = "2000-01-01";
+    private double kmParcourus = 0;
+    private String etat = "off";
     private int fk_id_borne = -1;
 
     public Velo() {
     }
     
-    public Velo(int id_velo, String serialNumber, String dateMiseEnService, String kmParcourus, String etat, int fk_id_borne) {
+    public Velo(int id_velo, String serialNumber, String dateMiseEnService, double kmParcourus, String etat, int fk_id_borne) {
         this.id_velo = id_velo;
         this.serialNumber = serialNumber;
         this.dateMiseEnService = dateMiseEnService;
@@ -50,11 +50,11 @@ public class Velo {
         this.dateMiseEnService = dateMiseEnService;
     }
 
-    public String getKmParcourus() {
+    public double getKmParcourus() {
         return kmParcourus;
     }
 
-    public void setKmParcourus(String kmParcourus) {
+    public void setKmParcourus(double kmParcourus) {
         this.kmParcourus = kmParcourus;
     }
 

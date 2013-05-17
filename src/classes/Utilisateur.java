@@ -8,20 +8,20 @@ package classes;
 public class Utilisateur {
     
     private int id_utilisateur = 0;
-    private String carteIdentite = "";
-    private String prenom = "";
-    private String nom = "";
-    private String dateNaissance = "";
-    private String adresse = "";
-    private String codePostal = "";
-    private String ville = "";
-    private String carteBancaire = "";
-    private String dateValiditeCarteBancaire = "";
-    private String rib = "";
-    private String iban = "";
-    private String dateCreation = "";
-    private String login = "";
-    private String password = "";
+    private String carteIdentite = "undefined";
+    private String prenom = "undefined";
+    private String nom = "undefined";
+    private String dateNaissance = "2000-01-01";
+    private String adresse = "undefined";
+    private String codePostal = "00000";
+    private String ville = "undefined";
+    private String carteBancaire = "undefined";
+    private String dateValiditeCarteBancaire = "2000-01-01";
+    private String rib = "undefined";
+    private String iban = "undefined";
+    private String dateCreation = "2000-01-01";
+    private String login = "undefined";
+    private String password = "undefined";
     private int fk_id_carte = -1;
     private int fk_id_velo = -1;
     
@@ -186,7 +186,7 @@ public class Utilisateur {
     
     @Override
     public String toString(){
-        return "plop";
+        return "TOSTRING UTILISATEUR A FAIRE";
     }
     
 }

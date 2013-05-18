@@ -4,7 +4,7 @@ import classes.*;
 
 /**
  *
- * @author Florian Haller-Casagrande
+ * @author Fenix
  */
 public class Main {
 

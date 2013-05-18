@@ -1,14 +1,11 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package vue;
 
 import vue.Page_Acceuil;
 
 /**
  *
- * @author heba.zeghadi
+ * @author Fenix
  */
 public class Interface_Login extends javax.swing.JFrame {
 

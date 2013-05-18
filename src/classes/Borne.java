@@ -3,7 +3,7 @@ package classes;
 
 /**
  *
- * @author HallerCasagrande-F
+ * @author Fenix
  */
 public class Borne {
     

@@ -1,12 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package vue;
 
 /**
  *
- * @author heba.zeghadi
+ * @author Fenix
  */
 public class Page_Acceuil extends javax.swing.JPanel {
 

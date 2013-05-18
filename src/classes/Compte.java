@@ -1,6 +1,8 @@
 
 package classes;
 
+import Config.ConfigGlobale;
+
 /**
  *
  * @author Fenix
@@ -28,16 +30,23 @@ public class Compte {
         return id_compte;
     }
 
-    public void setId_compte(int id_compte) {
+    // NE DOIT PAS ETRE UTILISE POUR NE PAS INTERFERER AVEC LA BDD
+    /*public void setId_compte(int id_compte) {
         this.id_compte = id_compte;
-    }
+    }*/
 
     public String getTypeCompte() {
         return typeCompte;
     }
 
-    public void setTypeCompte(String typeCompte) {
-        this.typeCompte = typeCompte;
+    public int setTypeCompte(String typeCompte) {
+        if(typeCompte.equalsIgnoreCase("solde") || typeCompte.equalsIgnoreCase("abonnement")){
+            this.typeCompte = typeCompte.toLowerCase();
+            return 0;
+        }
+        else{
+            return -1;
+        }
     }
 
     public double getSolde() {

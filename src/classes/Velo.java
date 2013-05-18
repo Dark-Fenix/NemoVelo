@@ -1,6 +1,8 @@
 
 package classes;
 
+import Config.ConfigGlobale;
+
 /**
  *
  * @author Fenix
@@ -30,16 +32,23 @@ public class Velo {
         return id_velo;
     }
 
-    public void setId_velo(int id_velo) {
+    // NE DOIT PAS ETRE UTILISE POUR NE PAS INTERFERER AVEC LA BDD
+    /*public void setId_velo(int id_velo) {
         this.id_velo = id_velo;
-    }
+    }*/
 
     public String getSerialNumber() {
         return serialNumber;
     }
 
-    public void setSerialNumber(String serialNumber) {
-        this.serialNumber = serialNumber;
+    public int setSerialNumber(String serialNumber) {
+        if(serialNumber.length()>10){
+            this.serialNumber = serialNumber;
+            return 0;
+        }
+        else{
+            return -1;
+        }
     }
 
     public String getDateMiseEnService() {
@@ -62,8 +71,14 @@ public class Velo {
         return etat;
     }
 
-    public void setEtat(String etat) {
-        this.etat = etat;
+    public int setEtat(String etat) {
+        if(etat.equalsIgnoreCase(ConfigGlobale.etatHS) || etat.equalsIgnoreCase(ConfigGlobale.etatOK) || etat.equalsIgnoreCase(ConfigGlobale.etatOFF) || etat.equalsIgnoreCase(ConfigGlobale.etatMaintenance)){
+            this.etat = etat.toLowerCase();
+            return 0;
+        }
+        else{
+            return -1;
+        }
     }
 
     public int getFk_id_borne() {

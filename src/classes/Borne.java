@@ -1,6 +1,8 @@
 
 package classes;
 
+import Config.ConfigGlobale;
+
 /**
  *
  * @author Fenix
@@ -24,24 +26,31 @@ public class Borne {
         return id_borne;
     }
 
-    public void setId_borne(int id_borne) {
-        this.id_borne = id_borne;
-    }
+    // NE DOIT PAS ETRE UTILISE POUR NE PAS INTERFERER AVEC LA BDD
+    /*public int setId_borne(int id_borne) {
+        return this.id_borne = id_borne;
+    }*/
 
     public String getEtat() {
         return etat;
     }
 
-    public void setEtat(String etat) {
-        this.etat = etat;
+    public int setEtat(String etat) {
+        if(etat.equalsIgnoreCase(ConfigGlobale.etatHS) || etat.equalsIgnoreCase(ConfigGlobale.etatOK) || etat.equalsIgnoreCase(ConfigGlobale.etatOFF) || etat.equalsIgnoreCase(ConfigGlobale.etatMaintenance)){
+            this.etat = etat.toLowerCase();
+            return 0;
+        }
+        else{
+            return -1;
+        }
     }
 
     public int getFk_id_station() {
         return fk_id_station;
     }
 
-    public void setFk_id_station(int fk_id_station) {
-        this.fk_id_station = fk_id_station;
+    public int setFk_id_station(int fk_id_station) {
+        return this.fk_id_station = fk_id_station;
     }
     
     @Override

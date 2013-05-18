@@ -20,9 +20,10 @@ public class Carte {
         return id_carte;
     }
 
-    public void setId_carte(int id_carte) {
+    // NE DOIT PAS ETRE UTILISE POUR NE PAS INTERFERER AVEC LA BDD
+    /*public void setId_carte(int id_carte) {
         this.id_carte = id_carte;
-    }
+    }*/
     
     @Override
     public String toString(){

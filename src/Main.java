@@ -1,6 +1,6 @@
 
-
 import classes.*;
+import Config.*;
 
 /**
  *
@@ -8,14 +8,14 @@ import classes.*;
  */
 public class Main {
 
-
+// SERT POUR LES TESTS
     public static void main(String[] args) {
 
-        Borne testBorne = new Borne();
-        System.out.println(testBorne.toString());
+        /*Borne testBorne = new Borne();
+        System.out.println(testBorne.toString());*/
         Carte testCarte = new Carte();
         System.out.println(testCarte.toString());
-        Compte testCompte = new Compte();
+        /*Compte testCompte = new Compte();
         System.out.println(testCompte.toString());
         Station testStation = new Station();
         System.out.println(testStation.toString());
@@ -23,7 +23,7 @@ public class Main {
         System.out.println(testUtilisateur.toString());
         System.out.println(testUtilisateur.toStringSecret());
         Velo testVelo = new Velo();
-        System.out.println(testVelo.toString());
+        System.out.println(testVelo.toString());*/
         
     }
 }

@@ -8,7 +8,6 @@ package classes;
 public class Utilisateur {
     
     private int id_utilisateur = 0;
-    private String carteIdentite = "undefined";
     private String prenom = "undefined";
     private String nom = "undefined";
     private String dateNaissance = "2000-01-01";
@@ -28,9 +27,8 @@ public class Utilisateur {
     public Utilisateur(){
     }
 
-    public Utilisateur(int id_utilisateur, String carteIdentite, String prenom, String nom, String dateNaissance, String adresse, String codePostal, String ville, String carteBancaire, String dateValiditeCarteBancaire, String rib, String iban, String dateCreation, String login, String password, int fk_id_carte, int fk_id_velo){
+    public Utilisateur(int id_utilisateur, String prenom, String nom, String dateNaissance, String adresse, String codePostal, String ville, String carteBancaire, String dateValiditeCarteBancaire, String rib, String iban, String dateCreation, String login, String password, int fk_id_carte, int fk_id_velo){
         this.id_utilisateur = id_utilisateur;
-        this.carteIdentite = carteIdentite;
         this.prenom = prenom;
         this.nom = nom;
         this.dateNaissance = dateNaissance;
@@ -52,32 +50,37 @@ public class Utilisateur {
         return id_utilisateur;
     }
 
-    public void setId_utilisateur(int id_utilisateur) {
+    // NE DOIT PAS ETRE UTILISE POUR NE PAS INTERFERER AVEC LA BDD
+    /*public void setId_utilisateur(int id_utilisateur) {
         this.id_utilisateur = id_utilisateur;
-    }
-
-    public String getCarteIdentite() {
-        return carteIdentite;
-    }
-
-    public void setCarteIdentite(String carteIdentite) {
-        this.carteIdentite = carteIdentite;
-    }
+    }*/
 
     public String getPrenom() {
         return prenom;
     }
 
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
+    public int setPrenom(String prenom) {
+        if(prenom.length()>30){
+            this.prenom = prenom;
+            return 0;
+        }
+        else{
+            return -1;
+        }
     }
 
     public String getNom() {
         return nom;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public int setNom(String nom) {
+        if(nom.length()>30){
+            this.nom = nom;
+            return 0;
+        }
+        else{
+            return -1;
+        }
     }
 
     public String getDateNaissance() {
@@ -92,32 +95,56 @@ public class Utilisateur {
         return adresse;
     }
 
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
+    public int setAdresse(String adresse) {
+        if(adresse.length()>100){
+            this.adresse = adresse;
+            return 0;
+        }
+        else{
+            return -1;
+        }
     }
 
     public String getCodePostal() {
         return codePostal;
     }
 
-    public void setCodePostal(String codePostal) {
-        this.codePostal = codePostal;
+    public int setCodePostal(String codePostal) {
+        if(codePostal.length()>5){
+            this.codePostal = codePostal;
+            return 0;
+        }
+        else{
+            return -1;
+        }
     }
 
     public String getVille() {
         return ville;
     }
 
-    public void setVille(String ville) {
-        this.ville = ville;
+    public int setVille(String ville) {
+        if(ville.length()>30){
+            this.ville = ville;
+            return 0;
+        }
+        else{
+            return -1;
+        }
     }
 
     public String getCarteBancaire() {
         return carteBancaire;
     }
 
-    public void setCarteBancaire(String carteBancaire) {
-        this.carteBancaire = carteBancaire;
+    public int setCarteBancaire(String carteBancaire) {
+        if(carteBancaire.length()>16){
+            this.carteBancaire = carteBancaire;
+            return 0;
+        }
+        else{
+            return -1;
+        }
     }
 
     public String getDateValiditeCarteBancaire() {
@@ -132,16 +159,28 @@ public class Utilisateur {
         return rib;
     }
 
-    public void setRib(String rib) {
-        this.rib = rib;
+    public int setRib(String rib) {
+        if(rib.length()>23){
+            this.rib = rib;
+            return 0;
+        }
+        else{
+            return -1;
+        }
     }
 
     public String getIban() {
         return iban;
     }
 
-    public void setIban(String iban) {
-        this.iban = iban;
+    public int setIban(String iban) {
+        if(iban.length()>34){
+            this.iban = iban;
+            return 0;
+        }
+        else{
+            return -1;
+        }
     }
 
     public String getDateCreation() {
@@ -156,16 +195,28 @@ public class Utilisateur {
         return login;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public int setLogin(String login) {
+        if(login.length()>30){
+            this.login = login;
+            return 0;
+        }
+        else{
+            return -1;
+        }
     }
 
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public int setPassword(String password) {
+        if(password.length()>30){
+            this.password = password;
+            return 0;
+        }
+        else{
+            return -1;
+        }
     }
 
     public int getFk_id_carte() {
@@ -186,7 +237,7 @@ public class Utilisateur {
     
     @Override
     public String toString(){
-        return "Utilisateur "+this.id_utilisateur+" : "+this.prenom+" "+this.nom+", numero CI : "+this.carteIdentite+", ne(e) le "+this.dateNaissance+", adresse : "+this.adresse+" "+this.codePostal+" "+this.ville+" compte cree le : "+this.dateCreation;
+        return "Utilisateur "+this.id_utilisateur+" : "+this.prenom+" "+this.nom+", ne(e) le "+this.dateNaissance+", adresse : "+this.adresse+" "+this.codePostal+" "+this.ville+" compte cree le : "+this.dateCreation;
     }
     
     public String toStringSecret(){

@@ -1,6 +1,8 @@
 
 package classes;
 
+import Config.ConfigGlobale;
+
 /**
  *
  * @author Fenix
@@ -23,24 +25,37 @@ public class Station {
         return id_station;
     }
 
-    public void setId_station(int id_station) {
+    // NE DOIT PAS ETRE UTILISE POUR NE PAS INTERFERER AVEC LA BDD
+    /*public void setId_station(int id_station) {
         this.id_station = id_station;
-    }
+    }*/
 
     public String getEtat() {
         return etat;
     }
 
-    public void setEtat(String etat) {
-        this.etat = etat;
+    public int setEtat(String etat) {
+        if(etat.equalsIgnoreCase(ConfigGlobale.etatHS) || etat.equalsIgnoreCase(ConfigGlobale.etatOK) || etat.equalsIgnoreCase(ConfigGlobale.etatOFF) || etat.equalsIgnoreCase(ConfigGlobale.etatMaintenance)){
+            this.etat = etat.toLowerCase();
+            return 0;
+        }
+        else{
+            return -1;
+        }
     }
     
     public String getEmplacement() {
         return emplacement;
     }
 
-    public void setEmplacement(String emplacement) {
-        this.emplacement = emplacement;
+    public int setEmplacement(String emplacement) {
+        if(emplacement.length()>100){
+            this.emplacement = emplacement;
+            return 0;
+        }
+        else{
+            return -1;
+        }
     }
     
     @Override

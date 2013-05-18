@@ -9,6 +9,7 @@ public class Station {
     
     private int id_station = 0;
     private String etat = "off";
+    private String emplacement = "undefined";
     
     public Station(){
     }
@@ -34,9 +35,17 @@ public class Station {
         this.etat = etat;
     }
     
+    public String getEmplacement() {
+        return emplacement;
+    }
+
+    public void setEmplacement(String emplacement) {
+        this.emplacement = emplacement;
+    }
+    
     @Override
     public String toString(){
-        return "Station "+this.id_station+", etat : "+this.etat;
+        return "Station "+this.id_station+", emplacement : "+this.emplacement+", etat : "+this.etat;
     }
     
 }

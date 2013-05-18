@@ -186,7 +186,11 @@ public class Utilisateur {
     
     @Override
     public String toString(){
-        return "TOSTRING UTILISATEUR A FAIRE";
+        return "Utilisateur "+this.id_utilisateur+" : "+this.prenom+" "+this.nom+", numero CI : "+this.carteIdentite+", ne(e) le "+this.dateNaissance+", adresse : "+this.adresse+" "+this.codePostal+" "+this.ville+" compte cree le : "+this.dateCreation;
+    }
+    
+    public String toStringSecret(){
+        return "Utilisateur "+this.id_utilisateur+", numero CN : "+this.carteBancaire+", date de validite CB : "+this.dateValiditeCarteBancaire+", rib : "+this.rib+", iban : "+this.iban+", login : "+this.login+", password : "+this.password+".";
     }
     
 }

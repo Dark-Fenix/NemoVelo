@@ -21,6 +21,7 @@ public class Main {
         System.out.println(testStation.toString());
         Utilisateur testUtilisateur = new Utilisateur();
         System.out.println(testUtilisateur.toString());
+        System.out.println(testUtilisateur.toStringSecret());
         Velo testVelo = new Velo();
         System.out.println(testVelo.toString());
         

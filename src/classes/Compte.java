@@ -61,8 +61,14 @@ public class Compte {
         return dateCreation;
     }
 
-    public void setDateCreation(String dateCreation) {
-        this.dateCreation = dateCreation;
+    public int setDateCreation(String dateCreation) {
+        if(dateCreation.matches(ConfigGlobale.regexValidationDate)){
+            this.dateCreation = dateCreation;
+            return 0;
+        }
+        else{
+            return -1;
+        }
     }
 
     public int getFk_id_utilisateur() {

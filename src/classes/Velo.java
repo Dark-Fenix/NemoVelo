@@ -55,8 +55,14 @@ public class Velo {
         return dateMiseEnService;
     }
 
-    public void setDateMiseEnService(String dateMiseEnService) {
-        this.dateMiseEnService = dateMiseEnService;
+    public int setDateMiseEnService(String dateMiseEnService) {
+        if(dateMiseEnService.matches(ConfigGlobale.regexValidationDate)){
+            this.dateMiseEnService = dateMiseEnService;
+            return 0;
+        }
+        else{
+            return -1;
+        }
     }
 
     public double getKmParcourus() {

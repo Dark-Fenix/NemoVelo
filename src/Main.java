@@ -21,9 +21,18 @@ public class Main {
         System.out.println(testStation.toString());
         Utilisateur testUtilisateur = new Utilisateur();
         System.out.println(testUtilisateur.toString());
-        System.out.println(testUtilisateur.toStringSecret());
+        System.out.println(testUtilisateur.toStringSecret());*/
         Velo testVelo = new Velo();
-        System.out.println(testVelo.toString());*/
+        System.out.println(testVelo.toString());
+        testVelo.setDateMiseEnService("2012-04-13");
+        System.out.println(testVelo.toString());
+        testVelo.setDateMiseEnService("2012-13-13");
+        System.out.println(testVelo.toString());
+        testVelo.setDateMiseEnService("2012-04-1");
+        System.out.println(testVelo.toString());
+        testVelo.setDateMiseEnService("2012-4-45");
+        System.out.println(testVelo.toString());
+        
         
     }
 }

@@ -1,6 +1,8 @@
 
 package classes;
 
+import Config.ConfigGlobale;
+
 /**
  *
  * @author Fenix
@@ -87,8 +89,14 @@ public class Utilisateur {
         return dateNaissance;
     }
 
-    public void setDateNaissance(String dateNaissance) {
-        this.dateNaissance = dateNaissance;
+    public int setDateNaissance(String dateNaissance) {
+        if(dateNaissance.matches(ConfigGlobale.regexValidationDate)){
+            this.dateNaissance = dateNaissance;
+            return 0;
+        }
+        else{
+            return -1;
+        }
     }
 
     public String getAdresse() {
@@ -151,8 +159,14 @@ public class Utilisateur {
         return dateValiditeCarteBancaire;
     }
 
-    public void setDateValiditeCarteBancaire(String dateValiditeCarteBancaire) {
-        this.dateValiditeCarteBancaire = dateValiditeCarteBancaire;
+    public int setDateValiditeCarteBancaire(String dateValiditeCarteBancaire) {
+        if(dateValiditeCarteBancaire.matches(ConfigGlobale.regexValidationDate)){
+            this.dateValiditeCarteBancaire = dateValiditeCarteBancaire;
+            return 0;
+        }
+        else{
+            return -1;
+        }
     }
 
     public String getRib() {
@@ -187,8 +201,14 @@ public class Utilisateur {
         return dateCreation;
     }
 
-    public void setDateCreation(String dateCreation) {
-        this.dateCreation = dateCreation;
+    public int setDateCreation(String dateCreation) {
+        if(dateCreation.matches(ConfigGlobale.regexValidationDate)){
+            this.dateCreation = dateCreation;
+            return 0;
+        }
+        else{
+            return -1;
+        }
     }
 
     public String getLogin() {

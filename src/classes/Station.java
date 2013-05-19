@@ -49,7 +49,7 @@ public class Station {
     }
 
     public int setEmplacement(String emplacement) {
-        if(emplacement.length()>100){
+        if(emplacement.length()>ConfigGlobale.longueurAdresse){
             this.emplacement = emplacement;
             return 0;
         }

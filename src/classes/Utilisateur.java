@@ -62,7 +62,7 @@ public class Utilisateur {
     }
 
     public int setPrenom(String prenom) {
-        if(prenom.length()>30){
+        if(prenom.length()>ConfigGlobale.longueurChampTexteGenerique){
             this.prenom = prenom;
             return 0;
         }
@@ -76,7 +76,7 @@ public class Utilisateur {
     }
 
     public int setNom(String nom) {
-        if(nom.length()>30){
+        if(nom.length()>ConfigGlobale.longueurChampTexteGenerique){
             this.nom = nom;
             return 0;
         }
@@ -104,7 +104,7 @@ public class Utilisateur {
     }
 
     public int setAdresse(String adresse) {
-        if(adresse.length()>100){
+        if(adresse.length()>ConfigGlobale.longueurAdresse){
             this.adresse = adresse;
             return 0;
         }
@@ -118,7 +118,7 @@ public class Utilisateur {
     }
 
     public int setCodePostal(String codePostal) {
-        if(codePostal.length()>5){
+        if(codePostal.length()>ConfigGlobale.longueurCodePostal){
             this.codePostal = codePostal;
             return 0;
         }
@@ -132,7 +132,7 @@ public class Utilisateur {
     }
 
     public int setVille(String ville) {
-        if(ville.length()>30){
+        if(ville.length()>ConfigGlobale.longueurChampTexteGenerique){
             this.ville = ville;
             return 0;
         }
@@ -146,7 +146,7 @@ public class Utilisateur {
     }
 
     public int setCarteBancaire(String carteBancaire) {
-        if(carteBancaire.length()>16){
+        if(carteBancaire.length()>ConfigGlobale.longueurCB){
             this.carteBancaire = carteBancaire;
             return 0;
         }
@@ -174,7 +174,7 @@ public class Utilisateur {
     }
 
     public int setRib(String rib) {
-        if(rib.length()>23){
+        if(rib.length()>ConfigGlobale.longueurRIB){
             this.rib = rib;
             return 0;
         }
@@ -188,7 +188,7 @@ public class Utilisateur {
     }
 
     public int setIban(String iban) {
-        if(iban.length()>34){
+        if(iban.length()>ConfigGlobale.longueurIBAN){
             this.iban = iban;
             return 0;
         }
@@ -216,7 +216,7 @@ public class Utilisateur {
     }
 
     public int setLogin(String login) {
-        if(login.length()>30){
+        if(login.length()>ConfigGlobale.longueurChampTexteGenerique){
             this.login = login;
             return 0;
         }
@@ -230,7 +230,7 @@ public class Utilisateur {
     }
 
     public int setPassword(String password) {
-        if(password.length()>30){
+        if(password.length()>ConfigGlobale.longueurChampTexteGenerique){
             this.password = password;
             return 0;
         }

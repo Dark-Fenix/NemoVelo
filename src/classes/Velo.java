@@ -42,7 +42,7 @@ public class Velo {
     }
 
     public int setSerialNumber(String serialNumber) {
-        if(serialNumber.length()>10){
+        if(serialNumber.length()>ConfigGlobale.longueurSNVelo){
             this.serialNumber = serialNumber;
             return 0;
         }

@@ -10,6 +10,7 @@ import Config.ConfigGlobale;
 public class Station {
     
     private int id_station = 0;
+    private String serialNumber = "KL34KL3411";
     private String etat = "off";
     private String emplacement = "undefined";
     
@@ -30,6 +31,20 @@ public class Station {
         this.id_station = id_station;
     }*/
 
+    public String getSerialNumber() {
+        return serialNumber;
+    }
+
+    public int setSerialNumber(String serialNumber) {
+        if(serialNumber.length()>ConfigGlobale.longueurSNStation){
+            this.serialNumber = serialNumber;
+            return 0;
+        }
+        else{
+            return -1;
+        }
+    }
+    
     public String getEtat() {
         return etat;
     }
@@ -60,7 +75,7 @@ public class Station {
     
     @Override
     public String toString(){
-        return "Station "+this.id_station+", emplacement : "+this.emplacement+", etat : "+this.etat;
+        return "Station "+this.id_station+" : numero de serie "+this.serialNumber+", emplacement : "+this.emplacement+", etat : "+this.etat;
     }
     
 }

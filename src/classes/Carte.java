@@ -1,6 +1,8 @@
 
 package classes;
 
+import Config.ConfigGlobale;
+
 /**
  *
  * @author Fenix
@@ -8,6 +10,7 @@ package classes;
 public class Carte {
     
     private int id_carte = 0;
+    private String serialNumber = "007FF007";
     
     public Carte(){
     }
@@ -25,9 +28,23 @@ public class Carte {
         this.id_carte = id_carte;
     }*/
     
+    public String getSerialNumber() {
+        return serialNumber;
+    }
+
+    public int setSerialNumber(String serialNumber) {
+        if(serialNumber.length()>ConfigGlobale.longueurSNCarte){
+            this.serialNumber = serialNumber;
+            return 0;
+        }
+        else{
+            return -1;
+        }
+    }
+    
     @Override
     public String toString(){
-        return "Carte "+this.id_carte;
+        return "Carte "+this.id_carte+" : numero de serie "+this.serialNumber;
     }
     
 }

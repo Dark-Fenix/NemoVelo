@@ -10,6 +10,7 @@ import Config.ConfigGlobale;
 public class Borne {
     
     private int id_borne = 0;
+    private String serialNumber = "HHHH66HHHH";
     private String etat = "off";
     private int fk_id_station = -1;
     
@@ -31,6 +32,20 @@ public class Borne {
         return this.id_borne = id_borne;
     }*/
 
+    public String getSerialNumber() {
+        return serialNumber;
+    }
+
+    public int setSerialNumber(String serialNumber) {
+        if(serialNumber.length()>ConfigGlobale.longueurSNBorne){
+            this.serialNumber = serialNumber;
+            return 0;
+        }
+        else{
+            return -1;
+        }
+    }
+    
     public String getEtat() {
         return etat;
     }
@@ -55,7 +70,7 @@ public class Borne {
     
     @Override
     public String toString(){
-        String temp = "Borne "+this.id_borne+", etat : "+this.etat;
+        String temp = "Borne "+this.id_borne+" : numero de serie "+this.serialNumber+", etat : "+this.etat;
         if(this.fk_id_station==-1){
             temp+=", pas de station d'attache.";
         }

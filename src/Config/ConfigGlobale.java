@@ -17,6 +17,9 @@ public class ConfigGlobale {
     public static int longueurCodePostal = 5;
     public static int longueurChampTexteGenerique = 30;
     public static int longueurSNVelo = 10;
+    public static int longueurSNBorne = 10;
+    public static int longueurSNStation = 10;
+    public static int longueurSNCarte = 8;
     public static int longueurCB = 16;
     public static int longueurRIB = 23;
     public static int longueurIBAN = 34;

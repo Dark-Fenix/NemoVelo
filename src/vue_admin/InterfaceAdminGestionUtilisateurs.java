@@ -8,12 +8,12 @@ package vue_admin;
  *
  * @author HallerCasagrande-F
  */
-public class InterfaceAdminGestionComptes extends javax.swing.JPanel {
+public class InterfaceAdminGestionUtilisateurs extends javax.swing.JPanel {
 
     /**
-     * Creates new form InterfaceAdminGestionComptes
+     * Creates new form InterfaceAdminGestionUtilisateurs
      */
-    public InterfaceAdminGestionComptes() {
+    public InterfaceAdminGestionUtilisateurs() {
         initComponents();
     }
 

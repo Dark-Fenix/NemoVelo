@@ -4,12 +4,17 @@
  */
 package vue_admin;
 
+import javax.swing.JPanel;
+
 /**
  *
  * @author HallerCasagrande-F
  */
 public class InterfaceAdminGestion extends javax.swing.JFrame {
 
+    private JPanel current;
+    private JPanel interfaceAdminGestionComptes = new InterfaceAdminGestionComptes();
+    private JPanel interfaceAdminGestionUtilisateurs = new InterfaceAdminGestionUtilisateurs();
     /**
      * Creates new form InterfaceAdminGestion
      */
@@ -39,6 +44,7 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setPreferredSize(new java.awt.Dimension(800, 600));
+        setResizable(false);
 
         titreInterfaceGestion.setBackground(new java.awt.Color(204, 255, 255));
         titreInterfaceGestion.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -49,13 +55,13 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
         menuBoutons.setBackground(new java.awt.Color(51, 153, 255));
 
         boutonUtilisateurs.setText("Utilisateurs");
-
-        boutonComptes.setText("Comptes");
-        boutonComptes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boutonComptesActionPerformed(evt);
+        boutonUtilisateurs.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                boutonUtilisateursMouseClicked(evt);
             }
         });
+
+        boutonComptes.setText("Comptes");
 
         boutonCartes.setText("Cartes");
 
@@ -134,9 +140,15 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void boutonComptesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonComptesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_boutonComptesActionPerformed
+    private void boutonUtilisateursMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonUtilisateursMouseClicked
+        if(current!=null){
+            panelFondInterfaceGestion.remove(current);
+        }
+        current = interfaceAdminGestionComptes;
+        panelFondInterfaceGestion.add(current);
+        panelFondInterfaceGestion.invalidate();
+    }
+    }//GEN-LAST:event_boutonUtilisateursMouseClicked
 
     /**
      * @param args the command line arguments

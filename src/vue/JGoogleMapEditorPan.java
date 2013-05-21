@@ -19,7 +19,7 @@ import javax.swing.text.html.HTMLEditorKit;
 public class JGoogleMapEditorPan extends JEditorPane {
 
     private int zoomFactor = 7;
-    private String ApiKey = "ABQIAAAA6aYFk0uJgwL3GjwI8PKQ1RT2yXp_ZAY8_ufC3CFXhHIE1NvwkxSYXgk0Ck7RneQuP0zjt9487jaJfQ";
+    private String ApiKey = "";
     private String roadmap = "roadmap";
     public final String viewTerrain = "terrain";
     public final String viewSatellite = "satellite";

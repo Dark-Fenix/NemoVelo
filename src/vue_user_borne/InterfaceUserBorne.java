@@ -1,16 +1,16 @@
 
-package vue;
+package vue_user_borne;
 
 /**
  *
  * @author Fenix
  */
-public class Page_Acceuil extends javax.swing.JPanel {
+public class InterfaceUserBorne extends javax.swing.JPanel {
 
     /**
      * Creates new form Page_Acceuil
      */
-    public Page_Acceuil() {
+    public InterfaceUserBorne() {
         initComponents();
     }
 

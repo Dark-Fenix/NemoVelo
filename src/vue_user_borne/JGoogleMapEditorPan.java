@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package vue;
+package vue_user_borne;
 
 import java.util.ArrayList;
 import java.util.logging.Level;

@@ -9,7 +9,6 @@ import Config.ConfigGlobale;
  */
 public class Borne {
     
-    private int d=0;
     private int id_borne = 0;
     private String serialNumber = "HHHH66HHHH";
     private String etat = "off";

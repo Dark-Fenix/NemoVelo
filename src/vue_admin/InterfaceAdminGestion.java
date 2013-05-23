@@ -4,9 +4,10 @@
  */
 package vue_admin;
 
-import javax.swing.JPanel;
+import javax.swing.*;
 
-/**
+
+    /**
  *
  * @author HallerCasagrande-F
  */
@@ -42,6 +43,7 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
         panelFondInterfaceGestion = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("NemoVelo");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setPreferredSize(new java.awt.Dimension(800, 600));
         setResizable(false);
@@ -144,13 +146,11 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
         if(current!=null){
             panelFondInterfaceGestion.remove(current);
         }
-        current = interfaceAdminGestionComptes;
+        current = interfaceAdminGestionUtilisateurs;
         panelFondInterfaceGestion.add(current);
         panelFondInterfaceGestion.invalidate();
-    }
     }//GEN-LAST:event_boutonUtilisateursMouseClicked
-
-    /**
+/**
      * @param args the command line arguments
      */
     public static void main(String args[]) {

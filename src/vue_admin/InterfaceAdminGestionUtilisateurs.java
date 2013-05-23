@@ -26,20 +26,46 @@ public class InterfaceAdminGestionUtilisateurs extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panelEditionUtilisateurs = new javax.swing.JPanel();
+        ascenceurUtilisateurs = new javax.swing.JScrollPane();
+
         setBackground(new java.awt.Color(102, 153, 255));
         setPreferredSize(new java.awt.Dimension(800, 400));
+
+        javax.swing.GroupLayout panelEditionUtilisateursLayout = new javax.swing.GroupLayout(panelEditionUtilisateurs);
+        panelEditionUtilisateurs.setLayout(panelEditionUtilisateursLayout);
+        panelEditionUtilisateursLayout.setHorizontalGroup(
+            panelEditionUtilisateursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
+        );
+        panelEditionUtilisateursLayout.setVerticalGroup(
+            panelEditionUtilisateursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ascenceurUtilisateurs, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(panelEditionUtilisateurs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelEditionUtilisateurs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ascenceurUtilisateurs, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane ascenceurUtilisateurs;
+    private javax.swing.JPanel panelEditionUtilisateurs;
     // End of variables declaration//GEN-END:variables
 }

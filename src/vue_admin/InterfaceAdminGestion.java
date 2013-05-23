@@ -111,7 +111,7 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
         panelFondInterfaceGestion.setLayout(panelFondInterfaceGestionLayout);
         panelFondInterfaceGestionLayout.setHorizontalGroup(
             panelFondInterfaceGestionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
         panelFondInterfaceGestionLayout.setVerticalGroup(
             panelFondInterfaceGestionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -4,7 +4,10 @@
  */
 package vue_admin;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
+import vue_user_borne.JGoogleMapEditorPan;
 
 
     /**
@@ -46,7 +49,6 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
         setTitle("NemoVelo");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setPreferredSize(new java.awt.Dimension(800, 600));
-        setResizable(false);
 
         titreInterfaceGestion.setBackground(new java.awt.Color(204, 255, 255));
         titreInterfaceGestion.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -64,8 +66,18 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
         });
 
         boutonComptes.setText("Comptes");
+        boutonComptes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                boutonComptesMouseClicked(evt);
+            }
+        });
 
         boutonCartes.setText("Cartes");
+        boutonCartes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                boutonCartesMouseClicked(evt);
+            }
+        });
 
         boutonStations.setText("Stations");
 
@@ -108,17 +120,7 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
 
         panelFondInterfaceGestion.setBackground(new java.awt.Color(102, 153, 255));
         panelFondInterfaceGestion.setPreferredSize(new java.awt.Dimension(0, 400));
-
-        javax.swing.GroupLayout panelFondInterfaceGestionLayout = new javax.swing.GroupLayout(panelFondInterfaceGestion);
-        panelFondInterfaceGestion.setLayout(panelFondInterfaceGestionLayout);
-        panelFondInterfaceGestionLayout.setHorizontalGroup(
-            panelFondInterfaceGestionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 597, Short.MAX_VALUE)
-        );
-        panelFondInterfaceGestionLayout.setVerticalGroup(
-            panelFondInterfaceGestionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
+        panelFondInterfaceGestion.setLayout(new javax.swing.BoxLayout(panelFondInterfaceGestion, javax.swing.BoxLayout.LINE_AXIS));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -143,15 +145,46 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boutonUtilisateursMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonUtilisateursMouseClicked
-        System.out.println("plop");
-        if(current!=null){
-            panelFondInterfaceGestion.remove(current);
-        }
-        current = interfaceAdminGestionUtilisateurs;
-        panelFondInterfaceGestion.add(current);
-        panelFondInterfaceGestion.validate();
+       swapPanel(interfaceAdminGestionUtilisateurs);
     }//GEN-LAST:event_boutonUtilisateursMouseClicked
-/**
+
+    private void boutonComptesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonComptesMouseClicked
+        swapPanel(interfaceAdminGestionComptes);
+    }//GEN-LAST:event_boutonComptesMouseClicked
+
+    private void boutonCartesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonCartesMouseClicked
+        try {
+            JGoogleMapEditorPan  googleMap = new JGoogleMapEditorPan();
+            googleMap.showCoordinate("48.8667", "2.3333",390, 400);
+            googleMap.showCoordinate("45.740724", "4.85561610000002", 390, 400);
+            swapPanel(googleMap);
+        }
+        catch (Exception ex) {
+            Logger.getLogger(InterfaceAdminGestion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_boutonCartesMouseClicked
+
+    
+    private void swapPanel(JComponent newPanel){
+        
+        panelFondInterfaceGestion.removeAll();
+       // current = newPanel;
+        panelFondInterfaceGestion.add(newPanel);
+//add your elements
+revalidate();
+this.repaint();
+
+
+      /*  panelFondInterfaceGestion.removeAll();;
+         
+        current = newPanel;
+        current.setVisible(true);
+        panelFondInterfaceGestion.add(current);
+        this.pack();
+        */
+    }
+            
+            /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {

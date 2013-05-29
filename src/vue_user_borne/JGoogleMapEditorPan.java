@@ -14,9 +14,9 @@ import javax.swing.text.html.HTMLEditorKit;
 
 public class JGoogleMapEditorPan extends JEditorPane {
 
-    private int zoomFactor = 7;
-    private String ApiKey = "";
-    private String roadmap = "roadmap";
+    private int zoomFactor = 15;
+    private String ApiKey = "ABQIAAAA6aYFk0uJgwL3GjwI8PKQ1RT2yXp_ZAY8_ufC3CFXhHIE1NvwkxSYXgk0Ck7RneQuP0zjt9487jaJfQ";
+    private String roadmap = "satellite";
     public final String viewTerrain = "terrain";
     public final String viewSatellite = "satellite";
     public final String viewHybrid = "hybrid";
@@ -105,8 +105,9 @@ public class JGoogleMapEditorPan extends JEditorPane {
         try {
             //googleMap.setApiKey("maCleGoogleMap");
             //  googleMap.setRoadmap(googleMap.viewHybrid);
-            googleMap.showLocation("Lyon", "france", 400, 400);
-            //  googleMap.showCoordinate("48.8667", "2.3333",390, 400);
+            //googleMap.showLocation("Lyon", "france", 390, 400);
+            googleMap.showCoordinate("48.8667", "2.3333",390, 400);
+            googleMap.showCoordinate("45.740724", "4.85561610000002", 390, 400);
         } catch (Exception ex) {
             Logger.getLogger(JGoogleMapEditorPan.class.getName()).log(Level.SEVERE, null, ex);
         }

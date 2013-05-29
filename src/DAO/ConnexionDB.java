@@ -10,14 +10,12 @@ public class ConnexionDB {
     private static Connection connexion = null;
 
     private ConnexionDB() {
-        try
-{
-Class.forName("com.mysql.jdbc.Driver").newInstance();
-}
-catch(Exception e)
-{
-e.printStackTrace();
-}
+        /*try {
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }*/
         try {
             ConnexionDB.connexion = (Connection) DriverManager.getConnection("jdbc:mysql://"+ConfigDB.adresseDB+"/"+ConfigDB.nomDB, ConfigDB.utilisateur, ConfigDB.password);
         }

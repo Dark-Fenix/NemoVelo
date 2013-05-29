@@ -32,10 +32,10 @@ public class Main {
         testVelo.setDateMiseEnService("2012-04-1");
         System.out.println(testVelo.toString());
         testVelo.setDateMiseEnService("2012-4-45");
-        System.out.println(testVelo.toString());
+        System.out.println(testVelo.toString());*/
         
         ConnexionDB.getInstance();
-        ConnexionDB.getConnexion().toString();*/
+        ConnexionDB.getConnexion().toString();
         
     }
 }

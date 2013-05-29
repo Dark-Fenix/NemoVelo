@@ -54,21 +54,35 @@ public class InterfaceAdminGestionUtilisateurs extends javax.swing.JPanel {
     private void initComponents() {
 
         panelEditionUtilisateurs = new javax.swing.JPanel();
+        jToggleButton1 = new javax.swing.JToggleButton();
         ascenceurUtilisateurs = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setBackground(new java.awt.Color(102, 153, 255));
         setPreferredSize(new java.awt.Dimension(800, 400));
+
+        jToggleButton1.setText("jToggleButton1");
 
         javax.swing.GroupLayout panelEditionUtilisateursLayout = new javax.swing.GroupLayout(panelEditionUtilisateurs);
         panelEditionUtilisateurs.setLayout(panelEditionUtilisateursLayout);
         panelEditionUtilisateursLayout.setHorizontalGroup(
             panelEditionUtilisateursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(panelEditionUtilisateursLayout.createSequentialGroup()
+                .addGap(223, 223, 223)
+                .addComponent(jToggleButton1)
+                .addContainerGap(272, Short.MAX_VALUE))
         );
         panelEditionUtilisateursLayout.setVerticalGroup(
             panelEditionUtilisateursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(panelEditionUtilisateursLayout.createSequentialGroup()
+                .addGap(130, 130, 130)
+                .addComponent(jToggleButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        ascenceurUtilisateurs.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -94,6 +108,8 @@ public class InterfaceAdminGestionUtilisateurs extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane ascenceurUtilisateurs;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JPanel panelEditionUtilisateurs;
     // End of variables declaration//GEN-END:variables
 }

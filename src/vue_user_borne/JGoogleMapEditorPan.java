@@ -4,6 +4,7 @@
  */
 package vue_user_borne;
 
+import java.awt.BorderLayout;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,7 +20,7 @@ import javax.swing.text.html.HTMLEditorKit;
 public class JGoogleMapEditorPan extends JEditorPane {
 
     private int zoomFactor = 7;
-    private String ApiKey = "";
+    private String ApiKey = "ABQIAAAA6aYFk0uJgwL3GjwI8PKQ1RT2yXp_ZAY8_ufC3CFXhHIE1NvwkxSYXgk0Ck7RneQuP0zjt9487jaJfQ";
     private String roadmap = "roadmap";
     public final String viewTerrain = "terrain";
     public final String viewSatellite = "satellite";
@@ -155,7 +156,7 @@ public class JGoogleMapEditorPan extends JEditorPane {
             /**
             Afficher la ville de Strabourg
              */
-            googleMap.showLocation("Saint-Alexandre", "france", 30, 30);
+            googleMap.showLocation("Lyon", "france", 400, 400);
             /**
              * Afficher Paris en fonction ses coordonnées GPS
              */
@@ -168,7 +169,7 @@ public class JGoogleMapEditorPan extends JEditorPane {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(googleMap);
         frame.setSize(400, 420);
-        frame.setLocation(200, 200);
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 }

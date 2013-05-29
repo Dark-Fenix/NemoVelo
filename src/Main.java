@@ -1,17 +1,18 @@
 
 import classes.*;
 import Config.*;
+import DAO.*;
 
 /**
  *
  * @author Fenix
  */
-//public class Main {
+public class Main {
 
 // SERT POUR LES TESTS
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
 
-        Borne testBorne = new Borne();
+        /*Borne testBorne = new Borne();
         System.out.println(testBorne.toString());
         Carte testCarte = new Carte();
         System.out.println(testCarte.toString());
@@ -33,6 +34,8 @@ import Config.*;
         testVelo.setDateMiseEnService("2012-4-45");
         System.out.println(testVelo.toString());
         
+        ConnexionDB.getInstance();
+        ConnexionDB.getConnexion().toString();*/
         
     }
-}*/
+}

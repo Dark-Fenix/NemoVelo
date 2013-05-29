@@ -90,7 +90,7 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
                 .addComponent(boutonBornes)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(boutonVelos)
-                .addGap(0, 140, Short.MAX_VALUE))
+                .addGap(0, 137, Short.MAX_VALUE))
         );
         menuBoutonsLayout.setVerticalGroup(
             menuBoutonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,7 +113,7 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
         panelFondInterfaceGestion.setLayout(panelFondInterfaceGestionLayout);
         panelFondInterfaceGestionLayout.setHorizontalGroup(
             panelFondInterfaceGestionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGap(0, 597, Short.MAX_VALUE)
         );
         panelFondInterfaceGestionLayout.setVerticalGroup(
             panelFondInterfaceGestionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,7 +125,7 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(titreInterfaceGestion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(panelFondInterfaceGestion, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+            .addComponent(panelFondInterfaceGestion, javax.swing.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE)
             .addComponent(menuBoutons, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -143,12 +143,13 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boutonUtilisateursMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonUtilisateursMouseClicked
+        System.out.println("plop");
         if(current!=null){
             panelFondInterfaceGestion.remove(current);
         }
         current = interfaceAdminGestionUtilisateurs;
         panelFondInterfaceGestion.add(current);
-        panelFondInterfaceGestion.invalidate();
+        panelFondInterfaceGestion.validate();
     }//GEN-LAST:event_boutonUtilisateursMouseClicked
 /**
      * @param args the command line arguments

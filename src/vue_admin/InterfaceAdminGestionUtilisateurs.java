@@ -4,6 +4,9 @@
  */
 package vue_admin;
 
+import javax.swing.ListModel;
+import javax.swing.event.ListDataListener;
+
 /**
  *
  * @author HallerCasagrande-F
@@ -15,6 +18,30 @@ public class InterfaceAdminGestionUtilisateurs extends javax.swing.JPanel {
      */
     public InterfaceAdminGestionUtilisateurs() {
         initComponents();
+        /*jList1.setModel(new ListModel(){
+
+            @Override
+            public int getSize() {
+                return 10;
+            }
+
+            @Override
+            public Object getElementAt(int index) {
+                return "Coucou";
+            }
+
+            @Override
+            public void addListDataListener(ListDataListener l) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void removeListDataListener(ListDataListener l) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        });
+        jList1.clearSelection();*/
+        
     }
 
     /**
@@ -64,6 +91,7 @@ public class InterfaceAdminGestionUtilisateurs extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane ascenceurUtilisateurs;
     private javax.swing.JPanel panelEditionUtilisateurs;

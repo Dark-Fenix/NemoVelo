@@ -2,20 +2,17 @@
 package vue_user_borne;
 
 import java.awt.BorderLayout;
-import java.awt.ScrollPane;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JEditorPane;
 import javax.swing.JFrame;
-import javax.swing.JScrollPane;
 import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLEditorKit;
 
 public class JGoogleMapEditorPan extends JEditorPane {
 
     private int zoomFactor = 15;
-    private String ApiKey = "ABQIAAAA6aYFk0uJgwL3GjwI8PKQ1RT2yXp_ZAY8_ufC3CFXhHIE1NvwkxSYXgk0Ck7RneQuP0zjt9487jaJfQ";
+    private String ApiKey = "";
     private String roadmap = "satellite";
     public final String viewTerrain = "terrain";
     public final String viewSatellite = "satellite";
@@ -56,7 +53,6 @@ public class JGoogleMapEditorPan extends JEditorPane {
         if (this.ApiKey.isEmpty()) {
             throw new Exception("Developper API Key not set !!!!");
         }
-
         String url = "http://maps.google.com/maps/api/staticmap?";
         url += "center=" + x + "," + y;
         url += "&amp;zoom=" + this.zoomFactor;
@@ -65,7 +61,6 @@ public class JGoogleMapEditorPan extends JEditorPane {
         url += "&amp;markers=color:blue" + x + "," + y;
         url += "&amp;sensor=false";
         url += "&amp;key=" + this.ApiKey;
-
         String html = "<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN'>";
         html += "<html><head></head><body>";
         html += "<img src='" + url + "'>";
@@ -100,23 +95,19 @@ public class JGoogleMapEditorPan extends JEditorPane {
         this.setText(html);
     }*/
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         JGoogleMapEditorPan googleMap = new JGoogleMapEditorPan();
         try {
-            //googleMap.setApiKey("maCleGoogleMap");
-            //  googleMap.setRoadmap(googleMap.viewHybrid);
             //googleMap.showLocation("Lyon", "france", 390, 400);
-            googleMap.showCoordinate("48.8667", "2.3333",390, 400);
             googleMap.showCoordinate("45.740724", "4.85561610000002", 390, 400);
         } catch (Exception ex) {
             Logger.getLogger(JGoogleMapEditorPan.class.getName()).log(Level.SEVERE, null, ex);
         }
-
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(googleMap,BorderLayout.CENTER);
         frame.setSize(400, 420);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-    }
+    }*/
 }

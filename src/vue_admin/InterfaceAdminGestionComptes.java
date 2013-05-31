@@ -4,6 +4,8 @@
  */
 package vue_admin;
 
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author HallerCasagrande-F
@@ -15,8 +17,17 @@ public class InterfaceAdminGestionComptes extends javax.swing.JPanel {
      */
     public InterfaceAdminGestionComptes() {
         initComponents();
+        RemplissageListeComptes();
     }
 
+    public final void RemplissageListeComptes(){
+        DefaultListModel liste = new DefaultListModel();
+        liste.addElement("Le compte de Jane Doe");
+        liste.addElement("Le compte de John Smith");
+        liste.addElement("Le compte de Kathy Green");
+        listeComptes.setModel(liste);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,45 +37,50 @@ public class InterfaceAdminGestionComptes extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        ascenceur = new javax.swing.JScrollPane();
+        listeComptes = new javax.swing.JList();
+        panelEdition = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(102, 153, 255));
         setPreferredSize(new java.awt.Dimension(800, 400));
 
-        jToggleButton1.setText("jToggleButton1");
+        ascenceur.setMaximumSize(new java.awt.Dimension(33, 80));
+        ascenceur.setMinimumSize(new java.awt.Dimension(33, 80));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        listeComptes.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        ascenceur.setViewportView(listeComptes);
+
+        panelEdition.setPreferredSize(new java.awt.Dimension(600, 164));
+        panelEdition.setLayout(new javax.swing.BoxLayout(panelEdition, javax.swing.BoxLayout.LINE_AXIS));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(306, 306, 306)
-                .addComponent(jToggleButton1)
-                .addContainerGap(389, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(205, 205, 205))
+                .addContainerGap()
+                .addComponent(ascenceur, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(panelEdition, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(121, 121, 121)
-                .addComponent(jToggleButton1)
-                .addGap(63, 63, 63)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(97, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(panelEdition, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE)
+                    .addComponent(ascenceur, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JScrollPane ascenceur;
+    private javax.swing.JList listeComptes;
+    private javax.swing.JPanel panelEdition;
     // End of variables declaration//GEN-END:variables
 }

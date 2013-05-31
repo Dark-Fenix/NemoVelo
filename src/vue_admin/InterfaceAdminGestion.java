@@ -16,7 +16,7 @@ import vue_user_borne.JGoogleMapEditorPan;
  */
 public class InterfaceAdminGestion extends javax.swing.JFrame {
 
-    private JPanel current;
+    //private JPanel current;
     private JPanel interfaceAdminGestionComptes = new InterfaceAdminGestionComptes();
     private JPanel interfaceAdminGestionUtilisateurs = new InterfaceAdminGestionUtilisateurs();
     /**
@@ -49,6 +49,7 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
         setTitle("NemoVelo");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setPreferredSize(new java.awt.Dimension(800, 600));
+        setResizable(false);
 
         titreInterfaceGestion.setBackground(new java.awt.Color(204, 255, 255));
         titreInterfaceGestion.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -145,11 +146,11 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boutonUtilisateursMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonUtilisateursMouseClicked
-       swapPanel(interfaceAdminGestionUtilisateurs);
+        swapPanel(panelFondInterfaceGestion, interfaceAdminGestionUtilisateurs);
     }//GEN-LAST:event_boutonUtilisateursMouseClicked
 
     private void boutonComptesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonComptesMouseClicked
-        swapPanel(interfaceAdminGestionComptes);
+        swapPanel(panelFondInterfaceGestion, interfaceAdminGestionComptes);
     }//GEN-LAST:event_boutonComptesMouseClicked
 
     private void boutonCartesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonCartesMouseClicked
@@ -157,7 +158,7 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
             JGoogleMapEditorPan  googleMap = new JGoogleMapEditorPan();
             googleMap.showCoordinate("48.8667", "2.3333",390, 400);
             googleMap.showCoordinate("45.740724", "4.85561610000002", 390, 400);
-            swapPanel(googleMap);
+            swapPanel(panelFondInterfaceGestion, googleMap);
         }
         catch (Exception ex) {
             Logger.getLogger(InterfaceAdminGestion.class.getName()).log(Level.SEVERE, null, ex);
@@ -165,35 +166,23 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
     }//GEN-LAST:event_boutonCartesMouseClicked
 
     
-    private void swapPanel(JComponent newPanel){
-        
-        panelFondInterfaceGestion.removeAll();
-       // current = newPanel;
-        panelFondInterfaceGestion.add(newPanel);
-//add your elements
-revalidate();
-this.repaint();
-
-
-      /*  panelFondInterfaceGestion.removeAll();;
-         
-        current = newPanel;
-        current.setVisible(true);
-        panelFondInterfaceGestion.add(current);
-        this.pack();
-        */
+    public void swapPanel(JComponent panelDeBase, JComponent newPanel){
+        panelDeBase.removeAll();
+        panelDeBase.add(newPanel);
+        revalidate();
+        repaint();
     }
             
             /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    //public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
+        /*try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -208,16 +197,16 @@ this.repaint();
             java.util.logging.Logger.getLogger(InterfaceAdminGestion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(InterfaceAdminGestion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+        }*/
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        /*java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new InterfaceAdminGestion().setVisible(true);
             }
-        });
-    }
+        });*/
+    //}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boutonBornes;
     private javax.swing.JButton boutonCartes;

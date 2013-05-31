@@ -4,8 +4,11 @@
  */
 package vue_admin;
 
-import javax.swing.ListModel;
-import javax.swing.event.ListDataListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.DefaultListModel;
+import javax.swing.JComponent;
+import classes.Utilisateur;
 
 /**
  *
@@ -18,32 +21,33 @@ public class InterfaceAdminGestionUtilisateurs extends javax.swing.JPanel {
      */
     public InterfaceAdminGestionUtilisateurs() {
         initComponents();
-        /*jList1.setModel(new ListModel(){
-
+        RemplissageListeComptes();
+        listeUtilisateurs.addMouseListener(new MouseAdapter() {
             @Override
-            public int getSize() {
-                return 10;
-            }
-
-            @Override
-            public Object getElementAt(int index) {
-                return "Coucou";
-            }
-
-            @Override
-            public void addListDataListener(ListDataListener l) {
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-
-            @Override
-            public void removeListDataListener(ListDataListener l) {
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            public void mouseClicked(MouseEvent evt) {
+                EditionUtilisateur edition = new EditionUtilisateur(new Utilisateur());
+                swapPanel(panelEdition, edition);
             }
         });
-        jList1.clearSelection();*/
-        
     }
 
+
+    public final void RemplissageListeComptes(){
+        DefaultListModel liste = new DefaultListModel();
+        liste.addElement("Jane Doe");
+        liste.addElement("John Smith");
+        liste.addElement("Kathy Green");
+        listeUtilisateurs.setModel(liste);
+    }
+        
+    
+    public void swapPanel(JComponent panelDeBase, JComponent newPanel){
+        panelDeBase.removeAll();
+        panelDeBase.add(newPanel);
+        revalidate();
+        repaint();
+    }
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -53,36 +57,24 @@ public class InterfaceAdminGestionUtilisateurs extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelEditionUtilisateurs = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        ascenceurUtilisateurs = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        panelEdition = new javax.swing.JPanel();
+        ascenceur = new javax.swing.JScrollPane();
+        listeUtilisateurs = new javax.swing.JList();
+        jButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(102, 153, 255));
         setPreferredSize(new java.awt.Dimension(800, 400));
 
-        jToggleButton1.setText("jToggleButton1");
+        panelEdition.setLayout(new javax.swing.BoxLayout(panelEdition, javax.swing.BoxLayout.LINE_AXIS));
 
-        javax.swing.GroupLayout panelEditionUtilisateursLayout = new javax.swing.GroupLayout(panelEditionUtilisateurs);
-        panelEditionUtilisateurs.setLayout(panelEditionUtilisateursLayout);
-        panelEditionUtilisateursLayout.setHorizontalGroup(
-            panelEditionUtilisateursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelEditionUtilisateursLayout.createSequentialGroup()
-                .addGap(223, 223, 223)
-                .addComponent(jToggleButton1)
-                .addContainerGap(272, Short.MAX_VALUE))
-        );
-        panelEditionUtilisateursLayout.setVerticalGroup(
-            panelEditionUtilisateursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelEditionUtilisateursLayout.createSequentialGroup()
-                .addGap(130, 130, 130)
-                .addComponent(jToggleButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        listeUtilisateurs.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        ascenceur.setViewportView(listeUtilisateurs);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        ascenceurUtilisateurs.setViewportView(jTextArea1);
+        jButton1.setText("Ajouter");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -90,9 +82,11 @@ public class InterfaceAdminGestionUtilisateurs extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(ascenceurUtilisateurs, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ascenceur, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(panelEditionUtilisateurs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelEdition, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -100,16 +94,19 @@ public class InterfaceAdminGestionUtilisateurs extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelEditionUtilisateurs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ascenceurUtilisateurs, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE))
+                    .addComponent(panelEdition, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ascenceur)))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane ascenceurUtilisateurs;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JPanel panelEditionUtilisateurs;
+    private javax.swing.JScrollPane ascenceur;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JList listeUtilisateurs;
+    private javax.swing.JPanel panelEdition;
     // End of variables declaration//GEN-END:variables
 }

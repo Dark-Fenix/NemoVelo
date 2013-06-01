@@ -21,7 +21,7 @@ public class InterfaceAdminGestionUtilisateurs extends javax.swing.JPanel {
      */
     public InterfaceAdminGestionUtilisateurs() {
         initComponents();
-        RemplissageListeComptes();
+        RemplissageListeUtilisateurs();
         listeUtilisateurs.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent evt) {
@@ -32,7 +32,7 @@ public class InterfaceAdminGestionUtilisateurs extends javax.swing.JPanel {
     }
 
 
-    public final void RemplissageListeComptes(){
+    public final void RemplissageListeUtilisateurs(){
         DefaultListModel liste = new DefaultListModel();
         liste.addElement("Jane Doe");
         liste.addElement("John Smith");

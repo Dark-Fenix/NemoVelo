@@ -4,11 +4,13 @@
  */
 package vue_admin;
 
+import Config.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.DefaultListModel;
 import javax.swing.JComponent;
 import classes.Utilisateur;
+import java.util.Iterator;
 
 /**
  *
@@ -25,7 +27,7 @@ public class InterfaceAdminGestionUtilisateurs extends javax.swing.JPanel {
         listeUtilisateurs.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent evt) {
-                EditionUtilisateur edition = new EditionUtilisateur(new Utilisateur());
+                EditionUtilisateur edition = new EditionUtilisateur((Utilisateur) listeUtilisateurs.getSelectedValue());
                 swapPanel(panelEdition, edition);
             }
         });
@@ -34,9 +36,10 @@ public class InterfaceAdminGestionUtilisateurs extends javax.swing.JPanel {
 
     public final void RemplissageListeUtilisateurs(){
         DefaultListModel liste = new DefaultListModel();
-        liste.addElement("Jane Doe");
-        liste.addElement("John Smith");
-        liste.addElement("Kathy Green");
+        for (Iterator<Utilisateur> it = ConfigGlobale.utilisateurs.iterator(); it.hasNext();) {
+            Utilisateur u = it.next();
+            liste.addElement(u);
+        }
         listeUtilisateurs.setModel(liste);
     }
         

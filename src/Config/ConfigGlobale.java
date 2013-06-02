@@ -1,11 +1,15 @@
 package Config;
 
+import java.util.ArrayList;
+import classes.*;
+import java.util.Vector;
+
 /**
  *
  * @author Fenix
  */
 public class ConfigGlobale {
-    
+
     public static String etatOK = "ok";
     public static String etatHS = "hs";
     public static String etatMaintenance = "maintenance";
@@ -23,5 +27,12 @@ public class ConfigGlobale {
     public static int longueurCB = 16;
     public static int longueurRIB = 23;
     public static int longueurIBAN = 34;
+
+    public static ArrayList<Utilisateur> utilisateurs = new ArrayList<>();
+    public static ArrayList<Compte> comptes = new ArrayList<>();
+    public static ArrayList<Carte> cartes = new ArrayList<>();
+    public static ArrayList<Station> stations = new ArrayList<>();
+    public static ArrayList<Borne> bornes = new ArrayList<>();
+    public static ArrayList<Velo> velos = new ArrayList<>();
     
 }

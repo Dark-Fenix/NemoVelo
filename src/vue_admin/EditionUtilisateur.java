@@ -3,6 +3,7 @@
  * and open the template in the editor.
  */
 package vue_admin;
+import Config.ConfigGlobale;
 import classes.Utilisateur;
 
 /**
@@ -17,11 +18,13 @@ public class EditionUtilisateur extends javax.swing.JPanel {
     /*public EditionUtilisateur() {
         initComponents();
     }*/
+    
+    private Utilisateur user;
+    
     public EditionUtilisateur(Utilisateur user) {
+        this.user = user;
         initComponents();
-        InitialisationEditionUser(user);
-        
-        
+        InitialisationEditionUser(this.user);
     }
 
     private void InitialisationEditionUser(Utilisateur user){
@@ -93,13 +96,18 @@ public class EditionUtilisateur extends javax.swing.JPanel {
         boutonValider.setText("Valider");
 
         boutonReset.setText("Reset");
-        boutonReset.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boutonResetActionPerformed(evt);
+        boutonReset.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                boutonResetMouseClicked(evt);
             }
         });
 
         boutonSupprimer.setText("Supprimer");
+        boutonSupprimer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                boutonSupprimerMouseClicked(evt);
+            }
+        });
 
         jLabel1.setText("Nom");
 
@@ -124,11 +132,6 @@ public class EditionUtilisateur extends javax.swing.JPanel {
         txtVille.setText("jTextField5");
 
         txtCodePostal.setText("jTextField6");
-        txtCodePostal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodePostalActionPerformed(evt);
-            }
-        });
 
         txtCarteBancaire.setText("jTextField7");
 
@@ -210,7 +213,7 @@ public class EditionUtilisateur extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtVelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtCarteUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtDateValiditeCB, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtDateValiditeCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -228,7 +231,7 @@ public class EditionUtilisateur extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtRIB)
                                     .addComponent(txtIBAN))))
-                        .addContainerGap(96, Short.MAX_VALUE))))
+                        .addContainerGap(83, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -293,7 +296,7 @@ public class EditionUtilisateur extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel15)
                             .addComponent(txtVelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(boutonValider)
                     .addComponent(boutonReset)
@@ -302,13 +305,14 @@ public class EditionUtilisateur extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void boutonResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonResetActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_boutonResetActionPerformed
+    private void boutonResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonResetMouseClicked
+        InitialisationEditionUser(this.user);
+    }//GEN-LAST:event_boutonResetMouseClicked
 
-    private void txtCodePostalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodePostalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodePostalActionPerformed
+    private void boutonSupprimerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonSupprimerMouseClicked
+        ConfigGlobale.utilisateurs.remove(this.user);
+        this.setVisible(false);
+    }//GEN-LAST:event_boutonSupprimerMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boutonReset;

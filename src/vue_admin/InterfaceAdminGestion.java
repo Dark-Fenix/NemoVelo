@@ -17,8 +17,8 @@ import vue_user_borne.JGoogleMapEditorPan;
 public class InterfaceAdminGestion extends javax.swing.JFrame {
 
     //private JPanel current;
-    private JPanel interfaceAdminGestionComptes = new InterfaceAdminGestionComptes();
-    private JPanel interfaceAdminGestionUtilisateurs = new InterfaceAdminGestionUtilisateurs();
+    /*private JPanel interfaceAdminGestionComptes = new InterfaceAdminGestionComptes();
+    private JPanel interfaceAdminGestionUtilisateursn= new InterfaceAdminGestionUtilisateurs();*/
     /**
      * Creates new form InterfaceAdminGestion
      */
@@ -48,6 +48,7 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("NemoVelo");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setMaximumSize(new java.awt.Dimension(800, 600));
         setPreferredSize(new java.awt.Dimension(800, 600));
         setResizable(false);
 
@@ -146,17 +147,16 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boutonUtilisateursMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonUtilisateursMouseClicked
-        swapPanel(panelFondInterfaceGestion, interfaceAdminGestionUtilisateurs);
+        swapPanel(panelFondInterfaceGestion, new InterfaceAdminGestionUtilisateurs());
     }//GEN-LAST:event_boutonUtilisateursMouseClicked
 
     private void boutonComptesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonComptesMouseClicked
-        swapPanel(panelFondInterfaceGestion, interfaceAdminGestionComptes);
+        swapPanel(panelFondInterfaceGestion, new InterfaceAdminGestionComptes());
     }//GEN-LAST:event_boutonComptesMouseClicked
 
     private void boutonCartesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonCartesMouseClicked
         try {
             JGoogleMapEditorPan  googleMap = new JGoogleMapEditorPan();
-            googleMap.showCoordinate("48.8667", "2.3333",390, 400);
             googleMap.showCoordinate("45.740724", "4.85561610000002", 390, 400);
             swapPanel(panelFondInterfaceGestion, googleMap);
         }

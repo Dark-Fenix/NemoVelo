@@ -257,6 +257,10 @@ public class Utilisateur {
     
     @Override
     public String toString(){
+        return this.prenom+" "+this.nom;
+    }
+    
+    public String toStringLight(){
         return "Utilisateur "+this.id_utilisateur+" : "+this.prenom+" "+this.nom+", ne(e) le "+this.dateNaissance+", adresse : "+this.adresse+" "+this.codePostal+" "+this.ville+" compte cree le : "+this.dateCreation;
     }
     

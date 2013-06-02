@@ -1,7 +1,10 @@
+package Nemovelo;
+
 
 import classes.*;
 import Config.*;
 import DAO.*;
+import java.util.Vector;
 import vue_admin.InterfaceAdminGestion;
 
 /**
@@ -12,14 +15,15 @@ import vue_admin.InterfaceAdminGestion;
 public class Nemovelo {
 
     
-    public static Utilisateur testUtilisateur = new Utilisateur();
-    
-    
 // SERT POUR LES TESTS
     public static void main(String[] args) {
         
-        ConnexionDB.getInstance();
-        ConnexionDB.getConnexion().toString();
+        //ConnexionDB.getInstance();
+        //ConnexionDB.getConnexion().toString();
+        
+        ConfigGlobale.utilisateurs.add(new Utilisateur());
+        
+
         
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -37,7 +41,6 @@ public class Nemovelo {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(InterfaceAdminGestion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new InterfaceAdminGestion().setVisible(true);

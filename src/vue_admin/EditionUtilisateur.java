@@ -40,8 +40,8 @@ public class EditionUtilisateur extends javax.swing.JPanel {
         txtDateValiditeCB.setText(user.getDateValiditeCarteBancaire());
         txtRIB.setText(user.getRib());
         txtIBAN.setText(user.getIban());
-        txtCarteUtilisateur.setText("ALERT");
-        txtVelo.setText("ALERT");
+        txtCarteUtilisateur.setText(String.valueOf(user.getFk_id_carte()));
+        txtVelo.setText(String.valueOf(user.getFk_id_velo()));
         txtDateCreation.setText(user.getDateCreation());
     }
     
@@ -94,6 +94,11 @@ public class EditionUtilisateur extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(600, 400));
 
         boutonValider.setText("Valider");
+        boutonValider.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                boutonValiderMouseClicked(evt);
+            }
+        });
 
         boutonReset.setText("Reset");
         boutonReset.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -311,8 +316,26 @@ public class EditionUtilisateur extends javax.swing.JPanel {
 
     private void boutonSupprimerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonSupprimerMouseClicked
         ConfigGlobale.utilisateurs.remove(this.user);
+        // Refaire ça au propre, c'est moche...
         this.setVisible(false);
     }//GEN-LAST:event_boutonSupprimerMouseClicked
+
+    private void boutonValiderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonValiderMouseClicked
+        this.user.setNom(txtNom.getText());
+        this.user.setPrenom(txtPrenom.getText());
+        this.user.setAdresse(txtAdresse.getText());
+        this.user.setCodePostal(txtCodePostal.getText());
+        this.user.setVille(txtVille.getText());
+        this.user.setDateNaissance(txtDateNaissance.getText());
+        this.user.setLogin(txtUsername.getText());
+        this.user.setPassword(txtPassword.getText());
+        this.user.setCarteBancaire(txtCarteBancaire.getText());
+        this.user.setDateValiditeCarteBancaire(txtCarteBancaire.getText());
+        this.user.setRib(txtRIB.getText());
+        this.user.setIban(txtIBAN.getText());
+        this.user.setFk_id_carte(Integer.parseInt(txtCarteUtilisateur.getText()));
+        this.user.setFk_id_velo(Integer.parseInt(txtVelo.getText()));
+    }//GEN-LAST:event_boutonValiderMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boutonReset;

@@ -34,11 +34,11 @@ public class Carte {
 
     public int setSerialNumber(String serialNumber) {
         if(serialNumber.length()>ConfigGlobale.longueurSNCarte){
-            this.serialNumber = serialNumber;
-            return 0;
+            return -1;
         }
         else{
-            return -1;
+            this.serialNumber = serialNumber;
+            return 0;
         }
     }
     

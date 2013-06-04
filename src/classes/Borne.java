@@ -38,11 +38,11 @@ public class Borne {
 
     public int setSerialNumber(String serialNumber) {
         if(serialNumber.length()>ConfigGlobale.longueurSNBorne){
-            this.serialNumber = serialNumber;
-            return 0;
+            return -1;
         }
         else{
-            return -1;
+            this.serialNumber = serialNumber;
+            return 0;
         }
     }
     

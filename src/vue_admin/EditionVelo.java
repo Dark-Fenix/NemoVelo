@@ -4,13 +4,13 @@
  */
 package vue_admin;
 import Config.ConfigGlobale;
-import classes.Borne;
+import classes.Velo;
 
 /**
  *
  * @author HallerCasagrande-F
  */
-public class EditionBorne extends javax.swing.JPanel {
+public class EditionVelo extends javax.swing.JPanel {
 
     /**
      * Creates new form EditionUtilisateur
@@ -19,19 +19,20 @@ public class EditionBorne extends javax.swing.JPanel {
         initComponents();
     }*/
     
-    private Borne borne;
+    private Velo velo;
     
-    public EditionBorne(Borne borne) {
-        this.borne = borne;
+    public EditionVelo(Velo velo) {
+        this.velo = velo;
         initComponents();
-        InitialisationEditionBorne(this.borne);
+        InitialisationEditionVelo(this.velo);
     }
 
-    private void InitialisationEditionBorne(Borne borne){
-        txtSerialNumber.setText(borne.getSerialNumber());
-        txtEtat.setText(borne.getEtat());
-        txtBorne.setText(String.valueOf(borne.getFk_id_station()));
-
+    private void InitialisationEditionVelo(Velo velo){
+        txtSN.setText(velo.getSerialNumber());
+        txtEtat.setText(velo.getEtat());
+        txtBorne.setText(String.valueOf(velo.getFk_id_borne()));
+        txtKM.setText(String.valueOf(velo.getKmParcourus()));
+        txtDateMiseEnService.setText(velo.getDateMiseEnService());
     }
     
     
@@ -49,11 +50,14 @@ public class EditionBorne extends javax.swing.JPanel {
         boutonSupprimer = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        txtSerialNumber = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtSN = new javax.swing.JTextField();
         txtEtat = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txtKM = new javax.swing.JLabel();
+        txtDateMiseEnService = new javax.swing.JLabel();
         txtBorne = new javax.swing.JTextField();
-        panelGoogleMap = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(153, 204, 255));
         setMaximumSize(new java.awt.Dimension(600, 400));
@@ -84,15 +88,21 @@ public class EditionBorne extends javax.swing.JPanel {
 
         jLabel2.setText("Etat");
 
-        jLabel4.setText("Attaché à la station");
+        jLabel3.setText("Attaché à la borne");
 
-        txtSerialNumber.setText("jTextField1");
+        txtSN.setText("jTextField1");
 
         txtEtat.setText("jTextField2");
 
-        txtBorne.setText("jTextField6");
+        jLabel16.setText("Km parcourus");
 
-        panelGoogleMap.setLayout(new javax.swing.BoxLayout(panelGoogleMap, javax.swing.BoxLayout.LINE_AXIS));
+        jLabel4.setText("Date de mise en service");
+
+        txtKM.setText("jLabel5");
+
+        txtDateMiseEnService.setText("jLabel6");
+
+        txtBorne.setText("jTextField1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -101,44 +111,52 @@ public class EditionBorne extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel1))
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtBorne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtEtat, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-                    .addComponent(txtSerialNumber))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel16)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel3))
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtKM)
                     .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtEtat, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                            .addComponent(txtSN))
+                        .addGap(30, 30, 30)
                         .addComponent(boutonSupprimer)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(boutonReset)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(boutonValider))
-                    .addComponent(panelGoogleMap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 83, Short.MAX_VALUE))
+                    .addComponent(txtDateMiseEnService)
+                    .addComponent(txtBorne, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 70, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(txtSerialNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(txtEtat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(txtBorne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(panelGoogleMap, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtSN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtEtat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(txtKM))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtDateMiseEnService))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtBorne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 219, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(boutonValider)
                     .addComponent(boutonReset)
@@ -148,20 +166,20 @@ public class EditionBorne extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boutonResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonResetMouseClicked
-        InitialisationEditionBorne(this.borne);
+        InitialisationEditionVelo(this.velo);
     }//GEN-LAST:event_boutonResetMouseClicked
 
     private void boutonSupprimerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonSupprimerMouseClicked
-        ConfigGlobale.bornes.remove(this.borne);
+        ConfigGlobale.velos.remove(this.velo);
         // Refaire ça au propre, c'est moche...
         this.setVisible(false);
     }//GEN-LAST:event_boutonSupprimerMouseClicked
 
     private void boutonValiderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonValiderMouseClicked
-        this.borne.setSerialNumber(txtSerialNumber.getText());
-        this.borne.setEtat(txtEtat.getText());
-        this.borne.setFk_id_station(Integer.parseInt(txtBorne.getText()));
-
+        this.velo.setSerialNumber(txtSN.getText());
+        this.velo.setEtat(txtEtat.getText());
+        this.velo.setFk_id_borne(Integer.parseInt(txtBorne.getText()));
+        this.velo.setKmParcourus(Double.parseDouble(txtKM.getText()));
     }//GEN-LAST:event_boutonValiderMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -169,11 +187,14 @@ public class EditionBorne extends javax.swing.JPanel {
     private javax.swing.JButton boutonSupprimer;
     private javax.swing.JButton boutonValider;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel panelGoogleMap;
     private javax.swing.JTextField txtBorne;
+    private javax.swing.JLabel txtDateMiseEnService;
     private javax.swing.JTextField txtEtat;
-    private javax.swing.JTextField txtSerialNumber;
+    private javax.swing.JLabel txtKM;
+    private javax.swing.JTextField txtSN;
     // End of variables declaration//GEN-END:variables
 }

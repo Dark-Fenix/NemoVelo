@@ -4,13 +4,13 @@
  */
 package vue_admin;
 import Config.ConfigGlobale;
-import classes.Borne;
+import classes.Compte;
 
 /**
  *
  * @author HallerCasagrande-F
  */
-public class EditionBorne extends javax.swing.JPanel {
+public class EditionCompte extends javax.swing.JPanel {
 
     /**
      * Creates new form EditionUtilisateur
@@ -19,19 +19,19 @@ public class EditionBorne extends javax.swing.JPanel {
         initComponents();
     }*/
     
-    private Borne borne;
+    private Compte compte;
     
-    public EditionBorne(Borne borne) {
-        this.borne = borne;
+    public EditionCompte(Compte compte) {
+        this.compte = compte;
         initComponents();
-        InitialisationEditionBorne(this.borne);
+        InitialisationEditionCompte(this.compte);
     }
 
-    private void InitialisationEditionBorne(Borne borne){
-        txtSerialNumber.setText(borne.getSerialNumber());
-        txtEtat.setText(borne.getEtat());
-        txtBorne.setText(String.valueOf(borne.getFk_id_station()));
-
+    private void InitialisationEditionCompte(Compte compte){
+        txtTypeCompte.setText(compte.getTypeCompte());
+        txtSolde.setText(String.valueOf(compte.getSolde()));
+        txtPossesseur.setText(String.valueOf(compte.getFk_id_utilisateur()));
+        txtDateCreationCompte.setText(compte.getDateCreation());
     }
     
     
@@ -49,11 +49,12 @@ public class EditionBorne extends javax.swing.JPanel {
         boutonSupprimer = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txtSerialNumber = new javax.swing.JTextField();
-        txtEtat = new javax.swing.JTextField();
-        txtBorne = new javax.swing.JTextField();
-        panelGoogleMap = new javax.swing.JPanel();
+        txtTypeCompte = new javax.swing.JTextField();
+        txtSolde = new javax.swing.JTextField();
+        txtPossesseur = new javax.swing.JTextField();
+        txtDateCreationCompte = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 204, 255));
         setMaximumSize(new java.awt.Dimension(600, 400));
@@ -80,19 +81,21 @@ public class EditionBorne extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setText("Serial Number");
+        jLabel1.setText("Type de compte");
 
-        jLabel2.setText("Etat");
+        jLabel2.setText("Solde");
 
-        jLabel4.setText("Attaché à la station");
+        jLabel3.setText("Possesseur");
 
-        txtSerialNumber.setText("jTextField1");
+        jLabel4.setText("Date de création du compte");
 
-        txtEtat.setText("jTextField2");
+        txtTypeCompte.setText("jTextField1");
 
-        txtBorne.setText("jTextField6");
+        txtSolde.setText("jTextField2");
 
-        panelGoogleMap.setLayout(new javax.swing.BoxLayout(panelGoogleMap, javax.swing.BoxLayout.LINE_AXIS));
+        txtPossesseur.setText("jTextField3");
+
+        txtDateCreationCompte.setText("jLabel5");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -102,43 +105,45 @@ public class EditionBorne extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
+                    .addComponent(jLabel3)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1))
                 .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtBorne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtEtat, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-                    .addComponent(txtSerialNumber))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtSolde, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                            .addComponent(txtTypeCompte)
+                            .addComponent(txtPossesseur, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30)
                         .addComponent(boutonSupprimer)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(boutonReset)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(boutonValider))
-                    .addComponent(panelGoogleMap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 83, Short.MAX_VALUE))
+                    .addComponent(txtDateCreationCompte))
+                .addGap(0, 44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(txtSerialNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(txtEtat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(txtBorne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(panelGoogleMap, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtTypeCompte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtSolde, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtPossesseur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtDateCreationCompte))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 263, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(boutonValider)
                     .addComponent(boutonReset)
@@ -148,20 +153,19 @@ public class EditionBorne extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boutonResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonResetMouseClicked
-        InitialisationEditionBorne(this.borne);
+        InitialisationEditionCompte(this.compte);
     }//GEN-LAST:event_boutonResetMouseClicked
 
     private void boutonSupprimerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonSupprimerMouseClicked
-        ConfigGlobale.bornes.remove(this.borne);
+        ConfigGlobale.comptes.remove(this.compte);
         // Refaire ça au propre, c'est moche...
         this.setVisible(false);
     }//GEN-LAST:event_boutonSupprimerMouseClicked
 
     private void boutonValiderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonValiderMouseClicked
-        this.borne.setSerialNumber(txtSerialNumber.getText());
-        this.borne.setEtat(txtEtat.getText());
-        this.borne.setFk_id_station(Integer.parseInt(txtBorne.getText()));
-
+        this.compte.setTypeCompte(txtTypeCompte.getText());
+        this.compte.setSolde(Double.parseDouble(txtSolde.getText()));
+        this.compte.setFk_id_utilisateur(Integer.parseInt(txtPossesseur.getText()));
     }//GEN-LAST:event_boutonValiderMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -170,10 +174,11 @@ public class EditionBorne extends javax.swing.JPanel {
     private javax.swing.JButton boutonValider;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel panelGoogleMap;
-    private javax.swing.JTextField txtBorne;
-    private javax.swing.JTextField txtEtat;
-    private javax.swing.JTextField txtSerialNumber;
+    private javax.swing.JLabel txtDateCreationCompte;
+    private javax.swing.JTextField txtPossesseur;
+    private javax.swing.JTextField txtSolde;
+    private javax.swing.JTextField txtTypeCompte;
     // End of variables declaration//GEN-END:variables
 }

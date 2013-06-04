@@ -22,6 +22,10 @@ public class Nemovelo {
         
         ConfigGlobale.utilisateurs.add(new Utilisateur());
         ConfigGlobale.bornes.add(new Borne());
+        ConfigGlobale.stations.add(new Station());
+        ConfigGlobale.cartes.add(new Carte());
+        ConfigGlobale.comptes.add(new Compte());
+        ConfigGlobale.velos.add(new Velo());
         
 
         

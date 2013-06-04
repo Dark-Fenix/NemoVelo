@@ -139,6 +139,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Stations"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="boutonStationsMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="boutonBornes">
           <Properties>
@@ -152,6 +155,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="V&#xe9;los"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="boutonVelosMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

@@ -82,6 +82,11 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
         });
 
         boutonStations.setText("Stations");
+        boutonStations.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                boutonStationsMouseClicked(evt);
+            }
+        });
 
         boutonBornes.setText("Bornes");
         boutonBornes.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -91,6 +96,11 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
         });
 
         boutonVelos.setText("Vélos");
+        boutonVelos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                boutonVelosMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout menuBoutonsLayout = new javax.swing.GroupLayout(menuBoutons);
         menuBoutons.setLayout(menuBoutonsLayout);
@@ -160,19 +170,20 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
     }//GEN-LAST:event_boutonComptesMouseClicked
 
     private void boutonCartesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonCartesMouseClicked
-        try {
-            JGoogleMapEditorPan  googleMap = new JGoogleMapEditorPan();
-            googleMap.showCoordinate("45.740724", "4.85561610000002", 390, 400);
-            swapPanel(panelFondInterfaceGestion, googleMap);
-        }
-        catch (Exception ex) {
-            Logger.getLogger(InterfaceAdminGestion.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        swapPanel(panelFondInterfaceGestion, new InterfaceAdminGestionCartes());
     }//GEN-LAST:event_boutonCartesMouseClicked
 
     private void boutonBornesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonBornesMouseClicked
         swapPanel(panelFondInterfaceGestion, new InterfaceAdminGestionBornes());
     }//GEN-LAST:event_boutonBornesMouseClicked
+
+    private void boutonStationsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonStationsMouseClicked
+        swapPanel(panelFondInterfaceGestion, new InterfaceAdminGestionStations());
+    }//GEN-LAST:event_boutonStationsMouseClicked
+
+    private void boutonVelosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonVelosMouseClicked
+        swapPanel(panelFondInterfaceGestion, new InterfaceAdminGestionVelos());
+    }//GEN-LAST:event_boutonVelosMouseClicked
 
     
     public void swapPanel(JComponent panelDeBase, JComponent newPanel){

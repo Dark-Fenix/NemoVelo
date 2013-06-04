@@ -1,11 +1,7 @@
 
 package vue_user_borne;
 
-import java.awt.BorderLayout;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JEditorPane;
-import javax.swing.JFrame;
 import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLEditorKit;
 
@@ -13,7 +9,7 @@ public class JGoogleMapEditorPan extends JEditorPane {
 
     private int zoomFactor = 15;
     private String ApiKey = "";
-    private String roadmap = "satellite";
+    private String roadmap = "roadmap";
     public final String viewTerrain = "terrain";
     public final String viewSatellite = "satellite";
     public final String viewHybrid = "hybrid";
@@ -59,7 +55,7 @@ public class JGoogleMapEditorPan extends JEditorPane {
         url += "&amp;size=" + width+ "x" + height;
         url += "&amp;maptype=" + this.roadmap;
         url += "&amp;markers=color:blue" + x + "," + y;
-        url += "&amp;sensor=false";
+        url += "&amp;sensor=true";
         url += "&amp;key=" + this.ApiKey;
         String html = "<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN'>";
         html += "<html><head></head><body>";

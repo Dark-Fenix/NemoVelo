@@ -5,7 +5,7 @@
 package vue_admin;
 
 import Config.*;
-import classes.Compte;
+import classes.Velo;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.DefaultListModel;
@@ -16,31 +16,31 @@ import java.util.Iterator;
  *
  * @author HallerCasagrande-F
  */
-public class InterfaceAdminGestionComptes extends javax.swing.JPanel {
+public class InterfaceAdminGestionVelos extends javax.swing.JPanel {
 
     /**
      * Creates new form InterfaceAdminGestionUtilisateurs
      */
-    public InterfaceAdminGestionComptes() {
+    public InterfaceAdminGestionVelos() {
         initComponents();
-        RemplissageListeComptes();
-        listeComptes.addMouseListener(new MouseAdapter() {
+        RemplissageListeVelos();
+        listeVelos.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent evt) {
-                EditionCompte edition = new EditionCompte((Compte) listeComptes.getSelectedValue());
+                EditionVelo edition = new EditionVelo((Velo) listeVelos.getSelectedValue());
                 swapPanel(panelEdition, edition);
             }
         });
     }
 
 
-    public final void RemplissageListeComptes(){
+    public final void RemplissageListeVelos(){
         DefaultListModel liste = new DefaultListModel();
-        for (Iterator<Compte> it = ConfigGlobale.comptes.iterator(); it.hasNext();) {
-            Compte u = it.next();
+        for (Iterator<Velo> it = ConfigGlobale.velos.iterator(); it.hasNext();) {
+            Velo u = it.next();
             liste.addElement(u);
         }
-        listeComptes.setModel(liste);
+        listeVelos.setModel(liste);
     }
         
     
@@ -62,7 +62,7 @@ public class InterfaceAdminGestionComptes extends javax.swing.JPanel {
 
         panelEdition = new javax.swing.JPanel();
         ascenceur = new javax.swing.JScrollPane();
-        listeComptes = new javax.swing.JList();
+        listeVelos = new javax.swing.JList();
         jButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(102, 153, 255));
@@ -70,12 +70,12 @@ public class InterfaceAdminGestionComptes extends javax.swing.JPanel {
 
         panelEdition.setLayout(new javax.swing.BoxLayout(panelEdition, javax.swing.BoxLayout.LINE_AXIS));
 
-        listeComptes.setModel(new javax.swing.AbstractListModel() {
+        listeVelos.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
-        ascenceur.setViewportView(listeComptes);
+        ascenceur.setViewportView(listeVelos);
 
         jButton1.setText("Ajouter");
 
@@ -109,7 +109,7 @@ public class InterfaceAdminGestionComptes extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane ascenceur;
     private javax.swing.JButton jButton1;
-    private javax.swing.JList listeComptes;
+    private javax.swing.JList listeVelos;
     private javax.swing.JPanel panelEdition;
     // End of variables declaration//GEN-END:variables
 }

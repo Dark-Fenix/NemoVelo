@@ -84,6 +84,11 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
         boutonStations.setText("Stations");
 
         boutonBornes.setText("Bornes");
+        boutonBornes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                boutonBornesMouseClicked(evt);
+            }
+        });
 
         boutonVelos.setText("Vélos");
 
@@ -164,6 +169,10 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
             Logger.getLogger(InterfaceAdminGestion.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_boutonCartesMouseClicked
+
+    private void boutonBornesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonBornesMouseClicked
+        swapPanel(panelFondInterfaceGestion, new InterfaceAdminGestionBornes());
+    }//GEN-LAST:event_boutonBornesMouseClicked
 
     
     public void swapPanel(JComponent panelDeBase, JComponent newPanel){

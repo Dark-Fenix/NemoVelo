@@ -81,6 +81,10 @@ public class Compte {
     
     @Override
     public String toString(){
+        return "Compte "+this.id_compte;
+    }
+    
+    public String toStringComplet(){
         String temp = "Compte "+this.id_compte+", type du compte : "+this.typeCompte+", date de creation : "+this.dateCreation+", solde : "+this.solde;
         if(this.fk_id_utilisateur==-1){
             temp+=", pas de detenteur.";

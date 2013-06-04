@@ -70,6 +70,10 @@ public class Borne {
     
     @Override
     public String toString(){
+        return "Borne "+this.id_borne;
+    }
+    
+    public String toStringComplet(){
         String temp = "Borne "+this.id_borne+" : numero de serie "+this.serialNumber+", etat : "+this.etat;
         if(this.fk_id_station==-1){
             temp+=", pas de station d'attache.";

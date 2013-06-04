@@ -75,6 +75,10 @@ public class Station {
     
     @Override
     public String toString(){
+        return "Station "+this.id_station;
+    }
+    
+    public String toStringComplet(){
         return "Station "+this.id_station+" : numero de serie "+this.serialNumber+", emplacement : "+this.emplacement+", etat : "+this.etat;
     }
     

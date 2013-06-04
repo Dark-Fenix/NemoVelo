@@ -4,7 +4,6 @@ package Nemovelo;
 import classes.*;
 import Config.*;
 import DAO.*;
-import java.util.Vector;
 import vue_admin.InterfaceAdminGestion;
 
 /**
@@ -22,6 +21,7 @@ public class Nemovelo {
         //ConnexionDB.getConnexion().toString();
         
         ConfigGlobale.utilisateurs.add(new Utilisateur());
+        ConfigGlobale.bornes.add(new Borne());
         
 
         

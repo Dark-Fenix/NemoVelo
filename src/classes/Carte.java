@@ -44,6 +44,10 @@ public class Carte {
     
     @Override
     public String toString(){
+        return "Carte "+this.id_carte;
+    }
+    
+    public String toStringComplet(){
         return "Carte "+this.id_carte+" : numero de serie "+this.serialNumber;
     }
     

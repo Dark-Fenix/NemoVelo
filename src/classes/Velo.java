@@ -97,7 +97,11 @@ public class Velo {
     
     @Override
     public String toString(){
-        String temp = "Velo "+this.id_velo+" : SN "+this.serialNumber+", mis en service le "+this.dateMiseEnService+", KM parcourus : "+this.kmParcourus+", etat : "+this.etat;
+        return "Vélo "+this.id_velo;
+    }
+    
+    public String toStringComplet(){
+        String temp = "Vélo "+this.id_velo+" : SN "+this.serialNumber+", mis en service le "+this.dateMiseEnService+", KM parcourus : "+this.kmParcourus+", etat : "+this.etat;
         if(this.fk_id_borne==-1){
             temp+=", pas de borne d'attache.";
         }

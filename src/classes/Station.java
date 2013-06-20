@@ -27,9 +27,9 @@ public class Station {
     }
 
     // NE DOIT PAS ETRE UTILISE POUR NE PAS INTERFERER AVEC LA BDD
-    /*public void setId_station(int id_station) {
+    public void setId_station(int id_station) {
         this.id_station = id_station;
-    }*/
+    }
 
     public String getSerialNumber() {
         return serialNumber;

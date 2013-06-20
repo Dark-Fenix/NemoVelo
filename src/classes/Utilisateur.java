@@ -53,9 +53,9 @@ public class Utilisateur {
     }
 
     // NE DOIT PAS ETRE UTILISE POUR NE PAS INTERFERER AVEC LA BDD
-    /*public void setId_utilisateur(int id_utilisateur) {
+    public void setId_utilisateur(int id_utilisateur) {
         this.id_utilisateur = id_utilisateur;
-    }*/
+    }
 
     public String getPrenom() {
         return prenom;

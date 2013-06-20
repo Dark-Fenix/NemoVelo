@@ -31,9 +31,9 @@ public class Compte {
     }
 
     // NE DOIT PAS ETRE UTILISE POUR NE PAS INTERFERER AVEC LA BDD
-    /*public void setId_compte(int id_compte) {
+    public void setId_compte(int id_compte) {
         this.id_compte = id_compte;
-    }*/
+    }
 
     public String getTypeCompte() {
         return typeCompte;

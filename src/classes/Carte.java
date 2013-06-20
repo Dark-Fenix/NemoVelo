@@ -24,9 +24,9 @@ public class Carte {
     }
 
     // NE DOIT PAS ETRE UTILISE POUR NE PAS INTERFERER AVEC LA BDD
-    /*public void setId_carte(int id_carte) {
+    public void setId_carte(int id_carte) {
         this.id_carte = id_carte;
-    }*/
+    }
     
     public String getSerialNumber() {
         return serialNumber;

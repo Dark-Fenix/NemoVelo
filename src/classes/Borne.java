@@ -28,9 +28,9 @@ public class Borne {
     }
 
     // NE DOIT PAS ETRE UTILISE POUR NE PAS INTERFERER AVEC LA BDD
-    /*public int setId_borne(int id_borne) {
+    public int setId_borne(int id_borne) {
         return this.id_borne = id_borne;
-    }*/
+    }
 
     public String getSerialNumber() {
         return serialNumber;

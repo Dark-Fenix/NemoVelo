@@ -121,6 +121,10 @@ public class EditionCarte extends javax.swing.JPanel {
 
     private void boutonValiderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonValiderMouseClicked
         this.carte.setSerialNumber(txtSerialNumber.getText());
+        if(!ConfigGlobale.cartes.contains(this.carte)){
+            ConfigGlobale.cartes.add(this.carte);
+            this.carte.setId_carte(ConfigGlobale.cartes.indexOf(this.carte));
+        }
     }//GEN-LAST:event_boutonValiderMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

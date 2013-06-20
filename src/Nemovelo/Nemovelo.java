@@ -25,7 +25,8 @@ public class Nemovelo {
         ConfigGlobale.stations.add(new Station());
         ConfigGlobale.cartes.add(new Carte());
         ConfigGlobale.comptes.add(new Compte());
-        ConfigGlobale.velos.add(new Velo());
+        ConfigGlobale.velos.add(new Velo(0, null, null, 0, null, 0));
+        ConfigGlobale.velos.add(new Velo(1, null, null, 10, null, 0));
         
 
         

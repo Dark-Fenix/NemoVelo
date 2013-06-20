@@ -180,6 +180,10 @@ public class EditionVelo extends javax.swing.JPanel {
         this.velo.setEtat(txtEtat.getText());
         this.velo.setFk_id_borne(Integer.parseInt(txtBorne.getText()));
         this.velo.setKmParcourus(Double.parseDouble(txtKM.getText()));
+        if(!ConfigGlobale.velos.contains(this.velo)){
+            ConfigGlobale.velos.add(this.velo);
+            this.velo.setId_velo(ConfigGlobale.velos.indexOf(this.velo));
+        }
     }//GEN-LAST:event_boutonValiderMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -178,7 +178,10 @@ public class EditionStation extends javax.swing.JPanel {
         this.station.setSerialNumber(txtSerialNumber.getText());
         this.station.setEtat(txtEtat.getText());
         this.station.setEmplacement(txtEmplacement.getText());
-
+        if(!ConfigGlobale.stations.contains(this.station)){
+            ConfigGlobale.stations.add(this.station);
+            this.station.setId_station(ConfigGlobale.stations.indexOf(this.station));
+        }
     }//GEN-LAST:event_boutonValiderMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

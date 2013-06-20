@@ -33,9 +33,9 @@ public class Velo {
     }
 
     // NE DOIT PAS ETRE UTILISE POUR NE PAS INTERFERER AVEC LA BDD
-    /*public void setId_velo(int id_velo) {
+    public void setId_velo(int id_velo) {
         this.id_velo = id_velo;
-    }*/
+    }
 
     public String getSerialNumber() {
         return serialNumber;

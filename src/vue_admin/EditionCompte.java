@@ -166,6 +166,10 @@ public class EditionCompte extends javax.swing.JPanel {
         this.compte.setTypeCompte(txtTypeCompte.getText());
         this.compte.setSolde(Double.parseDouble(txtSolde.getText()));
         this.compte.setFk_id_utilisateur(Integer.parseInt(txtPossesseur.getText()));
+        if(!ConfigGlobale.comptes.contains(this.compte)){
+            ConfigGlobale.comptes.add(this.compte);
+            this.compte.setId_compte(ConfigGlobale.comptes.indexOf(this.compte));
+        }
     }//GEN-LAST:event_boutonValiderMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

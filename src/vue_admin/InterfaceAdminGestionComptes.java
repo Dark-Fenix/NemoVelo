@@ -38,7 +38,8 @@ public class InterfaceAdminGestionComptes extends javax.swing.JPanel {
         DefaultListModel liste = new DefaultListModel();
         for (Iterator<Compte> it = ConfigGlobale.comptes.iterator(); it.hasNext();) {
             Compte u = it.next();
-            liste.addElement(u);
+            liste.add(u.getId_compte(),u);
+            //liste.addElement(u);
         }
         listeComptes.setModel(liste);
     }
@@ -63,7 +64,7 @@ public class InterfaceAdminGestionComptes extends javax.swing.JPanel {
         panelEdition = new javax.swing.JPanel();
         ascenceur = new javax.swing.JScrollPane();
         listeComptes = new javax.swing.JList();
-        jButton1 = new javax.swing.JButton();
+        BoutonAjouter = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(102, 153, 255));
         setPreferredSize(new java.awt.Dimension(800, 400));
@@ -77,7 +78,12 @@ public class InterfaceAdminGestionComptes extends javax.swing.JPanel {
         });
         ascenceur.setViewportView(listeComptes);
 
-        jButton1.setText("Ajouter");
+        BoutonAjouter.setText("Ajouter");
+        BoutonAjouter.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BoutonAjouterMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -87,7 +93,7 @@ public class InterfaceAdminGestionComptes extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ascenceur, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(BoutonAjouter))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panelEdition, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
                 .addContainerGap())
@@ -99,16 +105,21 @@ public class InterfaceAdminGestionComptes extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panelEdition, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(BoutonAjouter)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ascenceur)))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void BoutonAjouterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BoutonAjouterMouseClicked
+        EditionCompte edition = new EditionCompte(new Compte());
+        swapPanel(panelEdition, edition);        // TODO add your handling code here:
+    }//GEN-LAST:event_BoutonAjouterMouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BoutonAjouter;
     private javax.swing.JScrollPane ascenceur;
-    private javax.swing.JButton jButton1;
     private javax.swing.JList listeComptes;
     private javax.swing.JPanel panelEdition;
     // End of variables declaration//GEN-END:variables

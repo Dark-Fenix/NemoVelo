@@ -12,14 +12,18 @@ public class Station {
     private int id_station = 0;
     private String serialNumber = "KL34KL3411";
     private String etat = "off";
-    private String emplacement = "undefined";
+    private String latitude = null;
+    private String longitude = null;
     
     public Station(){
     }
     
-    public Station(int id_station, String etat){
+    public Station(int id_station, String serialNumber, String etat, String latitude, String longitude){
         this.id_station = id_station;
+        this.serialNumber = serialNumber;
         this.etat = etat;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public int getId_station() {
@@ -59,18 +63,20 @@ public class Station {
         }
     }
     
-    public String getEmplacement() {
-        return emplacement;
+     public String getLatitude() {
+        return latitude;
     }
 
-    public int setEmplacement(String emplacement) {
-        if(emplacement.length()>ConfigGlobale.longueurAdresse){
-            return -1;
-        }
-        else{
-            this.emplacement = emplacement;
-            return 0;
-        }
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
     
     @Override
@@ -79,7 +85,7 @@ public class Station {
     }
     
     public String toStringComplet(){
-        return "Station "+this.id_station+" : numero de serie "+this.serialNumber+", emplacement : "+this.emplacement+", etat : "+this.etat;
+        return "Station "+this.id_station+" : numero de serie "+this.serialNumber+", etat : "+this.etat+", latitude : "+this.latitude+", longitude : "+this.longitude;
     }
     
 }

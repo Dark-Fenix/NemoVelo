@@ -21,9 +21,9 @@ public class Nemovelo {
         //ConnexionDB.getConnexion().toString();
         
         ConfigGlobale.utilisateurs.add(new Utilisateur());
-        ConfigGlobale.bornes.add(new Borne());
-        ConfigGlobale.stations.add(new Station());
-        ConfigGlobale.cartes.add(new Carte());
+        ConfigGlobale.bornes.add(new Borne(0, null, null, 0));
+        ConfigGlobale.stations.add(new Station(0, null, null, "43.8217403", "4.3684387"));
+        ConfigGlobale.cartes.add(new Carte(0));
         ConfigGlobale.comptes.add(new Compte());
         ConfigGlobale.velos.add(new Velo(0, null, null, 0, null, 0));
         ConfigGlobale.velos.add(new Velo(1, null, null, 10, null, 0));

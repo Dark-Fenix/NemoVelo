@@ -2,7 +2,6 @@ package Config;
 
 import java.util.ArrayList;
 import classes.*;
-import java.util.Vector;
 
 /**
  *
@@ -34,5 +33,7 @@ public class ConfigGlobale {
     public static ArrayList<Station> stations = new ArrayList<>();
     public static ArrayList<Borne> bornes = new ArrayList<>();
     public static ArrayList<Velo> velos = new ArrayList<>();
+    
+    public static String ApiKey = "";
     
 }

@@ -168,7 +168,7 @@ public class EditionCompte extends javax.swing.JPanel {
         this.compte.setFk_id_utilisateur(Integer.parseInt(txtPossesseur.getText()));
         if(!ConfigGlobale.comptes.contains(this.compte)){
             ConfigGlobale.comptes.add(this.compte);
-            this.compte.setId_compte(ConfigGlobale.comptes.indexOf(this.compte));
+            //this.compte.setId_compte(ConfigGlobale.comptes.indexOf(this.compte));
         }
     }//GEN-LAST:event_boutonValiderMouseClicked
 

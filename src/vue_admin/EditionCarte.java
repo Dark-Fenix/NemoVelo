@@ -5,6 +5,7 @@
 package vue_admin;
 import Config.ConfigGlobale;
 import classes.Carte;
+import classes.Utilisateur;
 
 /**
  *
@@ -20,15 +21,26 @@ public class EditionCarte extends javax.swing.JPanel {
     }*/
     
     private Carte carte;
+    private Utilisateur user = new Utilisateur();
     
     public EditionCarte(Carte carte) {
         this.carte = carte;
+        for (Utilisateur u : ConfigGlobale.utilisateurs) {
+            if(u.getFk_id_carte()==this.carte.getId_carte()){
+                this.user = u;
+                break;
+            }
+            else {
+                this.user.setId_utilisateur(-1);
+            }
+        }
         initComponents();
         InitialisationEditionCarte(this.carte);
     }
 
     private void InitialisationEditionCarte(Carte carte){
         txtSerialNumber.setText(carte.getSerialNumber());
+        txtProprio.setText(Integer.toString(user.getId_utilisateur()));
     }
     
     
@@ -46,6 +58,8 @@ public class EditionCarte extends javax.swing.JPanel {
         boutonSupprimer = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txtSerialNumber = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txtProprio = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(153, 204, 255));
         setMaximumSize(new java.awt.Dimension(600, 400));
@@ -76,21 +90,31 @@ public class EditionCarte extends javax.swing.JPanel {
 
         txtSerialNumber.setText("jTextField1");
 
+        jLabel2.setText("Propriétaire");
+
+        txtProprio.setEditable(false);
+        txtProprio.setText("jTextField1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
                 .addGap(58, 58, 58)
-                .addComponent(txtSerialNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(boutonSupprimer)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(boutonReset)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(boutonValider)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtSerialNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(boutonSupprimer)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(boutonReset)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(boutonValider))
+                    .addComponent(txtProprio, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 88, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -100,7 +124,11 @@ public class EditionCarte extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtSerialNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 335, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtProprio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 309, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(boutonValider)
                     .addComponent(boutonReset)
@@ -123,7 +151,7 @@ public class EditionCarte extends javax.swing.JPanel {
         this.carte.setSerialNumber(txtSerialNumber.getText());
         if(!ConfigGlobale.cartes.contains(this.carte)){
             ConfigGlobale.cartes.add(this.carte);
-            this.carte.setId_carte(ConfigGlobale.cartes.indexOf(this.carte));
+            //this.carte.setId_carte(ConfigGlobale.cartes.indexOf(this.carte));
         }
     }//GEN-LAST:event_boutonValiderMouseClicked
 
@@ -132,6 +160,8 @@ public class EditionCarte extends javax.swing.JPanel {
     private javax.swing.JButton boutonSupprimer;
     private javax.swing.JButton boutonValider;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JTextField txtProprio;
     private javax.swing.JTextField txtSerialNumber;
     // End of variables declaration//GEN-END:variables
 }

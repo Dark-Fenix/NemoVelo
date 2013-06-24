@@ -182,7 +182,7 @@ public class EditionVelo extends javax.swing.JPanel {
         this.velo.setKmParcourus(Double.parseDouble(txtKM.getText()));
         if(!ConfigGlobale.velos.contains(this.velo)){
             ConfigGlobale.velos.add(this.velo);
-            this.velo.setId_velo(ConfigGlobale.velos.indexOf(this.velo));
+            //this.velo.setId_velo(ConfigGlobale.velos.indexOf(this.velo));
         }
     }//GEN-LAST:event_boutonValiderMouseClicked
 

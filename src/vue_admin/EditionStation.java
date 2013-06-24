@@ -34,10 +34,11 @@ public class EditionStation extends javax.swing.JPanel {
     private void InitialisationEditionStation(Station station){
         txtSerialNumber.setText(station.getSerialNumber());
         txtEtat.setText(station.getEtat());
-        txtEmplacement.setText(station.getEmplacement());
+        txtLatitude.setText(station.getLatitude());
+        txtLongitude.setText(station.getLongitude());
         try {
             JGoogleMapEditorPan googleMap = new JGoogleMapEditorPan();
-            googleMap.showCoordinate("45.740724", "4.85561610000002", 215, 200);
+            googleMap.showCoordinate(station.getLatitude(), station.getLongitude(), 215, 200);
             swapPanel(panelGoogleMap, googleMap);
         }
         catch (Exception ex) {
@@ -69,8 +70,10 @@ public class EditionStation extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         txtSerialNumber = new javax.swing.JTextField();
         txtEtat = new javax.swing.JTextField();
-        txtEmplacement = new javax.swing.JTextField();
+        txtLatitude = new javax.swing.JTextField();
         panelGoogleMap = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        txtLongitude = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(153, 204, 255));
         setMaximumSize(new java.awt.Dimension(600, 400));
@@ -101,15 +104,19 @@ public class EditionStation extends javax.swing.JPanel {
 
         jLabel2.setText("Etat");
 
-        jLabel4.setText("Emplacement");
+        jLabel4.setText("Latitude");
 
         txtSerialNumber.setText("jTextField1");
 
         txtEtat.setText("jTextField2");
 
-        txtEmplacement.setText("jTextField6");
+        txtLatitude.setText("jTextField6");
 
         panelGoogleMap.setLayout(new javax.swing.BoxLayout(panelGoogleMap, javax.swing.BoxLayout.LINE_AXIS));
+
+        jLabel5.setText("Longitude");
+
+        txtLongitude.setText("jTextField6");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -120,12 +127,15 @@ public class EditionStation extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel1))
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel5))
                 .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtEtat, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-                    .addComponent(txtSerialNumber)
-                    .addComponent(txtEmplacement))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtLongitude, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(txtEtat, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                        .addComponent(txtSerialNumber)
+                        .addComponent(txtLatitude)))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
@@ -153,7 +163,11 @@ public class EditionStation extends javax.swing.JPanel {
                         .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(txtEmplacement, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtLatitude, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(txtLongitude, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(panelGoogleMap, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -177,10 +191,11 @@ public class EditionStation extends javax.swing.JPanel {
     private void boutonValiderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonValiderMouseClicked
         this.station.setSerialNumber(txtSerialNumber.getText());
         this.station.setEtat(txtEtat.getText());
-        this.station.setEmplacement(txtEmplacement.getText());
+        this.station.setLatitude(txtLatitude.getText());
+        this.station.setLongitude(txtLongitude.getText());
         if(!ConfigGlobale.stations.contains(this.station)){
             ConfigGlobale.stations.add(this.station);
-            this.station.setId_station(ConfigGlobale.stations.indexOf(this.station));
+            //this.station.setId_station(ConfigGlobale.stations.indexOf(this.station));
         }
     }//GEN-LAST:event_boutonValiderMouseClicked
 
@@ -191,9 +206,11 @@ public class EditionStation extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel panelGoogleMap;
-    private javax.swing.JTextField txtEmplacement;
     private javax.swing.JTextField txtEtat;
+    private javax.swing.JTextField txtLatitude;
+    private javax.swing.JTextField txtLongitude;
     private javax.swing.JTextField txtSerialNumber;
     // End of variables declaration//GEN-END:variables
 }

@@ -17,8 +17,9 @@ public class Borne {
     public Borne(){
     }
     
-    public Borne(int id_borne, String etat, int fk_id_station){
+    public Borne(int id_borne, String serialNumber, String etat, int fk_id_station){
         this.id_borne = id_borne;
+        this.serialNumber = serialNumber;
         this.etat = etat;
         this.fk_id_station = fk_id_station;
     }

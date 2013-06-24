@@ -1,6 +1,7 @@
 
 package vue_user_borne;
 
+import Config.ConfigGlobale;
 import javax.swing.JEditorPane;
 import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLEditorKit;
@@ -8,7 +9,7 @@ import javax.swing.text.html.HTMLEditorKit;
 public class JGoogleMapEditorPan extends JEditorPane {
 
     private int zoomFactor = 15;
-    private String ApiKey = "";
+    private String ApiKey = ConfigGlobale.ApiKey;
     private String roadmap = "roadmap";
     public final String viewTerrain = "terrain";
     public final String viewSatellite = "satellite";

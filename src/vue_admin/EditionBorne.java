@@ -5,6 +5,11 @@
 package vue_admin;
 import Config.ConfigGlobale;
 import classes.Borne;
+import classes.Station;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JComponent;
+import vue_user_borne.JGoogleMapEditorPan;
 
 /**
  *
@@ -20,9 +25,16 @@ public class EditionBorne extends javax.swing.JPanel {
     }*/
     
     private Borne borne;
+    private Station station;
     
     public EditionBorne(Borne borne) {
         this.borne = borne;
+        for (Station s : ConfigGlobale.stations) {
+            if(s.getId_station()==this.borne.getFk_id_station()){
+                this.station = s;
+                break;
+            }
+        }
         initComponents();
         InitialisationEditionBorne(this.borne);
     }
@@ -31,10 +43,22 @@ public class EditionBorne extends javax.swing.JPanel {
         txtSerialNumber.setText(borne.getSerialNumber());
         txtEtat.setText(borne.getEtat());
         txtBorne.setText(String.valueOf(borne.getFk_id_station()));
-
+        try {
+            JGoogleMapEditorPan googleMap = new JGoogleMapEditorPan();
+            googleMap.showCoordinate(station.getLatitude(), station.getLongitude(), 215, 200);
+            swapPanel(panelGoogleMap, googleMap);
+        }
+        catch (Exception ex) {
+            Logger.getLogger(InterfaceAdminGestion.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
-    
+    public void swapPanel(JComponent panelDeBase, JComponent newPanel){
+        panelDeBase.removeAll();
+        panelDeBase.add(newPanel);
+        revalidate();
+        repaint();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -163,7 +187,7 @@ public class EditionBorne extends javax.swing.JPanel {
         this.borne.setFk_id_station(Integer.parseInt(txtBorne.getText()));
         if(!ConfigGlobale.bornes.contains(this.borne)){
             ConfigGlobale.bornes.add(this.borne);
-            this.borne.setId_borne(ConfigGlobale.bornes.indexOf(this.borne));
+            //this.borne.setId_borne(ConfigGlobale.bornes.indexOf(this.borne));
         }
     }//GEN-LAST:event_boutonValiderMouseClicked
 

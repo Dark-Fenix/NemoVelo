@@ -337,7 +337,7 @@ public class EditionUtilisateur extends javax.swing.JPanel {
         this.user.setFk_id_velo(Integer.parseInt(txtVelo.getText()));
         if(!ConfigGlobale.utilisateurs.contains(this.user)){
             ConfigGlobale.utilisateurs.add(this.user);
-            this.user.setId_utilisateur(ConfigGlobale.utilisateurs.indexOf(this.user));
+            //this.user.setId_utilisateur(ConfigGlobale.utilisateurs.indexOf(this.user));
         }
     }//GEN-LAST:event_boutonValiderMouseClicked
 

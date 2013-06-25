@@ -38,8 +38,8 @@ public class InterfaceAdminGestionBornes extends javax.swing.JPanel {
         DefaultListModel liste = new DefaultListModel();
         for (Iterator<Borne> it = ConfigGlobale.bornes.iterator(); it.hasNext();) {
             Borne u = it.next();
-            liste.add(u.getId_borne(),u);
-            //liste.addElement(u);
+            //liste.add(u.getId_borne(),u);
+            liste.addElement(u);
         }
         listeBornes.setModel(liste);
     }

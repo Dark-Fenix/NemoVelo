@@ -38,8 +38,8 @@ public class InterfaceAdminGestionStations extends javax.swing.JPanel {
         DefaultListModel liste = new DefaultListModel();
         for (Iterator<Station> it = ConfigGlobale.stations.iterator(); it.hasNext();) {
             Station u = it.next();
-            liste.add(u.getId_station(),u);
-            //liste.addElement(u);
+            //liste.add(u.getId_station(),u);
+            liste.addElement(u);
         }
         listeStations.setModel(liste);
     }

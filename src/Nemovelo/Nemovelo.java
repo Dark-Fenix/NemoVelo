@@ -20,15 +20,21 @@ public class Nemovelo {
         //ConnexionDB.getInstance();
         //ConnexionDB.getConnexion().toString();
         
-        ConfigGlobale.utilisateurs.add(new Utilisateur());
-        ConfigGlobale.bornes.add(new Borne(0, null, null, 0));
-        ConfigGlobale.stations.add(new Station(0, null, null, "43.8217403", "4.3684387"));
-        ConfigGlobale.cartes.add(new Carte(0));
-        ConfigGlobale.comptes.add(new Compte());
-        ConfigGlobale.velos.add(new Velo(0, null, null, 0, null, 0));
-        ConfigGlobale.velos.add(new Velo(1, null, null, 10, null, 0));
+//        ConfigGlobale.utilisateurs.add(new Utilisateur());
+//        ConfigGlobale.bornes.add(new Borne(0, null, null, 0));
+//        ConfigGlobale.stations.add(new Station(0, null, null, "43.8217403", "4.3684387"));
+//        ConfigGlobale.cartes.add(new Carte(0));
+//        ConfigGlobale.comptes.add(new Compte());
+//        ConfigGlobale.velos.add(new Velo(0, null, null, 0, null, 0));
+//        ConfigGlobale.velos.add(new Velo(1, null, null, 10, null, 0));
+       
+        ConfigGlobale.velos = VeloDAO.getAllVelo();
+        ConfigGlobale.bornes = BorneDAO.getAllBorne();
+        ConfigGlobale.stations = StationDAO.getAllStation();
+        ConfigGlobale.comptes = CompteDAO.getAllCompte();
+        ConfigGlobale.cartes = CarteDAO.getAllCarte();
+        ConfigGlobale.utilisateurs = UtilisateurDAO.getAllUtilisateur();
         
-
         
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

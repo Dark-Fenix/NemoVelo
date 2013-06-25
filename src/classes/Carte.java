@@ -15,8 +15,9 @@ public class Carte {
     public Carte(){
     }
     
-    public Carte(int id_carte){
+    public Carte(int id_carte, String serialNumber){
         this.id_carte = id_carte;
+        this.serialNumber = serialNumber;
     }
 
     public int getId_carte() {

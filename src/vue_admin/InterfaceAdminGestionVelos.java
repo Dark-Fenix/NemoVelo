@@ -39,8 +39,8 @@ public class InterfaceAdminGestionVelos extends javax.swing.JPanel {
         liste.setSize(ConfigGlobale.velos.size());
         for (Iterator<Velo> it = ConfigGlobale.velos.iterator(); it.hasNext();) {
             Velo u = it.next();
-            liste.add(u.getId_velo(),u);
-            //liste.addElement(u);
+            //liste.add(u.getId_velo(),u);
+            liste.addElement(u);
         }
         listeVelos.setModel(liste);
     }

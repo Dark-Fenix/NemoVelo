@@ -38,8 +38,8 @@ public class InterfaceAdminGestionComptes extends javax.swing.JPanel {
         DefaultListModel liste = new DefaultListModel();
         for (Iterator<Compte> it = ConfigGlobale.comptes.iterator(); it.hasNext();) {
             Compte u = it.next();
-            liste.add(u.getId_compte(),u);
-            //liste.addElement(u);
+            //liste.add(u.getId_compte(),u);
+            liste.addElement(u);
         }
         listeComptes.setModel(liste);
     }

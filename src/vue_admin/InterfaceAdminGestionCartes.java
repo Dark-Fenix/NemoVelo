@@ -38,8 +38,8 @@ public class InterfaceAdminGestionCartes extends javax.swing.JPanel {
         DefaultListModel liste = new DefaultListModel();
         for (Iterator<Carte> it = ConfigGlobale.cartes.iterator(); it.hasNext();) {
             Carte u = it.next();
-            liste.add(u.getId_carte(),u);
-            //liste.addElement(u);
+            //liste.add(u.getId_carte(),u);
+            liste.addElement(u);
         }
         listeCartes.setModel(liste);
     }

@@ -27,12 +27,12 @@ public class ConfigGlobale {
     public static int longueurRIB = 23;
     public static int longueurIBAN = 34;
 
-    public static ArrayList<Utilisateur> utilisateurs = new ArrayList<>();
-    public static ArrayList<Compte> comptes = new ArrayList<>();
-    public static ArrayList<Carte> cartes = new ArrayList<>();
-    public static ArrayList<Station> stations = new ArrayList<>();
-    public static ArrayList<Borne> bornes = new ArrayList<>();
-    public static ArrayList<Velo> velos = new ArrayList<>();
+    public static ArrayList<Utilisateur> utilisateurs;
+    public static ArrayList<Compte> comptes;
+    public static ArrayList<Carte> cartes;
+    public static ArrayList<Station> stations;
+    public static ArrayList<Borne> bornes;
+    public static ArrayList<Velo> velos;
     
     public static String ApiKey = "";
     

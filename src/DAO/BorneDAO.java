@@ -5,7 +5,6 @@
 package DAO;
 
 import classes.Borne;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -50,23 +49,22 @@ public class BorneDAO {
 
     }
 
-    /*public static Velo getVeloById(int idAgent) {
+    public static Borne getBorneById(int id_borne) {
 
-        /*Velo agent = null;
+        Borne borne = null;
         Statement stat;
         try {
             stat = ConnexionDB.getConnection().createStatement();
             stat.executeUpdate("use nemovelo");
-            ResultSet res = stat.executeQuery("select * from AgentMaintenance where idAgent="+ idAgent);
-            String nom, prenom, lieuDeNaissance;
-            Date dateDeNaissance;
-            if (res.next()) {
-                idAgent = res.getInt("idAgent");
-                nom = res.getString("nom");
-                prenom = res.getString("prenom");
-                dateDeNaissance = res.getDate("dateDeNaissance");
-                lieuDeNaissance = res.getString("lieuDeNaissance");
-                agent = new Velo(idAgent, nom, prenom,dateDeNaissance, lieuDeNaissance);
+            ResultSet res = stat.executeQuery("select * from borne where id_borne="+ id_borne);
+            int fk_id_station;
+            String serialNumber, etat;
+            while (res.next()) {
+                id_borne = res.getInt("id_borne");
+                serialNumber = res.getString("serialNumber");
+                etat = res.getString("etat");
+                fk_id_station = res.getInt("fk_id_station");
+                borne = new Borne(id_borne, serialNumber, etat, fk_id_station);
             }
         } catch (SQLException e) {
             while (e != null) {
@@ -77,23 +75,22 @@ public class BorneDAO {
                 e = e.getNextException();
             }
         }
-        return agent;
+        return borne;
                 
     }
 	
 
-    public static void updateVelo(Velo agent) {
+    public static void updateBorne(Borne borne) {
 
-        /*PreparedStatement stat;
+        PreparedStatement stat;
         try {
-            stat = ConnexionDB.getConnection().prepareStatement("select * from AgentMaintenance where idAgent=?",ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
-            stat.setInt(1, agent.getIdAgent());
+            stat = ConnexionDB.getConnection().prepareStatement("select * from borne where id_borne=?",ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
+            stat.setInt(1, borne.getId_borne());
             ResultSet res = stat.executeQuery();
             if (res.next()) {
-                res.updateString("nom", agent.getNom());
-                res.updateString("prenom", agent.getPrenom());
-                res.updateDate("dateDeNaissance", (Date) agent.getDateDeNaissance());
-                res.updateString("lieuDeNaissance", agent.getLieuDeNaissance());
+                res.updateString("serialNumber", borne.getSerialNumber());
+                res.updateString("etat", borne.getEtat());
+                res.updateInt("fk_id_station", borne.getFk_id_station());
                 res.updateRow();	
             }
         } catch (SQLException e) {
@@ -108,12 +105,12 @@ public class BorneDAO {
 
     }
 
-    public static void deleteVelo(Velo agent) {
+    public static void deleteBorne(Borne borne) {
 
         Statement stat;
         try {
             stat = ConnexionDB.getConnection().createStatement();
-            stat.executeUpdate("delete from AgentMaintenance where idAgent="+ agent.getIdAgent());
+            stat.executeUpdate("delete from borne where id_borne="+ borne.getId_borne());
         } catch (SQLException e) {
             while (e != null) {
                 System.out.println(e.getErrorCode());
@@ -126,15 +123,14 @@ public class BorneDAO {
         
     }
 
-    public static void insertVelo(Velo agent) {
-
+    public static void insertBorne(Borne borne) {
+         
         PreparedStatement stat;
         try {
-            stat = ConnexionDB.getConnection().prepareStatement("insert into AgentMaintenance (nom,prenom,dateDeNaissance,)lieuDeNaissance values (?,?,?,?)");
-            stat.setString(1, agent.getNom());
-            stat.setString(2, agent.getPrenom());
-            stat.setDate(3, (Date) agent.getDateDeNaissance());
-            stat.setString(4, agent.getLieuDeNaissance());			
+            stat = ConnexionDB.getConnection().prepareStatement("insert into borne (serialNumber,etat,fk_id_station) values (?,?,?)");
+            stat.setString(1, borne.getSerialNumber());
+            stat.setString(2, borne.getEtat());
+            stat.setInt(3, borne.getFk_id_station());
             stat.executeUpdate();
         } catch (SQLException e) {
             while (e != null) {
@@ -146,6 +142,6 @@ public class BorneDAO {
             }
         }
         
-    }*/
+    }
     
 }

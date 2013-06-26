@@ -4,6 +4,7 @@
  */
 package vue_admin;
 import Config.ConfigGlobale;
+import DAO.CompteDAO;
 import classes.Compte;
 
 /**
@@ -158,6 +159,7 @@ public class EditionCompte extends javax.swing.JPanel {
 
     private void boutonSupprimerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonSupprimerMouseClicked
         ConfigGlobale.comptes.remove(this.compte);
+        CompteDAO.deleteCompte(this.compte);
         // Refaire ça au propre, c'est moche...
         this.setVisible(false);
     }//GEN-LAST:event_boutonSupprimerMouseClicked

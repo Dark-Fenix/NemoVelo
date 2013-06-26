@@ -4,6 +4,7 @@
  */
 package vue_admin;
 import Config.ConfigGlobale;
+import DAO.StationDAO;
 import classes.Station;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -184,6 +185,7 @@ public class EditionStation extends javax.swing.JPanel {
 
     private void boutonSupprimerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonSupprimerMouseClicked
         ConfigGlobale.stations.remove(this.station);
+        StationDAO.deleteStation(this.station);
         // Refaire ça au propre, c'est moche...
         this.setVisible(false);
     }//GEN-LAST:event_boutonSupprimerMouseClicked

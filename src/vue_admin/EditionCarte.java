@@ -4,6 +4,7 @@
  */
 package vue_admin;
 import Config.ConfigGlobale;
+import DAO.CarteDAO;
 import classes.Carte;
 import classes.Utilisateur;
 
@@ -143,6 +144,7 @@ public class EditionCarte extends javax.swing.JPanel {
 
     private void boutonSupprimerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonSupprimerMouseClicked
         ConfigGlobale.cartes.remove(this.carte);
+        CarteDAO.deleteCarte(this.carte);
         // Refaire ça au propre, c'est moche...
         this.setVisible(false);
     }//GEN-LAST:event_boutonSupprimerMouseClicked

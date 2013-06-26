@@ -4,6 +4,7 @@
  */
 package vue_admin;
 import Config.ConfigGlobale;
+import DAO.BorneDAO;
 import classes.Borne;
 import classes.Station;
 import java.util.logging.Level;
@@ -177,6 +178,7 @@ public class EditionBorne extends javax.swing.JPanel {
 
     private void boutonSupprimerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonSupprimerMouseClicked
         ConfigGlobale.bornes.remove(this.borne);
+        BorneDAO.deleteBorne(this.borne);
         // Refaire ça au propre, c'est moche...
         this.setVisible(false);
     }//GEN-LAST:event_boutonSupprimerMouseClicked

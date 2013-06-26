@@ -4,6 +4,7 @@
  */
 package vue_admin;
 import Config.ConfigGlobale;
+import DAO.VeloDAO;
 import classes.Velo;
 
 /**
@@ -171,6 +172,7 @@ public class EditionVelo extends javax.swing.JPanel {
 
     private void boutonSupprimerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonSupprimerMouseClicked
         ConfigGlobale.velos.remove(this.velo);
+        VeloDAO.deleteVelo(this.velo);
         // Refaire ça au propre, c'est moche...
         this.setVisible(false);
     }//GEN-LAST:event_boutonSupprimerMouseClicked

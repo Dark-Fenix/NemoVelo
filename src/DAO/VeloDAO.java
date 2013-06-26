@@ -53,23 +53,25 @@ public class VeloDAO {
 
     }
 
-    /*public static Velo getVeloById(int idAgent) {
+    public static Velo getVeloById(int id_velo) {
 
-        /*Velo agent = null;
+        Velo velo = null;
         Statement stat;
         try {
             stat = ConnexionDB.getConnection().createStatement();
             stat.executeUpdate("use nemovelo");
-            ResultSet res = stat.executeQuery("select * from AgentMaintenance where idAgent="+ idAgent);
-            String nom, prenom, lieuDeNaissance;
-            Date dateDeNaissance;
+            ResultSet res = stat.executeQuery("select * from velo where id_velo="+ id_velo);
+            int fk_id_borne;
+            double kmParcourus;
+            String serialNumber, dateMiseEnService, etat;
             if (res.next()) {
-                idAgent = res.getInt("idAgent");
-                nom = res.getString("nom");
-                prenom = res.getString("prenom");
-                dateDeNaissance = res.getDate("dateDeNaissance");
-                lieuDeNaissance = res.getString("lieuDeNaissance");
-                agent = new Velo(idAgent, nom, prenom,dateDeNaissance, lieuDeNaissance);
+                id_velo = res.getInt("id_velo");
+                serialNumber = res.getString("serialNumber");
+                dateMiseEnService = res.getString("dateMiseEnService");
+                kmParcourus = res.getDouble("kmParcourus");
+                etat = res.getString("etat");
+                fk_id_borne = res.getInt("fk_id_borne");
+                velo = new Velo(id_velo, serialNumber, dateMiseEnService, kmParcourus, etat, fk_id_borne);
             }
         } catch (SQLException e) {
             while (e != null) {
@@ -80,23 +82,24 @@ public class VeloDAO {
                 e = e.getNextException();
             }
         }
-        return agent;
+        return velo;
                 
     }
 	
 
-    public static void updateVelo(Velo agent) {
+    public static void updateVelo(Velo velo) {
 
-        /*PreparedStatement stat;
+        PreparedStatement stat;
         try {
-            stat = ConnexionDB.getConnection().prepareStatement("select * from AgentMaintenance where idAgent=?",ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
-            stat.setInt(1, agent.getIdAgent());
+            stat = ConnexionDB.getConnection().prepareStatement("select * from velo where id_velo=?",ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
+            stat.setInt(1, velo.getId_velo());
             ResultSet res = stat.executeQuery();
             if (res.next()) {
-                res.updateString("nom", agent.getNom());
-                res.updateString("prenom", agent.getPrenom());
-                res.updateDate("dateDeNaissance", (Date) agent.getDateDeNaissance());
-                res.updateString("lieuDeNaissance", agent.getLieuDeNaissance());
+                res.updateString("serialNumber", velo.getSerialNumber());
+                res.updateString("dateMiseEnService", velo.getDateMiseEnService());
+                res.updateDouble("kmParcourus", velo.getKmParcourus());
+                res.updateString("etat", velo.getEtat());
+                res.updateInt("fk_id_borne", velo.getFk_id_borne());
                 res.updateRow();	
             }
         } catch (SQLException e) {
@@ -111,12 +114,12 @@ public class VeloDAO {
 
     }
 
-    public static void deleteVelo(Velo agent) {
+    public static void deleteVelo(Velo velo) {
 
         Statement stat;
         try {
             stat = ConnexionDB.getConnection().createStatement();
-            stat.executeUpdate("delete from AgentMaintenance where idAgent="+ agent.getIdAgent());
+            stat.executeUpdate("delete from velo where id_velo="+ velo.getId_velo());
         } catch (SQLException e) {
             while (e != null) {
                 System.out.println(e.getErrorCode());
@@ -129,15 +132,16 @@ public class VeloDAO {
         
     }
 
-    public static void insertVelo(Velo agent) {
+    public static void insertVelo(Velo velo) {
 
         PreparedStatement stat;
         try {
-            stat = ConnexionDB.getConnection().prepareStatement("insert into AgentMaintenance (nom,prenom,dateDeNaissance,)lieuDeNaissance values (?,?,?,?)");
-            stat.setString(1, agent.getNom());
-            stat.setString(2, agent.getPrenom());
-            stat.setDate(3, (Date) agent.getDateDeNaissance());
-            stat.setString(4, agent.getLieuDeNaissance());			
+            stat = ConnexionDB.getConnection().prepareStatement("insert into velo (serialNumber, dateMiseEnService, kmParcourus, etat, fk_id_borne) values (?,?,?,?,?)");
+            stat.setString(1, velo.getSerialNumber());
+            stat.setString(2, velo.getDateMiseEnService());
+            stat.setDouble(3, velo.getKmParcourus());
+            stat.setString(4, velo.getEtat());
+            stat.setInt(5, velo.getFk_id_borne());
             stat.executeUpdate();
         } catch (SQLException e) {
             while (e != null) {
@@ -149,6 +153,6 @@ public class VeloDAO {
             }
         }
         
-    }*/
+    }
     
 }

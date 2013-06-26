@@ -52,23 +52,24 @@ public class CompteDAO {
 
     }
 
-    /*public static Velo getVeloById(int idAgent) {
+    public static Compte getCompteById(int id_compte) {
 
-        /*Velo agent = null;
+        Compte compte = null;
         Statement stat;
         try {
             stat = ConnexionDB.getConnection().createStatement();
             stat.executeUpdate("use nemovelo");
-            ResultSet res = stat.executeQuery("select * from AgentMaintenance where idAgent="+ idAgent);
-            String nom, prenom, lieuDeNaissance;
-            Date dateDeNaissance;
+            ResultSet res = stat.executeQuery("select * from compte where id_compte="+ id_compte);
+            int fk_id_utilisateur;
+            double solde;
+            String typeCompte, dateCreation;
             if (res.next()) {
-                idAgent = res.getInt("idAgent");
-                nom = res.getString("nom");
-                prenom = res.getString("prenom");
-                dateDeNaissance = res.getDate("dateDeNaissance");
-                lieuDeNaissance = res.getString("lieuDeNaissance");
-                agent = new Velo(idAgent, nom, prenom,dateDeNaissance, lieuDeNaissance);
+                id_compte = res.getInt("id_compte");
+                typeCompte = res.getString("typeCompte");
+                solde = res.getDouble("solde");
+                dateCreation = res.getString("dateCreation");
+                fk_id_utilisateur = res.getInt("fk_id_utilisateur");
+                compte = new Compte(id_compte, typeCompte, solde, dateCreation, fk_id_utilisateur);
             }
         } catch (SQLException e) {
             while (e != null) {
@@ -79,23 +80,23 @@ public class CompteDAO {
                 e = e.getNextException();
             }
         }
-        return agent;
+        return compte;
                 
     }
 	
 
-    public static void updateVelo(Velo agent) {
+    public static void updateCompte(Compte compte) {
 
-        /*PreparedStatement stat;
+        PreparedStatement stat;
         try {
-            stat = ConnexionDB.getConnection().prepareStatement("select * from AgentMaintenance where idAgent=?",ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
-            stat.setInt(1, agent.getIdAgent());
+            stat = ConnexionDB.getConnection().prepareStatement("select * from compte where id_compte=?",ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
+            stat.setInt(1, compte.getId_compte());
             ResultSet res = stat.executeQuery();
             if (res.next()) {
-                res.updateString("nom", agent.getNom());
-                res.updateString("prenom", agent.getPrenom());
-                res.updateDate("dateDeNaissance", (Date) agent.getDateDeNaissance());
-                res.updateString("lieuDeNaissance", agent.getLieuDeNaissance());
+                res.updateString("typeCompte", compte.getTypeCompte());
+                res.updateDouble("solde", compte.getSolde());
+                res.updateString("dateCreation", compte.getDateCreation());
+                res.updateInt("fk_id_utilisateur", compte.getFk_id_utilisateur());
                 res.updateRow();	
             }
         } catch (SQLException e) {
@@ -110,12 +111,12 @@ public class CompteDAO {
 
     }
 
-    public static void deleteVelo(Velo agent) {
+    public static void deleteCompte(Compte compte) {
 
         Statement stat;
         try {
             stat = ConnexionDB.getConnection().createStatement();
-            stat.executeUpdate("delete from AgentMaintenance where idAgent="+ agent.getIdAgent());
+            stat.executeUpdate("delete from compte where id_compte="+ compte.getId_compte());
         } catch (SQLException e) {
             while (e != null) {
                 System.out.println(e.getErrorCode());
@@ -128,15 +129,15 @@ public class CompteDAO {
         
     }
 
-    public static void insertVelo(Velo agent) {
+    public static void insertCompte(Compte compte) {
 
         PreparedStatement stat;
         try {
-            stat = ConnexionDB.getConnection().prepareStatement("insert into AgentMaintenance (nom,prenom,dateDeNaissance,)lieuDeNaissance values (?,?,?,?)");
-            stat.setString(1, agent.getNom());
-            stat.setString(2, agent.getPrenom());
-            stat.setDate(3, (Date) agent.getDateDeNaissance());
-            stat.setString(4, agent.getLieuDeNaissance());			
+            stat = ConnexionDB.getConnection().prepareStatement("insert into compte (typeCompte, solde, dateCreation, fk_id_utilisateur) values (?,?,?,?)");
+            stat.setString(1, compte.getTypeCompte());
+            stat.setDouble(2, compte.getSolde());
+            stat.setString(3, compte.getDateCreation());
+            stat.setInt(4, compte.getFk_id_utilisateur());			
             stat.executeUpdate();
         } catch (SQLException e) {
             while (e != null) {
@@ -148,6 +149,6 @@ public class CompteDAO {
             }
         }
         
-    }*/
+    }
     
 }

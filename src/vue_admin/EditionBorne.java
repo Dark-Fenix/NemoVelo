@@ -188,8 +188,11 @@ public class EditionBorne extends javax.swing.JPanel {
         this.borne.setEtat(txtEtat.getText());
         this.borne.setFk_id_station(Integer.parseInt(txtBorne.getText()));
         if(!ConfigGlobale.bornes.contains(this.borne)){
+            BorneDAO.insertBorne(this.borne);
             ConfigGlobale.bornes.add(this.borne);
-            //this.borne.setId_borne(ConfigGlobale.bornes.indexOf(this.borne));
+        }
+        else {
+            BorneDAO.updateBorne(this.borne);
         }
     }//GEN-LAST:event_boutonValiderMouseClicked
 

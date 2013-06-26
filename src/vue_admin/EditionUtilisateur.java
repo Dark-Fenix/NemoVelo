@@ -6,6 +6,7 @@ package vue_admin;
 import Config.ConfigGlobale;
 import DAO.UtilisateurDAO;
 import classes.Utilisateur;
+import java.sql.SQLException;
 
 /**
  *
@@ -330,8 +331,8 @@ public class EditionUtilisateur extends javax.swing.JPanel {
     }//GEN-LAST:event_boutonResetMouseClicked
 
     private void boutonSupprimerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonSupprimerMouseClicked
+        UtilisateurDAO.deleteUtilisateur(this.user);    
         ConfigGlobale.utilisateurs.remove(this.user);
-        UtilisateurDAO.deleteUtilisateur(this.user);
         // Refaire ça au propre, c'est moche...
         this.setVisible(false);
     }//GEN-LAST:event_boutonSupprimerMouseClicked
@@ -352,8 +353,11 @@ public class EditionUtilisateur extends javax.swing.JPanel {
         this.user.setFk_id_carte(Integer.parseInt(txtCarteUtilisateur.getText()));
         this.user.setFk_id_velo(Integer.parseInt(txtVelo.getText()));
         if(!ConfigGlobale.utilisateurs.contains(this.user)){
+            UtilisateurDAO.insertUtilisateur(this.user);
             ConfigGlobale.utilisateurs.add(this.user);
-            //this.user.setId_utilisateur(ConfigGlobale.utilisateurs.indexOf(this.user));
+        }
+        else {
+            UtilisateurDAO.updateUtilisateur(this.user);
         }
     }//GEN-LAST:event_boutonValiderMouseClicked
 

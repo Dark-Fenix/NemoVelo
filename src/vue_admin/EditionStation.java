@@ -196,8 +196,11 @@ public class EditionStation extends javax.swing.JPanel {
         this.station.setLatitude(txtLatitude.getText());
         this.station.setLongitude(txtLongitude.getText());
         if(!ConfigGlobale.stations.contains(this.station)){
+            StationDAO.insertStation(this.station);
             ConfigGlobale.stations.add(this.station);
-            //this.station.setId_station(ConfigGlobale.stations.indexOf(this.station));
+        }
+        else {
+            StationDAO.updateStation(this.station);
         }
     }//GEN-LAST:event_boutonValiderMouseClicked
 

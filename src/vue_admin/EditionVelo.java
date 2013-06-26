@@ -183,8 +183,11 @@ public class EditionVelo extends javax.swing.JPanel {
         this.velo.setFk_id_borne(Integer.parseInt(txtBorne.getText()));
         this.velo.setKmParcourus(Double.parseDouble(txtKM.getText()));
         if(!ConfigGlobale.velos.contains(this.velo)){
+            VeloDAO.insertVelo(this.velo);
             ConfigGlobale.velos.add(this.velo);
-            //this.velo.setId_velo(ConfigGlobale.velos.indexOf(this.velo));
+        }
+        else {
+            VeloDAO.updateVelo(this.velo);
         }
     }//GEN-LAST:event_boutonValiderMouseClicked
 

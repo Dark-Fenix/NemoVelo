@@ -62,23 +62,34 @@ public class UtilisateurDAO {
 
     }
 
-    /*public static Velo getVeloById(int idAgent) {
+    public static Utilisateur getUtilisateurById(int id_utilisateur) {
 
-        /*Velo agent = null;
+        Utilisateur utilisateur = null;
         Statement stat;
         try {
             stat = ConnexionDB.getConnection().createStatement();
             stat.executeUpdate("use nemovelo");
-            ResultSet res = stat.executeQuery("select * from AgentMaintenance where idAgent="+ idAgent);
-            String nom, prenom, lieuDeNaissance;
-            Date dateDeNaissance;
+            ResultSet res = stat.executeQuery("select * from utilisateur where id_utilisateur="+ id_utilisateur);
+            int fk_id_carte, fk_id_velo;
+            String prenom, nom, dateNaissance, adresse, codePostal, ville, carteBancaire, dateValiditeCarteBancaire, rib, iban, dateCreation, login, password;
             if (res.next()) {
-                idAgent = res.getInt("idAgent");
-                nom = res.getString("nom");
+                id_utilisateur = res.getInt("id_utilisateur");
                 prenom = res.getString("prenom");
-                dateDeNaissance = res.getDate("dateDeNaissance");
-                lieuDeNaissance = res.getString("lieuDeNaissance");
-                agent = new Velo(idAgent, nom, prenom,dateDeNaissance, lieuDeNaissance);
+                nom = res.getString("nom");
+                dateNaissance = res.getString("dateNaissance");
+                adresse = res.getString("adresse");
+                codePostal = res.getString("codePostal");
+                ville = res.getString("ville");
+                carteBancaire = res.getString("carteBancaire");
+                dateValiditeCarteBancaire = res.getString("dateValiditeCarteBancaire");
+                rib = res.getString("rib");
+                iban = res.getString("iban");
+                dateCreation = res.getString("dateCreation");
+                login = res.getString("login");
+                password = res.getString("password");
+                fk_id_carte = res.getInt("fk_id_carte");
+                fk_id_velo = res.getInt("fk_id_velo");
+                utilisateur = new Utilisateur(id_utilisateur, prenom, nom, dateNaissance, adresse, codePostal, ville, carteBancaire, dateValiditeCarteBancaire, rib, iban, dateCreation, login, password, fk_id_carte, fk_id_velo);
             }
         } catch (SQLException e) {
             while (e != null) {
@@ -89,23 +100,34 @@ public class UtilisateurDAO {
                 e = e.getNextException();
             }
         }
-        return agent;
+        return utilisateur;
                 
     }
 	
 
-    public static void updateVelo(Velo agent) {
+    public static void updateUtilisateur(Utilisateur utilisateur) {
 
-        /*PreparedStatement stat;
+        PreparedStatement stat;
         try {
-            stat = ConnexionDB.getConnection().prepareStatement("select * from AgentMaintenance where idAgent=?",ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
-            stat.setInt(1, agent.getIdAgent());
+            stat = ConnexionDB.getConnection().prepareStatement("select * from utilisateur where id_utilisateur=?",ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
+            stat.setInt(1, utilisateur.getId_utilisateur());
             ResultSet res = stat.executeQuery();
             if (res.next()) {
-                res.updateString("nom", agent.getNom());
-                res.updateString("prenom", agent.getPrenom());
-                res.updateDate("dateDeNaissance", (Date) agent.getDateDeNaissance());
-                res.updateString("lieuDeNaissance", agent.getLieuDeNaissance());
+                res.updateString("prenom", utilisateur.getPrenom());
+                res.updateString("nom", utilisateur.getNom());
+                res.updateString("dateNaissance", utilisateur.getDateNaissance());
+                res.updateString("adresse", utilisateur.getAdresse());
+                res.updateString("codePostal", utilisateur.getCodePostal());
+                res.updateString("ville", utilisateur.getVille());
+                res.updateString("carteBancaire", utilisateur.getCarteBancaire());
+                res.updateString("dateValiditeCarteBancaire", utilisateur.getDateValiditeCarteBancaire());
+                res.updateString("rib", utilisateur.getRib());
+                res.updateString("iban", utilisateur.getIban());
+                res.updateString("dateCreation", utilisateur.getDateCreation());
+                res.updateString("login", utilisateur.getLogin());
+                res.updateString("password", utilisateur.getPassword());
+                res.updateInt("fk_id_carte", utilisateur.getFk_id_carte());
+                res.updateInt("fk_id_velo", utilisateur.getFk_id_velo());
                 res.updateRow();	
             }
         } catch (SQLException e) {
@@ -120,12 +142,12 @@ public class UtilisateurDAO {
 
     }
 
-    public static void deleteVelo(Velo agent) {
+    public static void deleteUtilisateur(Utilisateur utilisateur) {
 
         Statement stat;
         try {
             stat = ConnexionDB.getConnection().createStatement();
-            stat.executeUpdate("delete from AgentMaintenance where idAgent="+ agent.getIdAgent());
+            stat.executeUpdate("delete from utilisateur where id_utilisateur="+ utilisateur.getId_utilisateur());
         } catch (SQLException e) {
             while (e != null) {
                 System.out.println(e.getErrorCode());
@@ -138,15 +160,26 @@ public class UtilisateurDAO {
         
     }
 
-    public static void insertVelo(Velo agent) {
+    public static void insertUtilisateur(Utilisateur utilisateur) {
 
         PreparedStatement stat;
         try {
-            stat = ConnexionDB.getConnection().prepareStatement("insert into AgentMaintenance (nom,prenom,dateDeNaissance,)lieuDeNaissance values (?,?,?,?)");
-            stat.setString(1, agent.getNom());
-            stat.setString(2, agent.getPrenom());
-            stat.setDate(3, (Date) agent.getDateDeNaissance());
-            stat.setString(4, agent.getLieuDeNaissance());			
+            stat = ConnexionDB.getConnection().prepareStatement("insert into utilisateur (prenom, nom, dateNaissance, adresse, codePostal, ville, carteBancaire, dateValiditeCarteBancaire, rib, iban, dateCreation, login, password, fk_id_carte, fk_id_velo) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            stat.setString(1, utilisateur.getPrenom());
+            stat.setString(2, utilisateur.getNom());
+            stat.setString(3, utilisateur.getDateNaissance());
+            stat.setString(4, utilisateur.getAdresse());
+            stat.setString(5, utilisateur.getCodePostal());
+            stat.setString(6, utilisateur.getVille());
+            stat.setString(7, utilisateur.getCarteBancaire());
+            stat.setString(8, utilisateur.getDateValiditeCarteBancaire());
+            stat.setString(9, utilisateur.getRib());
+            stat.setString(10, utilisateur.getIban());
+            stat.setString(11, utilisateur.getDateCreation());
+            stat.setString(12, utilisateur.getLogin());
+            stat.setString(13, utilisateur.getPassword());
+            stat.setInt(14, utilisateur.getFk_id_carte());
+            stat.setInt(15, utilisateur.getFk_id_velo());
             stat.executeUpdate();
         } catch (SQLException e) {
             while (e != null) {
@@ -158,6 +191,6 @@ public class UtilisateurDAO {
             }
         }
         
-    }*/
+    }
     
 }

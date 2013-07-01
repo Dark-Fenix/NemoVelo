@@ -9,7 +9,7 @@ package vue_admin;
  *
  * @author HallerCasagrande-F
  */
-public class Tools {
+public class Interfaces {
     
     private InterfaceAdminGestionUtilisateurs interGestionUsers = new InterfaceAdminGestionUtilisateurs();
     private InterfaceAdminGestionBornes interGestionBornes = new InterfaceAdminGestionBornes();

@@ -5,7 +5,7 @@ import classes.*;
 import Config.*;
 import DAO.*;
 import vue_admin.InterfaceAdminGestion;
-import vue_admin.Tools;
+import vue_admin.Interfaces;
 
 /**
  *

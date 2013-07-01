@@ -1,5 +1,5 @@
 
-package vue_user_borne;
+package Tools;
 
 import Config.ConfigGlobale;
 import javax.swing.JEditorPane;

@@ -10,7 +10,7 @@ import classes.Station;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JComponent;
-import vue_user_borne.JGoogleMapEditorPan;
+import Tools.JGoogleMapEditorPan;
 
 /**
  *

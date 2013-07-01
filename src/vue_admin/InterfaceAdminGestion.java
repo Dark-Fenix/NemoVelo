@@ -7,7 +7,7 @@ package vue_admin;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
-import vue_user_borne.JGoogleMapEditorPan;
+import Tools.JGoogleMapEditorPan;
 
 
     /**
@@ -16,7 +16,7 @@ import vue_user_borne.JGoogleMapEditorPan;
  */
 public class InterfaceAdminGestion extends javax.swing.JFrame {
 
-    public static Tools tools = new Tools();
+    public static Interfaces tools = new Interfaces();
     
     public InterfaceAdminGestion() {
         initComponents();

@@ -17,13 +17,6 @@ import vue_user_borne.JGoogleMapEditorPan;
  */
 public class EditionStation extends javax.swing.JPanel {
 
-    /**
-     * Creates new form EditionUtilisateur
-     */
-    /*public EditionUtilisateur() {
-        initComponents();
-    }*/
-    
     private Station station;
     
     public EditionStation(Station station) {
@@ -184,10 +177,10 @@ public class EditionStation extends javax.swing.JPanel {
     }//GEN-LAST:event_boutonResetMouseClicked
 
     private void boutonSupprimerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonSupprimerMouseClicked
-        ConfigGlobale.stations.remove(this.station);
-        StationDAO.deleteStation(this.station);
-        // Refaire ça au propre, c'est moche...
         this.setVisible(false);
+        StationDAO.deleteStation(this.station);
+        ConfigGlobale.stations.remove(this.station);
+        InterfaceAdminGestion.tools.getInterGestionStations().RemplissageListeStations();
     }//GEN-LAST:event_boutonSupprimerMouseClicked
 
     private void boutonValiderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonValiderMouseClicked

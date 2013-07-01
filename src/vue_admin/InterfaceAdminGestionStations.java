@@ -18,9 +18,6 @@ import java.util.Iterator;
  */
 public class InterfaceAdminGestionStations extends javax.swing.JPanel {
 
-    /**
-     * Creates new form InterfaceAdminGestionUtilisateurs
-     */
     public InterfaceAdminGestionStations() {
         initComponents();
         RemplissageListeStations();
@@ -38,7 +35,6 @@ public class InterfaceAdminGestionStations extends javax.swing.JPanel {
         DefaultListModel liste = new DefaultListModel();
         for (Iterator<Station> it = ConfigGlobale.stations.iterator(); it.hasNext();) {
             Station u = it.next();
-            //liste.add(u.getId_station(),u);
             liste.addElement(u);
         }
         listeStations.setModel(liste);
@@ -114,7 +110,7 @@ public class InterfaceAdminGestionStations extends javax.swing.JPanel {
 
     private void BoutonAjouterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BoutonAjouterMouseClicked
         EditionStation edition = new EditionStation(new Station());
-        swapPanel(panelEdition, edition);        // TODO add your handling code here:
+        swapPanel(panelEdition, edition);
     }//GEN-LAST:event_BoutonAjouterMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

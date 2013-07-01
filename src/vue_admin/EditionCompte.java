@@ -12,13 +12,6 @@ import classes.Compte;
  * @author HallerCasagrande-F
  */
 public class EditionCompte extends javax.swing.JPanel {
-
-    /**
-     * Creates new form EditionUtilisateur
-     */
-    /*public EditionUtilisateur() {
-        initComponents();
-    }*/
     
     private Compte compte;
     
@@ -158,10 +151,10 @@ public class EditionCompte extends javax.swing.JPanel {
     }//GEN-LAST:event_boutonResetMouseClicked
 
     private void boutonSupprimerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonSupprimerMouseClicked
-        ConfigGlobale.comptes.remove(this.compte);
-        CompteDAO.deleteCompte(this.compte);
-        // Refaire ça au propre, c'est moche...
         this.setVisible(false);
+        CompteDAO.deleteCompte(this.compte);
+        ConfigGlobale.comptes.remove(this.compte);
+        InterfaceAdminGestion.tools.getInterGestionComptes().RemplissageListeComptes();
     }//GEN-LAST:event_boutonSupprimerMouseClicked
 
     private void boutonValiderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonValiderMouseClicked

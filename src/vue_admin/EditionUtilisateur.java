@@ -14,13 +14,6 @@ import java.sql.SQLException;
  */
 public class EditionUtilisateur extends javax.swing.JPanel {
 
-    /**
-     * Creates new form EditionUtilisateur
-     */
-    /*public EditionUtilisateur() {
-        initComponents();
-    }*/
-    
     private Utilisateur user;
     
     public EditionUtilisateur(Utilisateur user) {
@@ -331,10 +324,10 @@ public class EditionUtilisateur extends javax.swing.JPanel {
     }//GEN-LAST:event_boutonResetMouseClicked
 
     private void boutonSupprimerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonSupprimerMouseClicked
+        this.setVisible(false);
         UtilisateurDAO.deleteUtilisateur(this.user);    
         ConfigGlobale.utilisateurs.remove(this.user);
-        // Refaire ça au propre, c'est moche...
-        this.setVisible(false);
+        InterfaceAdminGestion.tools.getInterGestionUsers().RemplissageListeUtilisateurs();
     }//GEN-LAST:event_boutonSupprimerMouseClicked
 
     private void boutonValiderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonValiderMouseClicked

@@ -13,13 +13,6 @@ import classes.Velo;
  */
 public class EditionVelo extends javax.swing.JPanel {
 
-    /**
-     * Creates new form EditionUtilisateur
-     */
-    /*public EditionUtilisateur() {
-        initComponents();
-    }*/
-    
     private Velo velo;
     
     public EditionVelo(Velo velo) {
@@ -171,10 +164,10 @@ public class EditionVelo extends javax.swing.JPanel {
     }//GEN-LAST:event_boutonResetMouseClicked
 
     private void boutonSupprimerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonSupprimerMouseClicked
-        ConfigGlobale.velos.remove(this.velo);
-        VeloDAO.deleteVelo(this.velo);
-        // Refaire ça au propre, c'est moche...
         this.setVisible(false);
+        VeloDAO.deleteVelo(this.velo);
+        ConfigGlobale.velos.remove(this.velo);
+        InterfaceAdminGestion.tools.getInterGestionVelos().RemplissageListeVelos();
     }//GEN-LAST:event_boutonSupprimerMouseClicked
 
     private void boutonValiderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonValiderMouseClicked

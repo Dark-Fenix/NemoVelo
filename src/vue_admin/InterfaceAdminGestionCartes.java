@@ -18,9 +18,6 @@ import java.util.Iterator;
  */
 public class InterfaceAdminGestionCartes extends javax.swing.JPanel {
 
-    /**
-     * Creates new form InterfaceAdminGestionUtilisateurs
-     */
     public InterfaceAdminGestionCartes() {
         initComponents();
         RemplissageListeCartes();
@@ -38,7 +35,6 @@ public class InterfaceAdminGestionCartes extends javax.swing.JPanel {
         DefaultListModel liste = new DefaultListModel();
         for (Iterator<Carte> it = ConfigGlobale.cartes.iterator(); it.hasNext();) {
             Carte u = it.next();
-            //liste.add(u.getId_carte(),u);
             liste.addElement(u);
         }
         listeCartes.setModel(liste);
@@ -114,7 +110,7 @@ public class InterfaceAdminGestionCartes extends javax.swing.JPanel {
 
     private void BoutonAjouterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BoutonAjouterMouseClicked
         EditionCarte edition = new EditionCarte(new Carte());
-        swapPanel(panelEdition, edition);        // TODO add your handling code here:
+        swapPanel(panelEdition, edition);
     }//GEN-LAST:event_BoutonAjouterMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -18,9 +18,6 @@ import java.util.Iterator;
  */
 public class InterfaceAdminGestionUtilisateurs extends javax.swing.JPanel {
 
-    /**
-     * Creates new form InterfaceAdminGestionUtilisateurs
-     */
     public InterfaceAdminGestionUtilisateurs() {
         initComponents();
         RemplissageListeUtilisateurs();
@@ -36,12 +33,8 @@ public class InterfaceAdminGestionUtilisateurs extends javax.swing.JPanel {
 
     public final void RemplissageListeUtilisateurs(){
         DefaultListModel liste = new DefaultListModel();
-        /*for(Utilisateur u : ConfigGlobale.utilisateurs){
-            liste.add(u.getId_utilisateur(),u);
-        }*/
         for (Iterator<Utilisateur> it = ConfigGlobale.utilisateurs.iterator(); it.hasNext();) {
             Utilisateur u = it.next();
-            //liste.add(u.getId_utilisateur(),u);
             liste.addElement(u);
         }
         listeUtilisateurs.setModel(liste);

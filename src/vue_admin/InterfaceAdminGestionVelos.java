@@ -18,9 +18,6 @@ import java.util.Iterator;
  */
 public class InterfaceAdminGestionVelos extends javax.swing.JPanel {
 
-    /**
-     * Creates new form InterfaceAdminGestionUtilisateurs
-     */
     public InterfaceAdminGestionVelos() {
         initComponents();
         RemplissageListeVelos();
@@ -36,10 +33,8 @@ public class InterfaceAdminGestionVelos extends javax.swing.JPanel {
 
     public final void RemplissageListeVelos(){
         DefaultListModel liste = new DefaultListModel();
-        liste.setSize(ConfigGlobale.velos.size());
         for (Iterator<Velo> it = ConfigGlobale.velos.iterator(); it.hasNext();) {
             Velo u = it.next();
-            //liste.add(u.getId_velo(),u);
             liste.addElement(u);
         }
         listeVelos.setModel(liste);

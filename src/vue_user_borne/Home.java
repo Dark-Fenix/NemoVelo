@@ -4,10 +4,8 @@
  */
 package vue_user_borne;
 
-/**
- *
- * @author Aymerick
- */
+import java.awt.Color;
+
 public class Home extends javax.swing.JFrame {
 
     public vue_user_borne.ControleurHome ctrlHome;
@@ -16,6 +14,7 @@ public class Home extends javax.swing.JFrame {
     public Home(ControleurHome aThis) {
         initComponents();
         ctrlHome = aThis;
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -39,9 +38,20 @@ public class Home extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Nemo velo");
+        setBackground(new java.awt.Color(255, 255, 255));
+        setMaximumSize(new java.awt.Dimension(640, 480));
+        setMinimumSize(new java.awt.Dimension(640, 480));
+        setPreferredSize(new java.awt.Dimension(640, 480));
+        setResizable(false);
+        getContentPane().setLayout(null);
 
-        LabelBienvenue.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        LabelBienvenue.setText("Bienvenue");
+        LabelBienvenue.setBackground(new java.awt.Color(255, 255, 255));
+        LabelBienvenue.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        LabelBienvenue.setForeground(new java.awt.Color(136, 212, 29));
+        LabelBienvenue.setText("Bienvenue !");
+        LabelBienvenue.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(LabelBienvenue);
+        LabelBienvenue.setBounds(320, 20, 220, 50);
 
         ButtonLouerHome.setText("Louer un vélo");
         ButtonLouerHome.addActionListener(new java.awt.event.ActionListener() {
@@ -49,6 +59,8 @@ public class Home extends javax.swing.JFrame {
                 ButtonLouerHomeActionPerformed(evt);
             }
         });
+        getContentPane().add(ButtonLouerHome);
+        ButtonLouerHome.setBounds(310, 110, 229, 106);
 
         ButtonRendreHome.setText("Rendre un vélo");
         ButtonRendreHome.addActionListener(new java.awt.event.ActionListener() {
@@ -56,99 +68,40 @@ public class Home extends javax.swing.JFrame {
                 ButtonRendreHomeActionPerformed(evt);
             }
         });
+        getContentPane().add(ButtonRendreHome);
+        ButtonRendreHome.setBounds(310, 260, 229, 106);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jPanel1.setLayout(null);
 
+        LabelMenu.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        LabelMenu.setForeground(new java.awt.Color(136, 212, 29));
         LabelMenu.setText("Menu");
+        jPanel1.add(LabelMenu);
+        LabelMenu.setBounds(77, 13, 38, 17);
 
         ButtonLouer.setText("Louer un vélo");
         ButtonLouer.setEnabled(false);
+        jPanel1.add(ButtonLouer);
+        ButtonLouer.setBounds(20, 40, 162, 70);
 
         ButtonRendre.setText("Rendre un vélo");
         ButtonRendre.setEnabled(false);
+        jPanel1.add(ButtonRendre);
+        ButtonRendre.setBounds(20, 110, 162, 70);
+        ButtonRendre.getAccessibleContext().setAccessibleName("Rendre un velo");
 
         ButtonAccueil.setText("Accueil");
         ButtonAccueil.setEnabled(false);
+        jPanel1.add(ButtonAccueil);
+        ButtonAccueil.setBounds(20, 180, 162, 70);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ButtonLouer, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addComponent(LabelMenu))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(ButtonRendre, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(ButtonAccueil, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LabelMenu)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ButtonLouer, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ButtonRendre, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ButtonAccueil, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(10, 110, 200, 260);
 
-        ButtonRendre.getAccessibleContext().setAccessibleName("Rendre un velo");
-
-        LabelImageNemoVelo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ressource/velonemo.JPG"))); // NOI18N
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LabelImageNemoVelo))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ButtonLouerHome, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ButtonRendreHome, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(24, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(LabelBienvenue)
-                        .addGap(91, 91, 91))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(LabelImageNemoVelo)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(LabelBienvenue)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(ButtonLouerHome, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(ButtonRendreHome, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(194, 194, 194))
-        );
+        LabelImageNemoVelo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vue_user_borne/velonemo.JPG"))); // NOI18N
+        getContentPane().add(LabelImageNemoVelo);
+        LabelImageNemoVelo.setBounds(10, 10, 185, 72);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

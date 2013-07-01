@@ -20,6 +20,7 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
     
     public InterfaceAdminGestion() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

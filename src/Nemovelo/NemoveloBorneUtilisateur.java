@@ -4,7 +4,7 @@
  */
 package Nemovelo;
 
-import vue_user_borne.Fenetre;
+import vue_user_borne.*;
 
 public class NemoveloBorneUtilisateur {
 

@@ -4,17 +4,14 @@
  */
 package vue_user_borne;
 
-/**
- *
- * @author Aymerick
- */
 public class LouerVelo extends javax.swing.JFrame {
 
     public ControleurLouerVelo ctrlLV;
  
     public LouerVelo(ControleurLouerVelo aThis) {
         initComponents();
-        ctrlLV = aThis;                
+        ctrlLV = aThis; 
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -26,30 +23,38 @@ public class LouerVelo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        LabelBienvenue = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
         LabelMenu = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         ButtonLouer = new javax.swing.JButton();
         ButtonRendre = new javax.swing.JButton();
         ButtonAccueil = new javax.swing.JButton();
+        LabelMenu2 = new javax.swing.JLabel();
         LabelImageNemoVelo = new javax.swing.JLabel();
         LabelCarte = new javax.swing.JLabel();
         LabelRecupVelo = new javax.swing.JLabel();
         LabelRemerciement = new javax.swing.JLabel();
+        LabelBienvenue = new javax.swing.JLabel();
+
+        LabelMenu.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        LabelMenu.setForeground(new java.awt.Color(136, 212, 29));
+        LabelMenu.setText("Menu");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Nemo velo");
+        setBackground(new java.awt.Color(255, 255, 255));
+        setMaximumSize(new java.awt.Dimension(640, 480));
+        setMinimumSize(new java.awt.Dimension(640, 480));
+        setPreferredSize(new java.awt.Dimension(640, 480));
         setResizable(false);
-
-        LabelBienvenue.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        LabelBienvenue.setText("Bienvenue");
+        getContentPane().setLayout(null);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-        LabelMenu.setText("Menu");
+        jPanel1.setLayout(null);
 
         ButtonLouer.setText("Louer un vélo");
         ButtonLouer.setEnabled(false);
+        jPanel1.add(ButtonLouer);
+        ButtonLouer.setBounds(20, 40, 162, 70);
 
         ButtonRendre.setText("Rendre un vélo");
         ButtonRendre.addActionListener(new java.awt.event.ActionListener() {
@@ -57,6 +62,9 @@ public class LouerVelo extends javax.swing.JFrame {
                 ButtonRendreActionPerformed(evt);
             }
         });
+        jPanel1.add(ButtonRendre);
+        ButtonRendre.setBounds(20, 110, 162, 70);
+        ButtonRendre.getAccessibleContext().setAccessibleName("Rendre un velo");
 
         ButtonAccueil.setText("Accueil");
         ButtonAccueil.addActionListener(new java.awt.event.ActionListener() {
@@ -64,98 +72,44 @@ public class LouerVelo extends javax.swing.JFrame {
                 ButtonAccueilActionPerformed(evt);
             }
         });
+        jPanel1.add(ButtonAccueil);
+        ButtonAccueil.setBounds(20, 180, 162, 70);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ButtonLouer, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addComponent(LabelMenu))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(ButtonRendre, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(ButtonAccueil, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LabelMenu)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ButtonLouer, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ButtonRendre, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ButtonAccueil, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        LabelMenu2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        LabelMenu2.setForeground(new java.awt.Color(136, 212, 29));
+        LabelMenu2.setText("Menu");
+        jPanel1.add(LabelMenu2);
+        LabelMenu2.setBounds(77, 13, 38, 17);
 
-        ButtonRendre.getAccessibleContext().setAccessibleName("Rendre un velo");
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(10, 110, 198, 268);
 
-        LabelImageNemoVelo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ressource/velonemo.JPG"))); // NOI18N
+        LabelImageNemoVelo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vue_user_borne/velonemo.JPG"))); // NOI18N
+        getContentPane().add(LabelImageNemoVelo);
+        LabelImageNemoVelo.setBounds(10, 10, 185, 72);
 
-        LabelCarte.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        LabelCarte.setText("1) Mettre votre carte");
+        LabelCarte.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        LabelCarte.setText("1) Insérez votre carte");
+        getContentPane().add(LabelCarte);
+        LabelCarte.setBounds(240, 150, 270, 29);
 
-        LabelRecupVelo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        LabelRecupVelo.setText("2) Recuperer le velo indiqué");
+        LabelRecupVelo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        LabelRecupVelo.setText("2) Recupérez le velo : ");
+        getContentPane().add(LabelRecupVelo);
+        LabelRecupVelo.setBounds(240, 220, 370, 29);
 
-        LabelRemerciement.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        LabelRemerciement.setText("3) Merci et bonne route");
+        LabelRemerciement.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        LabelRemerciement.setText("3) Merci et bonne route !");
+        getContentPane().add(LabelRemerciement);
+        LabelRemerciement.setBounds(240, 290, 350, 29);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(LabelImageNemoVelo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(LabelBienvenue)
-                        .addGap(91, 91, 91))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LabelRecupVelo)
-                            .addComponent(LabelCarte)
-                            .addComponent(LabelRemerciement))
-                        .addContainerGap(39, Short.MAX_VALUE))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(LabelImageNemoVelo)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(LabelBienvenue)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addComponent(LabelCarte)
-                        .addGap(56, 56, 56)
-                        .addComponent(LabelRecupVelo)
-                        .addGap(49, 49, 49)
-                        .addComponent(LabelRemerciement)))
-                .addGap(194, 194, 194))
-        );
+        LabelBienvenue.setBackground(new java.awt.Color(255, 255, 255));
+        LabelBienvenue.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        LabelBienvenue.setForeground(new java.awt.Color(136, 212, 29));
+        LabelBienvenue.setText("Louer un vélo");
+        LabelBienvenue.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(LabelBienvenue);
+        LabelBienvenue.setBounds(300, 20, 250, 50);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -176,6 +130,7 @@ public class LouerVelo extends javax.swing.JFrame {
     private javax.swing.JLabel LabelCarte;
     private javax.swing.JLabel LabelImageNemoVelo;
     private javax.swing.JLabel LabelMenu;
+    private javax.swing.JLabel LabelMenu2;
     private javax.swing.JLabel LabelRecupVelo;
     private javax.swing.JLabel LabelRemerciement;
     private javax.swing.JPanel jPanel1;

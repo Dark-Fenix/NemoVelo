@@ -39,8 +39,8 @@ public class Compte {
     }
     
     /**
-     *
-     * @return
+     * Retourne l'ID du compte
+     * @return Int
      */
     public int getId_compte() {
         return id_compte;
@@ -48,7 +48,7 @@ public class Compte {
 
     // NE DOIT PAS ETRE UTILISE POUR NE PAS INTERFERER AVEC LA BDD
     /**
-     *
+     * Définit l'ID du compte
      * @param id_compte
      */
     public void setId_compte(int id_compte) {
@@ -56,17 +56,17 @@ public class Compte {
     }
 
     /**
-     *
-     * @return
+     * Retourne le type du compte
+     * @return String
      */
     public String getTypeCompte() {
         return typeCompte;
     }
 
     /**
-     *
+     * Définit le type du compte
      * @param typeCompte
-     * @return
+     * @return Int
      */
     public int setTypeCompte(String typeCompte) {
         if(typeCompte.equalsIgnoreCase("solde") || typeCompte.equalsIgnoreCase("abonnement")){
@@ -79,15 +79,15 @@ public class Compte {
     }
 
     /**
-     *
-     * @return
+     * Retourne le solde du compte
+     * @return Double
      */
     public double getSolde() {
         return solde;
     }
 
     /**
-     *
+     * Définit le solde du compte
      * @param solde
      */
     public void setSolde(double solde) {
@@ -95,17 +95,17 @@ public class Compte {
     }
 
     /**
-     *
-     * @return
+     * Retourne la date de création du compte
+     * @return String
      */
     public String getDateCreation() {
         return dateCreation;
     }
 
     /**
-     *
+     * Définit la date de création du compte
      * @param dateCreation
-     * @return
+     * @return Int
      */
     public int setDateCreation(String dateCreation) {
         if(dateCreation.matches(ConfigGlobale.regexValidationDate)){
@@ -118,15 +118,15 @@ public class Compte {
     }
 
     /**
-     *
-     * @return
+     * Retourne l'ID de l'utilisateur à qui est lié le compte
+     * @return Int
      */
     public int getFk_id_utilisateur() {
         return fk_id_utilisateur;
     }
 
     /**
-     *
+     * Définit l'ID de l'utilisateur à qui est lié le compte
      * @param fk_id_utilisateur
      */
     public void setFk_id_utilisateur(int fk_id_utilisateur) {
@@ -140,7 +140,7 @@ public class Compte {
     
     /**
      * Retourne une magnifique chaîne représentant l'objet
-     * @return
+     * @return String
      */
     public String toStringComplet(){
         String temp = "Compte "+this.id_compte+", type du compte : "+this.typeCompte+", date de creation : "+this.dateCreation+", solde : "+this.solde;

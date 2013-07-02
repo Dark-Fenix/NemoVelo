@@ -39,8 +39,8 @@ public class Station {
     }
 
     /**
-     *
-     * @return
+     * Retourne l'ID de la station
+     * @return Int
      */
     public int getId_station() {
         return id_station;
@@ -48,7 +48,7 @@ public class Station {
 
     // NE DOIT PAS ETRE UTILISE POUR NE PAS INTERFERER AVEC LA BDD
     /**
-     *
+     * Définit l'ID de la station
      * @param id_station
      */
     public void setId_station(int id_station) {
@@ -56,17 +56,17 @@ public class Station {
     }
 
     /**
-     *
-     * @return
+     * Retourne le SN de la station
+     * @return String
      */
     public String getSerialNumber() {
         return serialNumber;
     }
 
     /**
-     *
+     * Définit le SN de la station
      * @param serialNumber
-     * @return
+     * @return Int
      */
     public int setSerialNumber(String serialNumber) {
         if(serialNumber.length()>ConfigGlobale.longueurSNStation){
@@ -79,17 +79,17 @@ public class Station {
     }
     
     /**
-     *
-     * @return
+     * Retourne l'état de la station
+     * @return String
      */
     public String getEtat() {
         return etat;
     }
 
     /**
-     *
+     * Définit l'état de la station
      * @param etat
-     * @return
+     * @return Int
      */
     public int setEtat(String etat) {
         if(etat.equalsIgnoreCase(ConfigGlobale.etatHS) || etat.equalsIgnoreCase(ConfigGlobale.etatOK) || etat.equalsIgnoreCase(ConfigGlobale.etatOFF) || etat.equalsIgnoreCase(ConfigGlobale.etatMaintenance)){
@@ -102,15 +102,15 @@ public class Station {
     }
     
      /**
-     *
-     * @return
+     * Retourne la latitude de la station
+     * @return String
      */
     public String getLatitude() {
         return latitude;
     }
 
     /**
-     *
+     * Définit la latitude de la station
      * @param latitude
      */
     public void setLatitude(String latitude) {
@@ -118,15 +118,15 @@ public class Station {
     }
 
     /**
-     *
-     * @return
+     * Retourne la longitude de la station
+     * @return String
      */
     public String getLongitude() {
         return longitude;
     }
 
     /**
-     *
+     * Définit la longitude de la station
      * @param longitude
      */
     public void setLongitude(String longitude) {
@@ -140,7 +140,7 @@ public class Station {
     
     /**
      * Retourne une magnifique chaîne représentant l'objet
-     * @return
+     * @return String
      */
     public String toStringComplet(){
         return "Station "+this.id_station+" : numero de serie "+this.serialNumber+", etat : "+this.etat+", latitude : "+this.latitude+", longitude : "+this.longitude;

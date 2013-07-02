@@ -54,7 +54,7 @@ public class Borne {
     }
 
     /**
-     * Retourne le SN d'une borne
+     * Retourne le SN de la borne
      * @return String
      */
     public String getSerialNumber() {
@@ -62,7 +62,7 @@ public class Borne {
     }
 
     /**
-     * Définit le SN d'une borne
+     * Définit le SN de la borne
      * @param serialNumber
      * @return Int
      */
@@ -77,17 +77,17 @@ public class Borne {
     }
     
     /**
-     * Retourne l'état d'une borne
-     * @return Sting
+     * Retourne l'état de la borne
+     * @return String
      */
     public String getEtat() {
         return etat;
     }
 
     /**
-     * Définit l'état d'une borne
+     * Définit l'état de la borne
      * @param etat
-     * @return
+     * @return Int
      */
     public int setEtat(String etat) {
         if(etat.equalsIgnoreCase(ConfigGlobale.etatHS) || etat.equalsIgnoreCase(ConfigGlobale.etatOK) || etat.equalsIgnoreCase(ConfigGlobale.etatOFF) || etat.equalsIgnoreCase(ConfigGlobale.etatMaintenance)){
@@ -123,7 +123,7 @@ public class Borne {
     
     /**
      * Retourne une magnifique chaîne représentant l'objet
-     * @return
+     * @return String
      */
     public String toStringComplet(){
         String temp = "Borne "+this.id_borne+" : numero de serie "+this.serialNumber+", etat : "+this.etat;

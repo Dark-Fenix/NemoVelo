@@ -42,7 +42,7 @@ public class Velo {
     }
     
     /**
-     * Retourne l'ID d'un vélo
+     * Retourne l'ID du vélo
      * @return Int
      */
     public int getId_velo() {
@@ -51,7 +51,7 @@ public class Velo {
 
     // NE DOIT PAS ETRE UTILISE POUR NE PAS INTERFERER AVEC LA BDD
     /**
-     * Définit l'ID d'un vélo
+     * Définit l'ID du vélo
      * @param id_velo
      */
     public void setId_velo(int id_velo) {
@@ -59,15 +59,15 @@ public class Velo {
     }
 
     /**
-     * Retourne le SN d'un vélo
-     * @return
+     * Retourne le SN du vélo
+     * @return String
      */
     public String getSerialNumber() {
         return serialNumber;
     }
 
     /**
-     * Définit 
+     * Définit le SN du vélo
      * @param serialNumber
      * @return Int
      */
@@ -82,7 +82,7 @@ public class Velo {
     }
 
     /**
-     *
+     * Retourne la date de mise en service du vélo
      * @return String
      */
     public String getDateMiseEnService() {
@@ -90,7 +90,7 @@ public class Velo {
     }
 
     /**
-     *
+     * Définit la date de mise en service du vélo
      * @param dateMiseEnService
      * @return Int
      */
@@ -105,7 +105,7 @@ public class Velo {
     }
 
     /**
-     *
+     * Retourne le nombre de km parcourus du vélo
      * @return Double
      */
     public double getKmParcourus() {
@@ -113,7 +113,7 @@ public class Velo {
     }
 
     /**
-     *
+     * Définit le nombre de kilomètre parcourus du vélo
      * @param kmParcourus
      */
     public void setKmParcourus(double kmParcourus) {
@@ -121,7 +121,7 @@ public class Velo {
     }
 
     /**
-     *
+     * Retourne l'état du vélo
      * @return String
      */
     public String getEtat() {
@@ -129,7 +129,7 @@ public class Velo {
     }
 
     /**
-     *
+     * Définit l'état du vélo
      * @param etat
      * @return Int
      */
@@ -144,7 +144,7 @@ public class Velo {
     }
 
     /**
-     *
+     * Retourne à quelle borne est attaché le vélo (-1 si aucune)
      * @return Int
      */
     public int getFk_id_borne() {
@@ -152,7 +152,7 @@ public class Velo {
     }
 
     /**
-     *
+     * Définit à quelle borne est attaché le vélo
      * @param fk_id_borne
      */
     public void setFk_id_borne(int fk_id_borne) {

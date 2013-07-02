@@ -30,8 +30,8 @@ public class Carte {
     }
 
     /**
-     *
-     * @return
+     * Retourne l'ID de la carte
+     * @return Int
      */
     public int getId_carte() {
         return id_carte;
@@ -39,7 +39,7 @@ public class Carte {
 
     // NE DOIT PAS ETRE UTILISE POUR NE PAS INTERFERER AVEC LA BDD
     /**
-     *
+     * Définit l'ID de la carte
      * @param id_carte
      */
     public void setId_carte(int id_carte) {
@@ -47,17 +47,17 @@ public class Carte {
     }
     
     /**
-     *
-     * @return
+     * Retourne le SN de la carte
+     * @return String
      */
     public String getSerialNumber() {
         return serialNumber;
     }
 
     /**
-     *
+     * Définit le SN de la carte
      * @param serialNumber
-     * @return
+     * @return Int
      */
     public int setSerialNumber(String serialNumber) {
         if(serialNumber.length()>ConfigGlobale.longueurSNCarte){
@@ -76,7 +76,7 @@ public class Carte {
     
     /**
      * Retourne une magnifique chaîne représentant l'objet
-     * @return
+     * @return String
      */
     public String toStringComplet(){
         return "Carte "+this.id_carte+" : numero de serie "+this.serialNumber;

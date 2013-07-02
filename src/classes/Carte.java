@@ -9,17 +9,18 @@ import Config.ConfigGlobale;
  */
 public class Carte {
     
+    // Définition des attributs de base de la classe
     private int id_carte = 0;
     private String serialNumber = "007FF007";
     
     /**
-     *
+     * Initialise un objet carte avec les attributs de base
      */
     public Carte(){
     }
     
     /**
-     *
+     * Initialise un objet carte avec les attributs fournis
      * @param id_carte
      * @param serialNumber
      */
@@ -74,7 +75,7 @@ public class Carte {
     }
     
     /**
-     *
+     * Retourne une magnifique chaîne représentant l'objet
      * @return
      */
     public String toStringComplet(){

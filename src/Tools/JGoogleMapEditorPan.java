@@ -1,4 +1,3 @@
-
 package Tools;
 
 import Config.ConfigGlobale;
@@ -7,33 +6,22 @@ import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLEditorKit;
 
 /**
-*
+* Classe pour l'affichage d'une carte Google Map
 * @author Fenix
 */
 public class JGoogleMapEditorPan extends JEditorPane {
 
+    // Définition des paramètres
     private int zoomFactor = 15;
     private String ApiKey = ConfigGlobale.ApiKey;
     private String roadmap = "roadmap";
-    /**
-     *
-     */
     public final String viewTerrain = "terrain";
-    /**
-     *
-     */
     public final String viewSatellite = "satellite";
-    /**
-     *
-     */
     public final String viewHybrid = "hybrid";
-    /**
-     *
-     */
     public final String viewRoadmap = "roadmap";
 
     /**
-     *
+     * Création du panel pour l'affichage de la Google Map
      */
     public JGoogleMapEditorPan() {
         HTMLEditorKit kit = new HTMLEditorKit();
@@ -45,7 +33,7 @@ public class JGoogleMapEditorPan extends JEditorPane {
     }
 
     /**
-     *
+     * Définition du zoom
      * @param zoom
      */
     public void setZoom(int zoom) {
@@ -53,15 +41,7 @@ public class JGoogleMapEditorPan extends JEditorPane {
     }
 
     /**
-     *
-     * @param key
-     */
-    public void setApiKey(String key) {
-        this.ApiKey = key;
-    }
-
-    /**
-     *
+     * Définition du type de carte
      * @param roadMap
      */
     public void setRoadmap(String roadMap) {
@@ -69,7 +49,7 @@ public class JGoogleMapEditorPan extends JEditorPane {
     }
 
     /**
-     *
+     * Affiche la carte Google Map en fonction de coordonnées
      * @param latitude
      * @param longitude
      * @param width
@@ -81,17 +61,13 @@ public class JGoogleMapEditorPan extends JEditorPane {
     }
 
     /**
-     *
-     * @param city
-     * @param country
+     * Prépare l'url et récupère une vue de la carte Google Map
+     * @param latitude
+     * @param longitude
      * @param width
      * @param height
      * @throws Exception
      */
-    public void showLocation(String city, String country, int width, int height) throws Exception {
-        this.setMap(city, country, width, height);
-    }
-
     private void setMap(String x, String y, Integer width, Integer height) throws Exception {
         if (this.ApiKey.isEmpty()) {
             throw new Exception("Developper API Key not set !!!!");

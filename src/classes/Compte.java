@@ -9,6 +9,7 @@ import Config.ConfigGlobale;
  */
 public class Compte {
     
+    // Définition des attributs de base de la classe
     private int id_compte = 0;
     private String typeCompte = "abonnement";
     private double solde = 0;
@@ -16,13 +17,13 @@ public class Compte {
     private int fk_id_utilisateur = 0;
     
     /**
-     *
+     * Initialise un objet compte avec les attributs de base
      */
     public Compte(){
     }
 
     /**
-     *
+     * Initialise un objet compte avec les attributs fournis
      * @param id_compte
      * @param typeCompte
      * @param solde
@@ -138,7 +139,7 @@ public class Compte {
     }
     
     /**
-     *
+     * Retourne une magnifique chaîne représentant l'objet
      * @return
      */
     public String toStringComplet(){

@@ -5,6 +5,7 @@
 package vue_user_borne;
 
 import java.awt.Color;
+import vue_admin.InterfaceAdminGestion;
 
 /**
 *
@@ -23,6 +24,7 @@ public class Home extends javax.swing.JFrame {
      * @param aThis
      */
     public Home(ControleurHome aThis) {
+        
         initComponents();
         ctrlHome = aThis;
         this.setLocationRelativeTo(null);

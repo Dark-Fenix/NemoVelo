@@ -9,6 +9,7 @@ import Config.ConfigGlobale;
  */
 public class Station {
     
+    // Définition des attributs de base de la classe
     private int id_station = 0;
     private String serialNumber = "KL34KL3411";
     private String etat = "off";
@@ -16,13 +17,13 @@ public class Station {
     private String longitude = null;
     
     /**
-     *
+     * Initialise un objet station avec les attributs de base
      */
     public Station(){
     }
     
     /**
-     *
+     * Initialise un objet station avec les attributs fournis
      * @param id_station
      * @param serialNumber
      * @param etat
@@ -138,7 +139,7 @@ public class Station {
     }
     
     /**
-     *
+     * Retourne une magnifique chaîne représentant l'objet
      * @return
      */
     public String toStringComplet(){

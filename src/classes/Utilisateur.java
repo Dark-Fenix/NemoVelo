@@ -9,6 +9,7 @@ import Config.ConfigGlobale;
  */
 public class Utilisateur {
     
+    // Définition des attributs de base de la classe
     private int id_utilisateur = 0;
     private String prenom = "undefined";
     private String nom = "undefined";
@@ -27,13 +28,13 @@ public class Utilisateur {
     private int fk_id_velo = -1;
     
     /**
-     *
+     * Initialise un objet utlisateur avec les attributs de base
      */
     public Utilisateur(){
     }
 
     /**
-     *
+     * Initialise un objet utlisateur avec les attributs fournis
      * @param id_utilisateur
      * @param prenom
      * @param nom
@@ -424,7 +425,7 @@ public class Utilisateur {
     }
     
     /**
-     *
+     * Retourne une magnifique chaîne représentant l'objet de façon allégée
      * @return
      */
     public String toStringLight(){
@@ -432,7 +433,7 @@ public class Utilisateur {
     }
     
     /**
-     *
+     * Retourne une magnifique chaîne représentant les attributs confidentiels de l'objet
      * @return
      */
     public String toStringSecret(){

@@ -9,6 +9,7 @@ import Config.ConfigGlobale;
  */
 public class Velo {
 
+    // Définition des attributs de base de la classe
     private int id_velo = 0;
     private String serialNumber = "CK00000000";
     private String dateMiseEnService = "2000-01-01";
@@ -17,13 +18,13 @@ public class Velo {
     private int fk_id_borne = -1;
 
     /**
-     *
+     * Initialise un objet vélo avec les attributs de base
      */
     public Velo() {
     }
     
     /**
-     *
+     * Initialise un objet vélo avec les attributs fournis
      * @param id_velo
      * @param serialNumber
      * @param dateMiseEnService
@@ -41,8 +42,8 @@ public class Velo {
     }
     
     /**
-     *
-     * @return
+     * Retourne l'ID d'un vélo
+     * @return Int
      */
     public int getId_velo() {
         return id_velo;
@@ -50,7 +51,7 @@ public class Velo {
 
     // NE DOIT PAS ETRE UTILISE POUR NE PAS INTERFERER AVEC LA BDD
     /**
-     *
+     * Définit l'ID d'un vélo
      * @param id_velo
      */
     public void setId_velo(int id_velo) {
@@ -58,7 +59,7 @@ public class Velo {
     }
 
     /**
-     *
+     * Retourne le SN d'un vélo
      * @return
      */
     public String getSerialNumber() {
@@ -66,9 +67,9 @@ public class Velo {
     }
 
     /**
-     *
+     * Définit 
      * @param serialNumber
-     * @return
+     * @return Int
      */
     public int setSerialNumber(String serialNumber) {
         if(serialNumber.length()>ConfigGlobale.longueurSNVelo){
@@ -82,7 +83,7 @@ public class Velo {
 
     /**
      *
-     * @return
+     * @return String
      */
     public String getDateMiseEnService() {
         return dateMiseEnService;
@@ -91,7 +92,7 @@ public class Velo {
     /**
      *
      * @param dateMiseEnService
-     * @return
+     * @return Int
      */
     public int setDateMiseEnService(String dateMiseEnService) {
         if(dateMiseEnService.matches(ConfigGlobale.regexValidationDate)){
@@ -105,7 +106,7 @@ public class Velo {
 
     /**
      *
-     * @return
+     * @return Double
      */
     public double getKmParcourus() {
         return kmParcourus;
@@ -121,7 +122,7 @@ public class Velo {
 
     /**
      *
-     * @return
+     * @return String
      */
     public String getEtat() {
         return etat;
@@ -130,7 +131,7 @@ public class Velo {
     /**
      *
      * @param etat
-     * @return
+     * @return Int
      */
     public int setEtat(String etat) {
         if(etat.equalsIgnoreCase(ConfigGlobale.etatHS) || etat.equalsIgnoreCase(ConfigGlobale.etatOK) || etat.equalsIgnoreCase(ConfigGlobale.etatOFF) || etat.equalsIgnoreCase(ConfigGlobale.etatMaintenance)){
@@ -144,7 +145,7 @@ public class Velo {
 
     /**
      *
-     * @return
+     * @return Int
      */
     public int getFk_id_borne() {
         return fk_id_borne;
@@ -164,8 +165,8 @@ public class Velo {
     }
     
     /**
-     *
-     * @return
+     * Retourne une magnifique chaîne représentant l'objet
+     * @return String
      */
     public String toStringComplet(){
         String temp = "Vélo "+this.id_velo+" : SN "+this.serialNumber+", mis en service le "+this.dateMiseEnService+", KM parcourus : "+this.kmParcourus+", etat : "+this.etat;

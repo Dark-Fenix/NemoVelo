@@ -9,19 +9,20 @@ import Config.ConfigGlobale;
  */
 public class Borne {
     
+    // Définition des attributs de base de la classe
     private int id_borne = 0;
     private String serialNumber = "HHHH66HHHH";
     private String etat = "off";
     private int fk_id_station = -1;
     
     /**
-     *
+     * Initialise un objet borne avec les attributs de base
      */
     public Borne(){
     }
     
     /**
-     *
+     * Initialise un objet borne avec les attributs fournis
      * @param id_borne
      * @param serialNumber
      * @param etat
@@ -35,8 +36,8 @@ public class Borne {
     }
 
     /**
-     *
-     * @return
+     * Retourne l'ID de la borne
+     * @return Int
      */
     public int getId_borne() {
         return id_borne;
@@ -44,26 +45,26 @@ public class Borne {
 
     // NE DOIT PAS ETRE UTILISE POUR NE PAS INTERFERER AVEC LA BDD
     /**
-     *
+     * Définit l'ID de la borne
      * @param id_borne
-     * @return
+     * @return Int
      */
     public int setId_borne(int id_borne) {
         return this.id_borne = id_borne;
     }
 
     /**
-     *
-     * @return
+     * Retourne le SN d'une borne
+     * @return String
      */
     public String getSerialNumber() {
         return serialNumber;
     }
 
     /**
-     *
+     * Définit le SN d'une borne
      * @param serialNumber
-     * @return
+     * @return Int
      */
     public int setSerialNumber(String serialNumber) {
         if(serialNumber.length()>ConfigGlobale.longueurSNBorne){
@@ -76,15 +77,15 @@ public class Borne {
     }
     
     /**
-     *
-     * @return
+     * Retourne l'état d'une borne
+     * @return Sting
      */
     public String getEtat() {
         return etat;
     }
 
     /**
-     *
+     * Définit l'état d'une borne
      * @param etat
      * @return
      */
@@ -99,17 +100,17 @@ public class Borne {
     }
 
     /**
-     *
-     * @return
+     * Retourne l'ID de la station d'attache de la borne
+     * @return Int
      */
     public int getFk_id_station() {
         return fk_id_station;
     }
 
     /**
-     *
+     * Définit l'ID de la station d'attache de la borne
      * @param fk_id_station
-     * @return
+     * @return Int
      */
     public int setFk_id_station(int fk_id_station) {
         return this.fk_id_station = fk_id_station;
@@ -121,7 +122,7 @@ public class Borne {
     }
     
     /**
-     *
+     * Retourne une magnifique chaîne représentant l'objet
      * @return
      */
     public String toStringComplet(){

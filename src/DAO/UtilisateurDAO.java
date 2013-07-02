@@ -5,7 +5,6 @@
 package DAO;
 
 import classes.Utilisateur;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,8 +18,8 @@ import java.util.ArrayList;
 public class UtilisateurDAO {
 
     /**
-     *
-     * @return
+     * Retourne tous les utlisateurs de la DB
+     * @return ArrayList<Utilisateur>
      */
     public static ArrayList<Utilisateur> getAllUtilisateur() {
 
@@ -67,9 +66,9 @@ public class UtilisateurDAO {
     }
 
     /**
-     *
+     * Retourne un utlisateur de la DB en fonction de son ID
      * @param id_utilisateur
-     * @return
+     * @return Utilisateur
      */
     public static Utilisateur getUtilisateurById(int id_utilisateur) {
 
@@ -115,8 +114,8 @@ public class UtilisateurDAO {
 	
 
     /**
-     *
-     * @param utilisateur
+     * Met à jour un utlisateur dans la DB
+     * @param utlisateur
      */
     public static void updateUtilisateur(Utilisateur utilisateur) {
 
@@ -156,8 +155,8 @@ public class UtilisateurDAO {
     }
 
     /**
-     *
-     * @param utilisateur
+     * Supprime un utlisateur dans la DB
+     * @param utlisateur
      */
     public static void deleteUtilisateur(Utilisateur utilisateur) {
 
@@ -178,8 +177,8 @@ public class UtilisateurDAO {
     }
 
     /**
-     *
-     * @param utilisateur
+     * Insère un utlisateur dans la DB
+     * @param utlisateur
      */
     public static void insertUtilisateur(Utilisateur utilisateur) {
 

@@ -19,7 +19,7 @@ import java.util.Iterator;
 public class InterfaceAdminGestionStations extends javax.swing.JPanel {
 
     /**
-     *
+     * Initialise l'interface de sélection des stations
      */
     public InterfaceAdminGestionStations() {
         initComponents();
@@ -29,7 +29,7 @@ public class InterfaceAdminGestionStations extends javax.swing.JPanel {
 
 
     /**
-     *
+     * Initialise la liste de stations en fonction de la BDD
      */
     public final void RemplissageListeStations(){
         DefaultListModel liste = new DefaultListModel();
@@ -49,7 +49,7 @@ public class InterfaceAdminGestionStations extends javax.swing.JPanel {
         
     
     /**
-     *
+     * Fonction utilitaire pour palier aux problèmes de rafraichissement
      * @param panelDeBase
      * @param newPanel
      */

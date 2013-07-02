@@ -13,7 +13,7 @@ import javax.swing.*;
 public class InterfaceAdminGestion extends javax.swing.JFrame {
     
     /**
-     *
+     * Initialise l'interface de sélection des interfaces de gestion
      */
     public InterfaceAdminGestion() {
         
@@ -200,7 +200,7 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
     }//GEN-LAST:event_boutonVelosMouseClicked
 
     /**
-     *
+     * Fonction utilitaire pour palier aux problèmes de rafraichissement
      * @param panelDeBase
      * @param newPanel
      */

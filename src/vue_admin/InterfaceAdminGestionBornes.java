@@ -19,7 +19,7 @@ import java.util.Iterator;
 public class InterfaceAdminGestionBornes extends javax.swing.JPanel {
 
     /**
-     *
+     * Initialise l'interface de sélection des bornes
      */
     public InterfaceAdminGestionBornes() {
         initComponents();
@@ -28,7 +28,7 @@ public class InterfaceAdminGestionBornes extends javax.swing.JPanel {
 
 
     /**
-     *
+     * Initialise la liste de bornes en fonction de la BDD
      */
     public final void RemplissageListeBornes(){
         DefaultListModel liste = new DefaultListModel();
@@ -48,7 +48,7 @@ public class InterfaceAdminGestionBornes extends javax.swing.JPanel {
         
     
     /**
-     *
+     * Fonction utilitaire pour palier aux problèmes de rafraichissement
      * @param panelDeBase
      * @param newPanel
      */

@@ -19,6 +19,10 @@ public class Interfaces {
     private static InterfaceAdminGestionStations interGestionStations = null;
     private static InterfaceAdminGestion interAdminGestion = null;
 
+    /**
+     * Retourne l'interface d'administration principale en la créant au besoin (initialisation)
+     * @return InterfaceAdminGestion
+     */
     public static InterfaceAdminGestion getInterAdminGestion() {
         if (interAdminGestion == null){
             interAdminGestion = new InterfaceAdminGestion();
@@ -26,13 +30,17 @@ public class Interfaces {
         return interAdminGestion;
     }
 
+    /**
+     * Définit l'interface d'administration principale comme celle fournie
+     * @param interAdminGestion
+     */
     public static void setInterAdminGestion(InterfaceAdminGestion a) {
         interAdminGestion = a;
     }
 
     /**
-     *
-     * @return
+     * Retourne l'interface d'administration des utilisateurs en la créant au besoin (initialisation)
+     * @return InterfaceAdminGestionUtilisateurs
      */
     public static InterfaceAdminGestionUtilisateurs getInterGestionUsers() {
         if (interGestionUsers == null){
@@ -42,7 +50,7 @@ public class Interfaces {
     }
 
     /**
-     *
+     * Définit l'interface d'administration des utilisateurs comme celle fournie
      * @param interGestionUsers
      */
     public static void setInterGestionUsers(InterfaceAdminGestionUtilisateurs b) {
@@ -50,8 +58,8 @@ public class Interfaces {
     }
 
     /**
-     *
-     * @return
+     * Retourne l'interface d'administration des bornes en la créant au besoin (initialisation)
+     * @return InterfaceAdminGestionBornes
      */
     public static InterfaceAdminGestionBornes getInterGestionBornes() {
         if (interGestionBornes == null){
@@ -61,7 +69,7 @@ public class Interfaces {
     }
 
     /**
-     *
+     * Définit l'interface d'administration des bornes comme celle fournie
      * @param interGestionBornes
      */
     public static void setInterGestionBornes(InterfaceAdminGestionBornes c) {
@@ -69,8 +77,8 @@ public class Interfaces {
     }
 
     /**
-     *
-     * @return
+     * Retourne l'interface d'administration des comptes en la créant au besoin (initialisation)
+     * @return InterfaceAdminGestionComptes
      */
     public static InterfaceAdminGestionComptes getInterGestionComptes() {
         if (interGestionComptes == null){
@@ -80,16 +88,16 @@ public class Interfaces {
     }
 
     /**
-     *
+     * Définit l'interface d'administration des comptes comme celle fournie
      * @param interGestionComptes
      */
     public static void setInterGestionComptes(InterfaceAdminGestionComptes d) {
         interGestionComptes = d;
     }
 
-    /**
-     *
-     * @return
+    /** 
+     * Retourne l'interface d'administration des cartes en la créant au besoin (initialisation)
+     * @return InterfaceAdminGestionCartes
      */
     public static InterfaceAdminGestionCartes getInterGestionCartes() {
         if (interGestionCartes == null){
@@ -99,7 +107,7 @@ public class Interfaces {
     }
 
     /**
-     *
+     * Définit l'interface d'administration des cartes comme celle fournie
      * @param interGestionCartes
      */
     public static void setInterGestionCartes(InterfaceAdminGestionCartes e) {
@@ -107,8 +115,8 @@ public class Interfaces {
     }
 
     /**
-     *
-     * @return
+     * Retourne l'interface d'administration des vélos en la créant au besoin (initialisation)
+     * @return InterfaceAdminGestionVelos
      */
     public static InterfaceAdminGestionVelos getInterGestionVelos() {
         if (interGestionVelos == null){
@@ -118,7 +126,7 @@ public class Interfaces {
     }
 
     /**
-     *
+     * Définit l'interface d'administration des vélos comme celle fournie
      * @param interGestionVelos
      */
     public static void setInterGestionVelos(InterfaceAdminGestionVelos f) {
@@ -126,8 +134,8 @@ public class Interfaces {
     }
 
     /**
-     *
-     * @return
+     * Retourne l'interface d'administration des stations en la créant au besoin (initialisation)
+     * @return InterfaceAdminGestionStations
      */
     public static InterfaceAdminGestionStations getInterGestionStations() {
         if (interGestionStations == null){
@@ -137,7 +145,7 @@ public class Interfaces {
     }
 
     /**
-     *
+     * Définit l'interface d'administration des stations comme celle fournie
      * @param interGestionStations
      */
     public static void setInterGestionStations(InterfaceAdminGestionStations g) {

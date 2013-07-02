@@ -19,7 +19,7 @@ import java.util.Iterator;
 public class InterfaceAdminGestionComptes extends javax.swing.JPanel {
 
     /**
-     *
+     * Initialise l'interface de sélection des comptes
      */
     public InterfaceAdminGestionComptes() {
         initComponents();
@@ -29,7 +29,7 @@ public class InterfaceAdminGestionComptes extends javax.swing.JPanel {
 
 
     /**
-     *
+     * Initialise la liste de comptes en fonction de la BDD
      */
     public final void RemplissageListeComptes(){
         DefaultListModel liste = new DefaultListModel();
@@ -49,7 +49,7 @@ public class InterfaceAdminGestionComptes extends javax.swing.JPanel {
         
     
     /**
-     *
+     * Fonction utilitaire pour palier aux problèmes de rafraichissement
      * @param panelDeBase
      * @param newPanel
      */

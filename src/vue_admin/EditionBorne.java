@@ -22,11 +22,13 @@ public class EditionBorne extends javax.swing.JPanel {
     private Station station;
     
     /**
-     *
+     * Initialise l'interface d'édition d'une borne
      * @param borne
      */
     public EditionBorne(Borne borne) {
+        
         this.borne = borne;
+        // Pour récupérer à quelle station est attachée cette borne
         for (Station s : ConfigGlobale.stations) {
             if(s.getId_station()==this.borne.getFk_id_station()){
                 this.station = s;
@@ -35,8 +37,13 @@ public class EditionBorne extends javax.swing.JPanel {
         }
         initComponents();
         InitialisationEditionBorne(this.borne);
+        
     }
 
+    /**
+     * Initialise les champs d'édition et la Google Map
+     * @param borne
+     */
     private void InitialisationEditionBorne(Borne borne){
         txtSerialNumber.setText(borne.getSerialNumber());
         txtEtat.setText(borne.getEtat());
@@ -52,7 +59,7 @@ public class EditionBorne extends javax.swing.JPanel {
     }
     
     /**
-     *
+     * Fonction utilitaire pour palier aux problèmes de rafraichissement
      * @param panelDeBase
      * @param newPanel
      */

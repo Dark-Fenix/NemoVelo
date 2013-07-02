@@ -17,7 +17,7 @@ public class EditionUtilisateur extends javax.swing.JPanel {
     private Utilisateur user;
     
     /**
-     *
+     * Initialise l'interface d'édition d'un utilisateur
      * @param user
      */
     public EditionUtilisateur(Utilisateur user) {
@@ -26,6 +26,10 @@ public class EditionUtilisateur extends javax.swing.JPanel {
         InitialisationEditionUser(this.user);
     }
 
+    /**
+     * Initialise les champs d'édition et la Google Map
+     * @param user
+     */
     private void InitialisationEditionUser(Utilisateur user){
         txtNom.setText(user.getNom());
         txtPrenom.setText(user.getPrenom());

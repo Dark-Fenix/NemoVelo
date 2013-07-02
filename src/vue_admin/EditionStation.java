@@ -20,7 +20,7 @@ public class EditionStation extends javax.swing.JPanel {
     private Station station;
     
     /**
-     *
+     * Initialise l'interface d'édition d'une station
      * @param station
      */
     public EditionStation(Station station) {
@@ -29,6 +29,10 @@ public class EditionStation extends javax.swing.JPanel {
         InitialisationEditionStation(this.station);
     }
 
+    /**
+     * Initialise les champs d'édition et la Google Map
+     * @param station
+     */
     private void InitialisationEditionStation(Station station){
         txtSerialNumber.setText(station.getSerialNumber());
         txtEtat.setText(station.getEtat());
@@ -45,7 +49,7 @@ public class EditionStation extends javax.swing.JPanel {
     }
     
     /**
-     *
+     * Fonction utilitaire pour palier aux problèmes de rafraichissement
      * @param panelDeBase
      * @param newPanel
      */

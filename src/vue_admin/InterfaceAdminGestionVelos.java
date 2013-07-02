@@ -19,7 +19,7 @@ import java.util.Iterator;
 public class InterfaceAdminGestionVelos extends javax.swing.JPanel {
 
     /**
-     *
+     * Initialise l'interface de sélection des vélos
      */
     public InterfaceAdminGestionVelos() {
         initComponents();
@@ -29,7 +29,7 @@ public class InterfaceAdminGestionVelos extends javax.swing.JPanel {
 
 
     /**
-     *
+     * Initialise la liste de vélos en fonction de la BDD
      */
     public final void RemplissageListeVelos(){
         DefaultListModel liste = new DefaultListModel();
@@ -49,7 +49,7 @@ public class InterfaceAdminGestionVelos extends javax.swing.JPanel {
         
     
     /**
-     *
+     * Fonction utilitaire pour palier aux problèmes de rafraichissement
      * @param panelDeBase
      * @param newPanel
      */

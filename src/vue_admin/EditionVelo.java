@@ -16,7 +16,7 @@ public class EditionVelo extends javax.swing.JPanel {
     private Velo velo;
     
     /**
-     *
+     * Initialise l'interface d'édition d'un vélo
      * @param velo
      */
     public EditionVelo(Velo velo) {
@@ -25,6 +25,10 @@ public class EditionVelo extends javax.swing.JPanel {
         InitialisationEditionVelo(this.velo);
     }
 
+    /**
+     * Initialise les champs d'édition et la Google Map
+     * @param velo
+     */
     private void InitialisationEditionVelo(Velo velo){
         txtSN.setText(velo.getSerialNumber());
         txtEtat.setText(velo.getEtat());

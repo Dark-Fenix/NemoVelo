@@ -19,7 +19,7 @@ import java.util.Iterator;
 public class InterfaceAdminGestionUtilisateurs extends javax.swing.JPanel {
 
     /**
-     *
+     * Initialise l'interface de sélection des utilisateurs
      */
     public InterfaceAdminGestionUtilisateurs() {
         initComponents();
@@ -29,7 +29,7 @@ public class InterfaceAdminGestionUtilisateurs extends javax.swing.JPanel {
 
 
     /**
-     *
+     * Initialise la liste d'utilisateurs en fonction de la BDD
      */
     public final void RemplissageListeUtilisateurs(){
         DefaultListModel liste = new DefaultListModel();
@@ -49,7 +49,7 @@ public class InterfaceAdminGestionUtilisateurs extends javax.swing.JPanel {
         
     
     /**
-     *
+     * Fonction utilitaire pour palier aux problèmes de rafraichissement
      * @param panelDeBase
      * @param newPanel
      */

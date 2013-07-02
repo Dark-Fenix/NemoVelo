@@ -18,11 +18,12 @@ public class EditionCarte extends javax.swing.JPanel {
     private Utilisateur user = new Utilisateur();
     
     /**
-     *
+     * Initialise l'interface d'édition d'une carte
      * @param carte
      */
     public EditionCarte(Carte carte) {
         this.carte = carte;
+        // Pour récupérer à quel utilisateur appartient la carte
         for (Utilisateur u : ConfigGlobale.utilisateurs) {
             if(u.getFk_id_carte()==this.carte.getId_carte()){
                 this.user = u;
@@ -36,6 +37,10 @@ public class EditionCarte extends javax.swing.JPanel {
         InitialisationEditionCarte(this.carte);
     }
 
+    /**
+     * Initialise les champs d'édition et la Google Map
+     * @param carte
+     */
     private void InitialisationEditionCarte(Carte carte){
         txtSerialNumber.setText(carte.getSerialNumber());
         txtProprio.setText(Integer.toString(user.getId_utilisateur()));

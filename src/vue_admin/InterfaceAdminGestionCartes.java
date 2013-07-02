@@ -19,7 +19,7 @@ import java.util.Iterator;
 public class InterfaceAdminGestionCartes extends javax.swing.JPanel {
 
     /**
-     *
+     * Initialise l'interface de sélection des cartes
      */
     public InterfaceAdminGestionCartes() {
         initComponents();
@@ -29,7 +29,7 @@ public class InterfaceAdminGestionCartes extends javax.swing.JPanel {
 
 
     /**
-     *
+     * Initialise la liste de cartes en fonction de la BDD
      */
     public final void RemplissageListeCartes(){
         DefaultListModel liste = new DefaultListModel();
@@ -49,7 +49,7 @@ public class InterfaceAdminGestionCartes extends javax.swing.JPanel {
         
     
     /**
-     *
+     * Fonction utilitaire pour palier aux problèmes de rafraichissement
      * @param panelDeBase
      * @param newPanel
      */

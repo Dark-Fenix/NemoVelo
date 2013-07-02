@@ -16,7 +16,7 @@ public class EditionCompte extends javax.swing.JPanel {
     private Compte compte;
     
     /**
-     *
+     * Initialise l'interface d'édition d'un compte
      * @param compte
      */
     public EditionCompte(Compte compte) {
@@ -25,6 +25,10 @@ public class EditionCompte extends javax.swing.JPanel {
         InitialisationEditionCompte(this.compte);
     }
 
+    /**
+     * Initialise les champs d'édition et la Google Map
+     * @param compte
+     */
     private void InitialisationEditionCompte(Compte compte){
         txtTypeCompte.setText(compte.getTypeCompte());
         txtSolde.setText(String.valueOf(compte.getSolde()));

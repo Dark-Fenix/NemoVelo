@@ -18,12 +18,13 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
     /**
      *
      */
-    public static Interfaces tools = new Interfaces();
+    //public static Interfaces tools = new Interfaces();
     
     /**
      *
      */
     public InterfaceAdminGestion() {
+        //tools.setInterAdminGestion(this);
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -164,39 +165,39 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boutonUtilisateursMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonUtilisateursMouseClicked
-        InterfaceAdminGestionUtilisateurs interGestionUsers = new InterfaceAdminGestionUtilisateurs();
-        tools.setInterGestionUsers(interGestionUsers);
-        swapPanel(panelFondInterfaceGestion, interGestionUsers);
+//        InterfaceAdminGestionUtilisateurs interGestionUsers = new InterfaceAdminGestionUtilisateurs();
+//        Interfaces.setInterGestionUsers(interGestionUsers);
+        swapPanel(panelFondInterfaceGestion, Interfaces.getInterGestionUsers());
     }//GEN-LAST:event_boutonUtilisateursMouseClicked
 
     private void boutonComptesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonComptesMouseClicked
-        InterfaceAdminGestionComptes interGestionComptes = new InterfaceAdminGestionComptes();
-        tools.setInterGestionComptes(interGestionComptes);
-        swapPanel(panelFondInterfaceGestion, interGestionComptes);
+//        InterfaceAdminGestionComptes interGestionComptes = new InterfaceAdminGestionComptes();
+//        Interfaces.setInterGestionComptes(interGestionComptes);
+        swapPanel(panelFondInterfaceGestion, Interfaces.getInterGestionComptes());
     }//GEN-LAST:event_boutonComptesMouseClicked
 
     private void boutonCartesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonCartesMouseClicked
-        InterfaceAdminGestionCartes interGestionCartes = new InterfaceAdminGestionCartes();
-        tools.setInterGestionCartes(interGestionCartes);
-        swapPanel(panelFondInterfaceGestion, new InterfaceAdminGestionCartes());
+//        InterfaceAdminGestionCartes interGestionCartes = new InterfaceAdminGestionCartes();
+//        Interfaces.setInterGestionCartes(interGestionCartes);
+        swapPanel(panelFondInterfaceGestion, Interfaces.getInterGestionCartes());
     }//GEN-LAST:event_boutonCartesMouseClicked
 
     private void boutonBornesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonBornesMouseClicked
-        InterfaceAdminGestionBornes interGestionBornes = new InterfaceAdminGestionBornes();
-        tools.setInterGestionBornes(interGestionBornes);
-        swapPanel(panelFondInterfaceGestion, new InterfaceAdminGestionBornes());
+//        InterfaceAdminGestionBornes interGestionBornes = new InterfaceAdminGestionBornes();
+//        Interfaces.setInterGestionBornes(interGestionBornes);
+        swapPanel(panelFondInterfaceGestion, Interfaces.getInterGestionBornes());
     }//GEN-LAST:event_boutonBornesMouseClicked
 
     private void boutonStationsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonStationsMouseClicked
-        InterfaceAdminGestionStations interGestionStations = new InterfaceAdminGestionStations();
-        tools.setInterGestionStations(interGestionStations);
-        swapPanel(panelFondInterfaceGestion, new InterfaceAdminGestionStations());
+//        InterfaceAdminGestionStations interGestionStations = new InterfaceAdminGestionStations();
+//        Interfaces.setInterGestionStations(interGestionStations);
+        swapPanel(panelFondInterfaceGestion, Interfaces.getInterGestionStations());
     }//GEN-LAST:event_boutonStationsMouseClicked
 
     private void boutonVelosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonVelosMouseClicked
-        InterfaceAdminGestionVelos interGestionVelos = new InterfaceAdminGestionVelos();
-        tools.setInterGestionVelos(interGestionVelos);
-        swapPanel(panelFondInterfaceGestion, new InterfaceAdminGestionVelos());
+//        InterfaceAdminGestionVelos interGestionVelos = new InterfaceAdminGestionVelos();
+//        Interfaces.setInterGestionVelos(interGestionVelos);
+        swapPanel(panelFondInterfaceGestion, Interfaces.getInterGestionVelos());
     }//GEN-LAST:event_boutonVelosMouseClicked
 
     
@@ -213,12 +214,12 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton boutonBornes;
-    private javax.swing.JButton boutonCartes;
-    private javax.swing.JButton boutonComptes;
-    private javax.swing.JButton boutonStations;
-    private javax.swing.JButton boutonUtilisateurs;
-    private javax.swing.JButton boutonVelos;
+    public javax.swing.JButton boutonBornes;
+    public javax.swing.JButton boutonCartes;
+    public javax.swing.JButton boutonComptes;
+    public javax.swing.JButton boutonStations;
+    public javax.swing.JButton boutonUtilisateurs;
+    public javax.swing.JButton boutonVelos;
     private javax.swing.JPanel menuBoutons;
     private javax.swing.JPanel panelFondInterfaceGestion;
     private javax.swing.JLabel titreInterfaceGestion;

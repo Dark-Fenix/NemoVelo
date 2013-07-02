@@ -143,7 +143,7 @@ public class EditionCarte extends javax.swing.JPanel {
         this.setVisible(false);
         CarteDAO.deleteCarte(this.carte);
         ConfigGlobale.cartes.remove(this.carte);
-        InterfaceAdminGestion.tools.getInterGestionCartes().RemplissageListeCartes();
+        Interfaces.getInterGestionCartes().RemplissageListeCartes();
     }//GEN-LAST:event_boutonSupprimerMouseClicked
 
     private void boutonValiderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonValiderMouseClicked

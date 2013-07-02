@@ -24,13 +24,7 @@ public class InterfaceAdminGestionVelos extends javax.swing.JPanel {
     public InterfaceAdminGestionVelos() {
         initComponents();
         RemplissageListeVelos();
-        listeVelos.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent evt) {
-                EditionVelo edition = new EditionVelo((Velo) listeVelos.getSelectedValue());
-                swapPanel(panelEdition, edition);
-            }
-        });
+        
     }
 
 
@@ -44,6 +38,13 @@ public class InterfaceAdminGestionVelos extends javax.swing.JPanel {
             liste.addElement(u);
         }
         listeVelos.setModel(liste);
+        listeVelos.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent evt) {
+                EditionVelo edition = new EditionVelo((Velo) listeVelos.getSelectedValue());
+                swapPanel(panelEdition, edition);
+            }
+        });
     }
         
     

@@ -158,7 +158,7 @@ public class EditionCompte extends javax.swing.JPanel {
         this.setVisible(false);
         CompteDAO.deleteCompte(this.compte);
         ConfigGlobale.comptes.remove(this.compte);
-        InterfaceAdminGestion.tools.getInterGestionComptes().RemplissageListeComptes();
+        Interfaces.getInterGestionComptes().RemplissageListeComptes();
     }//GEN-LAST:event_boutonSupprimerMouseClicked
 
     private void boutonValiderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonValiderMouseClicked

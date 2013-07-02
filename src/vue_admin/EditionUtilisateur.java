@@ -331,7 +331,7 @@ public class EditionUtilisateur extends javax.swing.JPanel {
         this.setVisible(false);
         UtilisateurDAO.deleteUtilisateur(this.user);    
         ConfigGlobale.utilisateurs.remove(this.user);
-        InterfaceAdminGestion.tools.getInterGestionUsers().RemplissageListeUtilisateurs();
+        Interfaces.getInterGestionUsers().RemplissageListeUtilisateurs();
     }//GEN-LAST:event_boutonSupprimerMouseClicked
 
     private void boutonValiderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonValiderMouseClicked

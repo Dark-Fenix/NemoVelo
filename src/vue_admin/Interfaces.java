@@ -11,18 +11,33 @@ package vue_admin;
  */
 public class Interfaces {
     
-    private InterfaceAdminGestionUtilisateurs interGestionUsers = new InterfaceAdminGestionUtilisateurs();
-    private InterfaceAdminGestionBornes interGestionBornes = new InterfaceAdminGestionBornes();
-    private InterfaceAdminGestionComptes interGestionComptes = new InterfaceAdminGestionComptes();
-    private InterfaceAdminGestionCartes interGestionCartes = new InterfaceAdminGestionCartes();
-    private InterfaceAdminGestionVelos interGestionVelos = new InterfaceAdminGestionVelos();
-    private InterfaceAdminGestionStations interGestionStations = new InterfaceAdminGestionStations();
+    private static InterfaceAdminGestionUtilisateurs interGestionUsers = null;
+    private static InterfaceAdminGestionBornes interGestionBornes = null;
+    private static InterfaceAdminGestionComptes interGestionComptes = null;
+    private static InterfaceAdminGestionCartes interGestionCartes = null;
+    private static InterfaceAdminGestionVelos interGestionVelos = null;
+    private static InterfaceAdminGestionStations interGestionStations = null;
+    private static InterfaceAdminGestion interAdminGestion = null;
+
+    public static InterfaceAdminGestion getInterAdminGestion() {
+        if (interAdminGestion == null){
+            interAdminGestion = new InterfaceAdminGestion();
+        }
+        return interAdminGestion;
+    }
+
+    public static void setInterAdminGestion(InterfaceAdminGestion a) {
+        interAdminGestion = a;
+    }
 
     /**
      *
      * @return
      */
-    public InterfaceAdminGestionUtilisateurs getInterGestionUsers() {
+    public static InterfaceAdminGestionUtilisateurs getInterGestionUsers() {
+        if (interGestionUsers == null){
+            interGestionUsers = new InterfaceAdminGestionUtilisateurs();
+        }
         return interGestionUsers;
     }
 
@@ -30,15 +45,18 @@ public class Interfaces {
      *
      * @param interGestionUsers
      */
-    public void setInterGestionUsers(InterfaceAdminGestionUtilisateurs interGestionUsers) {
-        this.interGestionUsers = interGestionUsers;
+    public static void setInterGestionUsers(InterfaceAdminGestionUtilisateurs b) {
+        interGestionUsers = b;
     }
 
     /**
      *
      * @return
      */
-    public InterfaceAdminGestionBornes getInterGestionBornes() {
+    public static InterfaceAdminGestionBornes getInterGestionBornes() {
+        if (interGestionBornes == null){
+            interGestionBornes = new InterfaceAdminGestionBornes();
+        }
         return interGestionBornes;
     }
 
@@ -46,15 +64,18 @@ public class Interfaces {
      *
      * @param interGestionBornes
      */
-    public void setInterGestionBornes(InterfaceAdminGestionBornes interGestionBornes) {
-        this.interGestionBornes = interGestionBornes;
+    public static void setInterGestionBornes(InterfaceAdminGestionBornes c) {
+        interGestionBornes = c;
     }
 
     /**
      *
      * @return
      */
-    public InterfaceAdminGestionComptes getInterGestionComptes() {
+    public static InterfaceAdminGestionComptes getInterGestionComptes() {
+        if (interGestionComptes == null){
+            interGestionComptes = new InterfaceAdminGestionComptes();
+        }
         return interGestionComptes;
     }
 
@@ -62,15 +83,18 @@ public class Interfaces {
      *
      * @param interGestionComptes
      */
-    public void setInterGestionComptes(InterfaceAdminGestionComptes interGestionComptes) {
-        this.interGestionComptes = interGestionComptes;
+    public static void setInterGestionComptes(InterfaceAdminGestionComptes d) {
+        interGestionComptes = d;
     }
 
     /**
      *
      * @return
      */
-    public InterfaceAdminGestionCartes getInterGestionCartes() {
+    public static InterfaceAdminGestionCartes getInterGestionCartes() {
+        if (interGestionCartes == null){
+            interGestionCartes = new InterfaceAdminGestionCartes();
+        }
         return interGestionCartes;
     }
 
@@ -78,15 +102,18 @@ public class Interfaces {
      *
      * @param interGestionCartes
      */
-    public void setInterGestionCartes(InterfaceAdminGestionCartes interGestionCartes) {
-        this.interGestionCartes = interGestionCartes;
+    public static void setInterGestionCartes(InterfaceAdminGestionCartes e) {
+        interGestionCartes = e;
     }
 
     /**
      *
      * @return
      */
-    public InterfaceAdminGestionVelos getInterGestionVelos() {
+    public static InterfaceAdminGestionVelos getInterGestionVelos() {
+        if (interGestionVelos == null){
+            interGestionVelos = new InterfaceAdminGestionVelos();
+        }
         return interGestionVelos;
     }
 
@@ -94,15 +121,18 @@ public class Interfaces {
      *
      * @param interGestionVelos
      */
-    public void setInterGestionVelos(InterfaceAdminGestionVelos interGestionVelos) {
-        this.interGestionVelos = interGestionVelos;
+    public static void setInterGestionVelos(InterfaceAdminGestionVelos f) {
+        interGestionVelos = f;
     }
 
     /**
      *
      * @return
      */
-    public InterfaceAdminGestionStations getInterGestionStations() {
+    public static InterfaceAdminGestionStations getInterGestionStations() {
+        if (interGestionStations == null){
+            interGestionStations = new InterfaceAdminGestionStations();
+        }
         return interGestionStations;
     }
 
@@ -110,8 +140,8 @@ public class Interfaces {
      *
      * @param interGestionStations
      */
-    public void setInterGestionStations(InterfaceAdminGestionStations interGestionStations) {
-        this.interGestionStations = interGestionStations;
+    public static void setInterGestionStations(InterfaceAdminGestionStations g) {
+        interGestionStations = g;
     }
     
     

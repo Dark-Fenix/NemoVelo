@@ -182,7 +182,7 @@ public class EditionBorne extends javax.swing.JPanel {
         this.setVisible(false);
         BorneDAO.deleteBorne(this.borne);
         ConfigGlobale.bornes.remove(this.borne);
-        InterfaceAdminGestion.tools.getInterGestionBornes().RemplissageListeBornes();
+        Interfaces.getInterGestionBornes().RemplissageListeBornes();
     }//GEN-LAST:event_boutonSupprimerMouseClicked
 
     private void boutonValiderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonValiderMouseClicked

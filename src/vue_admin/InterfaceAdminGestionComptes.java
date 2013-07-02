@@ -24,13 +24,7 @@ public class InterfaceAdminGestionComptes extends javax.swing.JPanel {
     public InterfaceAdminGestionComptes() {
         initComponents();
         RemplissageListeComptes();
-        listeComptes.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent evt) {
-                EditionCompte edition = new EditionCompte((Compte) listeComptes.getSelectedValue());
-                swapPanel(panelEdition, edition);
-            }
-        });
+        
     }
 
 
@@ -44,6 +38,13 @@ public class InterfaceAdminGestionComptes extends javax.swing.JPanel {
             liste.addElement(u);
         }
         listeComptes.setModel(liste);
+        listeComptes.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent evt) {
+                EditionCompte edition = new EditionCompte((Compte) listeComptes.getSelectedValue());
+                swapPanel(panelEdition, edition);
+            }
+        });
     }
         
     

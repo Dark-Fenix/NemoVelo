@@ -46,11 +46,13 @@ public class NemoveloGestion {
         }
         
         // Lancement de la fenêtre
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        /*java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new InterfaceAdminGestion().setVisible(true);
             }
-        });
+        });*/
+        
+        Interfaces.getInterAdminGestion().setVisible(true);
         
     }
 }

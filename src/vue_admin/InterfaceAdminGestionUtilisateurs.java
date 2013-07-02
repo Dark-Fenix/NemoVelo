@@ -24,13 +24,7 @@ public class InterfaceAdminGestionUtilisateurs extends javax.swing.JPanel {
     public InterfaceAdminGestionUtilisateurs() {
         initComponents();
         RemplissageListeUtilisateurs();
-        listeUtilisateurs.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent evt) {
-                EditionUtilisateur edition = new EditionUtilisateur((Utilisateur) listeUtilisateurs.getSelectedValue());
-                swapPanel(panelEdition, edition);
-            }
-        });
+        
     }
 
 
@@ -44,6 +38,13 @@ public class InterfaceAdminGestionUtilisateurs extends javax.swing.JPanel {
             liste.addElement(u);
         }
         listeUtilisateurs.setModel(liste);
+        listeUtilisateurs.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent evt) {
+                EditionUtilisateur edition = new EditionUtilisateur((Utilisateur) listeUtilisateurs.getSelectedValue());
+                swapPanel(panelEdition, edition);
+            }
+        });
     }
         
     

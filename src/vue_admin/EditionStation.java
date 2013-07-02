@@ -189,7 +189,7 @@ public class EditionStation extends javax.swing.JPanel {
         this.setVisible(false);
         StationDAO.deleteStation(this.station);
         ConfigGlobale.stations.remove(this.station);
-        InterfaceAdminGestion.tools.getInterGestionStations().RemplissageListeStations();
+        Interfaces.getInterGestionStations().RemplissageListeStations();
     }//GEN-LAST:event_boutonSupprimerMouseClicked
 
     private void boutonValiderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonValiderMouseClicked

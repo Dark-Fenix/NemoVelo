@@ -24,13 +24,7 @@ public class InterfaceAdminGestionStations extends javax.swing.JPanel {
     public InterfaceAdminGestionStations() {
         initComponents();
         RemplissageListeStations();
-        listeStations.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent evt) {
-                EditionStation edition = new EditionStation((Station) listeStations.getSelectedValue());
-                swapPanel(panelEdition, edition);
-            }
-        });
+        
     }
 
 
@@ -44,6 +38,13 @@ public class InterfaceAdminGestionStations extends javax.swing.JPanel {
             liste.addElement(u);
         }
         listeStations.setModel(liste);
+        listeStations.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent evt) {
+                EditionStation edition = new EditionStation((Station) listeStations.getSelectedValue());
+                swapPanel(panelEdition, edition);
+            }
+        });
     }
         
     

@@ -24,13 +24,6 @@ public class InterfaceAdminGestionBornes extends javax.swing.JPanel {
     public InterfaceAdminGestionBornes() {
         initComponents();
         RemplissageListeBornes();
-        listeBornes.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent evt) {
-                EditionBorne edition = new EditionBorne((Borne) listeBornes.getSelectedValue());
-                swapPanel(panelEdition, edition);
-            }
-        });
     }
 
 
@@ -44,6 +37,13 @@ public class InterfaceAdminGestionBornes extends javax.swing.JPanel {
             liste.addElement(u);
         }
         listeBornes.setModel(liste);
+        listeBornes.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent evt) {
+                EditionBorne edition = new EditionBorne((Borne) listeBornes.getSelectedValue());
+                swapPanel(panelEdition, edition);
+            }
+        });
     }
         
     

@@ -24,13 +24,7 @@ public class InterfaceAdminGestionCartes extends javax.swing.JPanel {
     public InterfaceAdminGestionCartes() {
         initComponents();
         RemplissageListeCartes();
-        listeCartes.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent evt) {
-                EditionCarte edition = new EditionCarte((Carte) listeCartes.getSelectedValue());
-                swapPanel(panelEdition, edition);
-            }
-        });
+        
     }
 
 
@@ -44,6 +38,13 @@ public class InterfaceAdminGestionCartes extends javax.swing.JPanel {
             liste.addElement(u);
         }
         listeCartes.setModel(liste);
+        listeCartes.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent evt) {
+                EditionCarte edition = new EditionCarte((Carte) listeCartes.getSelectedValue());
+                swapPanel(panelEdition, edition);
+            }
+        });
     }
         
     

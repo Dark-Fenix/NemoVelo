@@ -5,9 +5,9 @@
 package vue_user_borne;
 
 /**
- *
- * @author Aymerick
- */
+*
+* @author Aurelie
+*/
 public class Fenetre {
     private ControleurHome home;
     private ControleurLouerVelo louer;

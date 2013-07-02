@@ -12,9 +12,9 @@ import javax.swing.JComponent;
 import Tools.JGoogleMapEditorPan;
 
 /**
- *
- * @author HallerCasagrande-F
- */
+*
+* @author Fenix
+*/
 public class EditionStation extends javax.swing.JPanel {
 
     private Station station;

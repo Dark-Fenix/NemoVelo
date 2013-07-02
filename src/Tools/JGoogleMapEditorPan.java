@@ -6,6 +6,10 @@ import javax.swing.JEditorPane;
 import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLEditorKit;
 
+/**
+*
+* @author Fenix
+*/
 public class JGoogleMapEditorPan extends JEditorPane {
 
     private int zoomFactor = 15;
@@ -15,7 +19,6 @@ public class JGoogleMapEditorPan extends JEditorPane {
     public final String viewSatellite = "satellite";
     public final String viewHybrid = "hybrid";
     public final String viewRoadmap = "roadmap";
-    //private ArrayList<MStation> stations = new ArrayList<MStation>();
 
     public JGoogleMapEditorPan() {
         HTMLEditorKit kit = new HTMLEditorKit();
@@ -65,46 +68,4 @@ public class JGoogleMapEditorPan extends JEditorPane {
         this.setText(html);
     }
 
-    /*public void showStations(Integer width, Integer height){
-        String url = "http://maps.google.com/maps/api/staticmap?";
-        url += "center=Nimes";
-        url += "&amp;zoom=" + this.zoomFactor;
-        url += "&amp;size=" + width.toString() + "x" + height.toString();
-        url += "&amp;maptype=" + this.roadmap;
-
-        this.stations=MStation.getStations();
-        for(int i=0; i<this.stations.size();i++){
-            url += "&markers=color:";
-            if(stations.get(i).getEtatStation()== MStation.PLEINE){
-                url+="blue";
-            }else if(stations.get(i).getEtatStation()== MStation.VIDE){
-                url+="red";
-            }else{
-                url+="green";
-            }
-            url+="|"+stations.get(i).getLatitude() + ","+stations.get(i).getLongitude();
-        }
-        url+="&sensor=true";
-        String html = "<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN'>";
-        html += "<html><head></head><body>";
-        html += "<img src='" + url + "'>";
-        html += "</body></html>";
-        this.setText(html);
-    }*/
-
-    /*public static void main(String[] args) {
-        JGoogleMapEditorPan googleMap = new JGoogleMapEditorPan();
-        try {
-            //googleMap.showLocation("Lyon", "france", 390, 400);
-            googleMap.showCoordinate("45.740724", "4.85561610000002", 390, 400);
-        } catch (Exception ex) {
-            Logger.getLogger(JGoogleMapEditorPan.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        JFrame frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.add(googleMap,BorderLayout.CENTER);
-        frame.setSize(400, 420);
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
-    }*/
 }

@@ -9,9 +9,9 @@ import classes.Carte;
 import classes.Utilisateur;
 
 /**
- *
- * @author HallerCasagrande-F
- */
+*
+* @author Fenix
+*/
 public class EditionCarte extends javax.swing.JPanel {
 
     private Carte carte;

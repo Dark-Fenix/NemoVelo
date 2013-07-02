@@ -3,6 +3,10 @@ package DAO;
 import Config.ConfigDB;
 import java.sql.*;
 
+/**
+*
+* @author Fenix
+*/
 public class ConnexionDB {	
 
     private static Connection _conn;

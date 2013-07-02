@@ -13,9 +13,9 @@ import classes.Utilisateur;
 import java.util.Iterator;
 
 /**
- *
- * @author HallerCasagrande-F
- */
+*
+* @author Fenix
+*/
 public class InterfaceAdminGestionUtilisateurs extends javax.swing.JPanel {
 
     public InterfaceAdminGestionUtilisateurs() {

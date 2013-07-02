@@ -11,7 +11,6 @@ import vue_admin.Interfaces;
  *
  * @author Fenix
  */
-
 public class NemoveloGestion {
 
     public static void main(String[] args) {

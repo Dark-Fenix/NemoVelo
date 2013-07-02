@@ -9,11 +9,10 @@ import java.util.logging.Logger;
 import javax.swing.*;
 import Tools.JGoogleMapEditorPan;
 
-
-    /**
- *
- * @author HallerCasagrande-F
- */
+/**
+*
+* @author Fenix
+*/
 public class InterfaceAdminGestion extends javax.swing.JFrame {
 
     public static Interfaces tools = new Interfaces();

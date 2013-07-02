@@ -6,6 +6,10 @@ package vue_user_borne;
 
 import java.awt.Color;
 
+/**
+*
+* @author Aurelie
+*/
 public class Home extends javax.swing.JFrame {
 
     public vue_user_borne.ControleurHome ctrlHome;

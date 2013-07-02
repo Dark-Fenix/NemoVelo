@@ -13,9 +13,9 @@ import javax.swing.JComponent;
 import Tools.JGoogleMapEditorPan;
 
 /**
- *
- * @author HallerCasagrande-F
- */
+*
+* @author Fenix
+*/
 public class EditionBorne extends javax.swing.JPanel {
 
     private Borne borne;

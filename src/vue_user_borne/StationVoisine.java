@@ -7,6 +7,10 @@ package vue_user_borne;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
+/**
+*
+* @author Aurelie
+*/
 public class StationVoisine extends javax.swing.JFrame {
 
     public ControleurStationVoisine ctrlSV;

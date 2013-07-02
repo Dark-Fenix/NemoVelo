@@ -9,9 +9,9 @@ import classes.Utilisateur;
 import java.sql.SQLException;
 
 /**
- *
- * @author HallerCasagrande-F
- */
+*
+* @author Fenix
+*/
 public class EditionUtilisateur extends javax.swing.JPanel {
 
     private Utilisateur user;

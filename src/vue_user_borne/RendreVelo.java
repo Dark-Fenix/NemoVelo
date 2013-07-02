@@ -4,6 +4,10 @@
  */
 package vue_user_borne;
 
+/**
+*
+* @author Aurelie
+*/
 public class RendreVelo extends javax.swing.JFrame {
 
     public ControleurRendrevelo ctrlRV;

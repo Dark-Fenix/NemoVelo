@@ -8,9 +8,9 @@ import DAO.VeloDAO;
 import classes.Velo;
 
 /**
- *
- * @author HallerCasagrande-F
- */
+*
+* @author Fenix
+*/
 public class EditionVelo extends javax.swing.JPanel {
 
     private Velo velo;

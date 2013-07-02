@@ -13,9 +13,9 @@ import javax.swing.JComponent;
 import java.util.Iterator;
 
 /**
- *
- * @author HallerCasagrande-F
- */
+*
+* @author Fenix
+*/
 public class InterfaceAdminGestionCartes extends javax.swing.JPanel {
 
     public InterfaceAdminGestionCartes() {

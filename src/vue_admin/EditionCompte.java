@@ -8,9 +8,9 @@ import DAO.CompteDAO;
 import classes.Compte;
 
 /**
- *
- * @author HallerCasagrande-F
- */
+*
+* @author Fenix
+*/
 public class EditionCompte extends javax.swing.JPanel {
     
     private Compte compte;

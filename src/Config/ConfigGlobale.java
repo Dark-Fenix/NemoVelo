@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import classes.*;
 
 /**
- *
- * @author Fenix
- */
+*
+* @author Fenix
+*/
 public class ConfigGlobale {
 
     public static String etatOK = "ok";

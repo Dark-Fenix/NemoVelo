@@ -17,6 +17,10 @@ import java.util.ArrayList;
  */
 public class CarteDAO {
 
+    /**
+     * Retourne toutes les cartes de la DB
+     * @return ArrayList<Carte>
+     */
     public static ArrayList<Carte> getAllCarte() {
 
         Statement stat;
@@ -47,6 +51,11 @@ public class CarteDAO {
 
     }
 
+    /**
+     * Retourne une carte de la DB en fonction de son ID
+     * @param id_carte
+     * @return Carte
+     */
     public static Carte getCarteById(int id_carte) {
 
         Carte carte = null;
@@ -75,6 +84,10 @@ public class CarteDAO {
     }
 	
 
+    /**
+     * Met à jour une carte dans la DB
+     * @param carte
+     */
     public static void updateCarte(Carte carte) {
 
         PreparedStatement stat;
@@ -98,6 +111,10 @@ public class CarteDAO {
 
     }
 
+    /**
+     * Supprime une carte dans la DB
+     * @param carte
+     */
     public static void deleteCarte(Carte carte) {
 
         Statement stat;
@@ -116,6 +133,10 @@ public class CarteDAO {
         
     }
 
+    /**
+     * Insère une carte dans la DB
+     * @param carte
+     */
     public static void insertCarte(Carte carte) {
 
         PreparedStatement stat;

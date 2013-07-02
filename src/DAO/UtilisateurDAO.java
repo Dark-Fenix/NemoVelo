@@ -18,6 +18,10 @@ import java.util.ArrayList;
  */
 public class UtilisateurDAO {
 
+    /**
+     *
+     * @return
+     */
     public static ArrayList<Utilisateur> getAllUtilisateur() {
 
         Statement stat;
@@ -62,6 +66,11 @@ public class UtilisateurDAO {
 
     }
 
+    /**
+     *
+     * @param id_utilisateur
+     * @return
+     */
     public static Utilisateur getUtilisateurById(int id_utilisateur) {
 
         Utilisateur utilisateur = null;
@@ -105,6 +114,10 @@ public class UtilisateurDAO {
     }
 	
 
+    /**
+     *
+     * @param utilisateur
+     */
     public static void updateUtilisateur(Utilisateur utilisateur) {
 
         PreparedStatement stat;
@@ -142,6 +155,10 @@ public class UtilisateurDAO {
 
     }
 
+    /**
+     *
+     * @param utilisateur
+     */
     public static void deleteUtilisateur(Utilisateur utilisateur) {
 
         Statement stat;
@@ -160,6 +177,10 @@ public class UtilisateurDAO {
         
     }
 
+    /**
+     *
+     * @param utilisateur
+     */
     public static void insertUtilisateur(Utilisateur utilisateur) {
 
         PreparedStatement stat;

@@ -18,6 +18,10 @@ import java.util.ArrayList;
  */
 public class CompteDAO {
 
+    /**
+     * Retourne tous les comptes de la DB
+     * @return ArrayList<Compte>
+     */
     public static ArrayList<Compte> getAllCompte() {
 
         Statement stat;
@@ -52,6 +56,11 @@ public class CompteDAO {
 
     }
 
+    /**
+     * Retourne un compte de la DB en fonction de son ID
+     * @param id_compte
+     * @return Compte
+     */
     public static Compte getCompteById(int id_compte) {
 
         Compte compte = null;
@@ -85,6 +94,10 @@ public class CompteDAO {
     }
 	
 
+    /**
+     * Met à jour un compte dans la DB
+     * @param compte
+     */
     public static void updateCompte(Compte compte) {
 
         PreparedStatement stat;
@@ -111,6 +124,10 @@ public class CompteDAO {
 
     }
 
+    /**
+     * Supprime un compte dans la DB
+     * @param compte
+     */
     public static void deleteCompte(Compte compte) {
 
         Statement stat;
@@ -129,6 +146,10 @@ public class CompteDAO {
         
     }
 
+    /**
+     * Insère un compte dans la DB
+     * @param compte
+     */
     public static void insertCompte(Compte compte) {
 
         PreparedStatement stat;

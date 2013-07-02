@@ -18,6 +18,10 @@ import java.util.ArrayList;
  */
 public class VeloDAO {
 
+    /**
+     * Retourne tous les vélos de la DB
+     * @return ArrayList<Velo>
+     */
     public static ArrayList<Velo> getAllVelo() {
 
         Statement stat;
@@ -53,6 +57,11 @@ public class VeloDAO {
 
     }
 
+    /**
+     * Retourne un vélo de la DB en fonction de son ID
+     * @param id_velo
+     * @return Velo
+     */
     public static Velo getVeloById(int id_velo) {
 
         Velo velo = null;
@@ -87,6 +96,10 @@ public class VeloDAO {
     }
 	
 
+    /**
+     * Met à jour un vélo dans la DB
+     * @param velo
+     */
     public static void updateVelo(Velo velo) {
 
         PreparedStatement stat;
@@ -114,6 +127,10 @@ public class VeloDAO {
 
     }
 
+    /**
+     * Supprime un vélo dans la DB
+     * @param velo
+     */
     public static void deleteVelo(Velo velo) {
 
         Statement stat;
@@ -132,6 +149,10 @@ public class VeloDAO {
         
     }
 
+    /**
+     * Insère un vélo dans la DB
+     * @param velo
+     */
     public static void insertVelo(Velo velo) {
 
         PreparedStatement stat;

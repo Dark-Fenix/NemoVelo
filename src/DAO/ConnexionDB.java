@@ -11,6 +11,9 @@ public class ConnexionDB {
 
     private static Connection _conn;
 
+    /**
+     * Initialise la connexion avec la DB seulement si elle est inexistante
+     */
     static Connection getConnection() {
 
         if (_conn == null) {

@@ -14,6 +14,9 @@ public class Fenetre {
     private ControleurRendrevelo rendre;
     private ControleurStationVoisine voisin;
     
+    /**
+     *
+     */
     public Fenetre(){
         home  = new ControleurHome(this);
         louer = new ControleurLouerVelo(this);
@@ -21,22 +24,41 @@ public class Fenetre {
         voisin = new ControleurStationVoisine(this);
     }
     
+    /**
+     *
+     */
     public void launch(){
         home.launchView();
     }
 
+    /**
+     *
+     * @return
+     */
     public ControleurHome getHome() {
         return home;
     }
 
+    /**
+     *
+     * @return
+     */
     public ControleurLouerVelo getLouer() {
         return louer;
     }
 
+    /**
+     *
+     * @return
+     */
     public ControleurRendrevelo getRendre() {
         return rendre;
     }
 
+    /**
+     *
+     * @return
+     */
     public ControleurStationVoisine getVoisin() {
         return voisin;
     }

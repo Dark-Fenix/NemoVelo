@@ -21,8 +21,13 @@ public class NemoveloBorneUtilisateur {
 
     public static Fenetre fntr = new Fenetre();
     
+    /**
+     * Lancement de l'interface de la borne utilisateur
+     * @param args
+     */
     public static void main(String[] args) {
         
+        // Initialisation des listes d'objets métiers
         ConfigGlobale.velos = VeloDAO.getAllVelo();
         ConfigGlobale.bornes = BorneDAO.getAllBorne();
         ConfigGlobale.stations = StationDAO.getAllStation();
@@ -30,6 +35,7 @@ public class NemoveloBorneUtilisateur {
         ConfigGlobale.cartes = CarteDAO.getAllCarte();
         ConfigGlobale.utilisateurs = UtilisateurDAO.getAllUtilisateur();
         
+        // Lancement de la fenêtre
         fntr.launch();
     }
 }

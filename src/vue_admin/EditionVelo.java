@@ -15,6 +15,10 @@ public class EditionVelo extends javax.swing.JPanel {
 
     private Velo velo;
     
+    /**
+     *
+     * @param velo
+     */
     public EditionVelo(Velo velo) {
         this.velo = velo;
         initComponents();

@@ -19,6 +19,10 @@ public class EditionStation extends javax.swing.JPanel {
 
     private Station station;
     
+    /**
+     *
+     * @param station
+     */
     public EditionStation(Station station) {
         this.station = station;
         initComponents();
@@ -40,6 +44,11 @@ public class EditionStation extends javax.swing.JPanel {
         }
     }
     
+    /**
+     *
+     * @param panelDeBase
+     * @param newPanel
+     */
     public void swapPanel(JComponent panelDeBase, JComponent newPanel){
         panelDeBase.removeAll();
         panelDeBase.add(newPanel);

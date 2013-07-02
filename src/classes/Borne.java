@@ -14,9 +14,19 @@ public class Borne {
     private String etat = "off";
     private int fk_id_station = -1;
     
+    /**
+     *
+     */
     public Borne(){
     }
     
+    /**
+     *
+     * @param id_borne
+     * @param serialNumber
+     * @param etat
+     * @param fk_id_station
+     */
     public Borne(int id_borne, String serialNumber, String etat, int fk_id_station){
         this.id_borne = id_borne;
         this.serialNumber = serialNumber;
@@ -24,19 +34,37 @@ public class Borne {
         this.fk_id_station = fk_id_station;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getId_borne() {
         return id_borne;
     }
 
     // NE DOIT PAS ETRE UTILISE POUR NE PAS INTERFERER AVEC LA BDD
+    /**
+     *
+     * @param id_borne
+     * @return
+     */
     public int setId_borne(int id_borne) {
         return this.id_borne = id_borne;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getSerialNumber() {
         return serialNumber;
     }
 
+    /**
+     *
+     * @param serialNumber
+     * @return
+     */
     public int setSerialNumber(String serialNumber) {
         if(serialNumber.length()>ConfigGlobale.longueurSNBorne){
             return -1;
@@ -47,10 +75,19 @@ public class Borne {
         }
     }
     
+    /**
+     *
+     * @return
+     */
     public String getEtat() {
         return etat;
     }
 
+    /**
+     *
+     * @param etat
+     * @return
+     */
     public int setEtat(String etat) {
         if(etat.equalsIgnoreCase(ConfigGlobale.etatHS) || etat.equalsIgnoreCase(ConfigGlobale.etatOK) || etat.equalsIgnoreCase(ConfigGlobale.etatOFF) || etat.equalsIgnoreCase(ConfigGlobale.etatMaintenance)){
             this.etat = etat.toLowerCase();
@@ -61,10 +98,19 @@ public class Borne {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public int getFk_id_station() {
         return fk_id_station;
     }
 
+    /**
+     *
+     * @param fk_id_station
+     * @return
+     */
     public int setFk_id_station(int fk_id_station) {
         return this.fk_id_station = fk_id_station;
     }
@@ -74,6 +120,10 @@ public class Borne {
         return "Borne "+this.id_borne;
     }
     
+    /**
+     *
+     * @return
+     */
     public String toStringComplet(){
         String temp = "Borne "+this.id_borne+" : numero de serie "+this.serialNumber+", etat : "+this.etat;
         if(this.fk_id_station==-1){

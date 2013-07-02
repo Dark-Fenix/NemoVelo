@@ -18,6 +18,9 @@ import java.util.Iterator;
 */
 public class InterfaceAdminGestionVelos extends javax.swing.JPanel {
 
+    /**
+     *
+     */
     public InterfaceAdminGestionVelos() {
         initComponents();
         RemplissageListeVelos();
@@ -31,6 +34,9 @@ public class InterfaceAdminGestionVelos extends javax.swing.JPanel {
     }
 
 
+    /**
+     *
+     */
     public final void RemplissageListeVelos(){
         DefaultListModel liste = new DefaultListModel();
         for (Iterator<Velo> it = ConfigGlobale.velos.iterator(); it.hasNext();) {
@@ -41,6 +47,11 @@ public class InterfaceAdminGestionVelos extends javax.swing.JPanel {
     }
         
     
+    /**
+     *
+     * @param panelDeBase
+     * @param newPanel
+     */
     public void swapPanel(JComponent panelDeBase, JComponent newPanel){
         panelDeBase.removeAll();
         panelDeBase.add(newPanel);

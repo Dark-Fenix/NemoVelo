@@ -17,6 +17,10 @@ public class EditionCarte extends javax.swing.JPanel {
     private Carte carte;
     private Utilisateur user = new Utilisateur();
     
+    /**
+     *
+     * @param carte
+     */
     public EditionCarte(Carte carte) {
         this.carte = carte;
         for (Utilisateur u : ConfigGlobale.utilisateurs) {

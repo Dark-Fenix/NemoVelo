@@ -12,9 +12,16 @@ import java.awt.Color;
 */
 public class Home extends javax.swing.JFrame {
 
+    /**
+     *
+     */
     public vue_user_borne.ControleurHome ctrlHome;
 
 
+    /**
+     *
+     * @param aThis
+     */
     public Home(ControleurHome aThis) {
         initComponents();
         ctrlHome = aThis;

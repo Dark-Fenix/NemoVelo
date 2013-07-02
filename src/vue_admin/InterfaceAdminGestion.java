@@ -15,8 +15,14 @@ import Tools.JGoogleMapEditorPan;
 */
 public class InterfaceAdminGestion extends javax.swing.JFrame {
 
+    /**
+     *
+     */
     public static Interfaces tools = new Interfaces();
     
+    /**
+     *
+     */
     public InterfaceAdminGestion() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -194,6 +200,11 @@ public class InterfaceAdminGestion extends javax.swing.JFrame {
     }//GEN-LAST:event_boutonVelosMouseClicked
 
     
+    /**
+     *
+     * @param panelDeBase
+     * @param newPanel
+     */
     public void swapPanel(JComponent panelDeBase, JComponent newPanel){
         panelDeBase.removeAll();
         panelDeBase.add(newPanel);

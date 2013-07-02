@@ -17,6 +17,10 @@ import java.util.ArrayList;
  */
 public class BorneDAO {
 
+    /**
+     * Retourne toutes les bornes de la DB
+     * @return ArrayList<Borne>
+     */
     public static ArrayList<Borne> getAllBorne() {
 
         Statement stat;
@@ -49,6 +53,11 @@ public class BorneDAO {
 
     }
 
+    /**
+     * Retourne une borne de la DB en fonction de son ID
+     * @param id_borne
+     * @return Borne
+     */
     public static Borne getBorneById(int id_borne) {
 
         Borne borne = null;
@@ -80,6 +89,10 @@ public class BorneDAO {
     }
 	
 
+    /**
+     * Met à jour une borne dans la DB
+     * @param borne
+     */
     public static void updateBorne(Borne borne) {
 
         PreparedStatement stat;
@@ -105,6 +118,10 @@ public class BorneDAO {
 
     }
 
+    /**
+     * Supprime une borne dans la DB
+     * @param borne
+     */
     public static void deleteBorne(Borne borne) {
 
         Statement stat;
@@ -123,6 +140,10 @@ public class BorneDAO {
         
     }
 
+    /**
+     * Insère une borne dans la DB
+     * @param borne
+     */
     public static void insertBorne(Borne borne) {
          
         PreparedStatement stat;

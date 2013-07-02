@@ -18,6 +18,9 @@ import java.util.Iterator;
 */
 public class InterfaceAdminGestionUtilisateurs extends javax.swing.JPanel {
 
+    /**
+     *
+     */
     public InterfaceAdminGestionUtilisateurs() {
         initComponents();
         RemplissageListeUtilisateurs();
@@ -31,6 +34,9 @@ public class InterfaceAdminGestionUtilisateurs extends javax.swing.JPanel {
     }
 
 
+    /**
+     *
+     */
     public final void RemplissageListeUtilisateurs(){
         DefaultListModel liste = new DefaultListModel();
         for (Iterator<Utilisateur> it = ConfigGlobale.utilisateurs.iterator(); it.hasNext();) {
@@ -41,6 +47,11 @@ public class InterfaceAdminGestionUtilisateurs extends javax.swing.JPanel {
     }
         
     
+    /**
+     *
+     * @param panelDeBase
+     * @param newPanel
+     */
     public void swapPanel(JComponent panelDeBase, JComponent newPanel){
         panelDeBase.removeAll();
         panelDeBase.add(newPanel);

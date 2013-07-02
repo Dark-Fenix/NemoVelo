@@ -21,6 +21,10 @@ public class EditionBorne extends javax.swing.JPanel {
     private Borne borne;
     private Station station;
     
+    /**
+     *
+     * @param borne
+     */
     public EditionBorne(Borne borne) {
         this.borne = borne;
         for (Station s : ConfigGlobale.stations) {
@@ -47,6 +51,11 @@ public class EditionBorne extends javax.swing.JPanel {
         }
     }
     
+    /**
+     *
+     * @param panelDeBase
+     * @param newPanel
+     */
     public void swapPanel(JComponent panelDeBase, JComponent newPanel){
         panelDeBase.removeAll();
         panelDeBase.add(newPanel);

@@ -26,9 +26,31 @@ public class Utilisateur {
     private int fk_id_carte = -1;
     private int fk_id_velo = -1;
     
+    /**
+     *
+     */
     public Utilisateur(){
     }
 
+    /**
+     *
+     * @param id_utilisateur
+     * @param prenom
+     * @param nom
+     * @param dateNaissance
+     * @param adresse
+     * @param codePostal
+     * @param ville
+     * @param carteBancaire
+     * @param dateValiditeCarteBancaire
+     * @param rib
+     * @param iban
+     * @param dateCreation
+     * @param login
+     * @param password
+     * @param fk_id_carte
+     * @param fk_id_velo
+     */
     public Utilisateur(int id_utilisateur, String prenom, String nom, String dateNaissance, String adresse, String codePostal, String ville, String carteBancaire, String dateValiditeCarteBancaire, String rib, String iban, String dateCreation, String login, String password, int fk_id_carte, int fk_id_velo){
         this.id_utilisateur = id_utilisateur;
         this.prenom = prenom;
@@ -48,19 +70,36 @@ public class Utilisateur {
         this.fk_id_velo = fk_id_velo;
     }
     
+    /**
+     *
+     * @return
+     */
     public int getId_utilisateur() {
         return id_utilisateur;
     }
 
     // NE DOIT PAS ETRE UTILISE POUR NE PAS INTERFERER AVEC LA BDD
+    /**
+     *
+     * @param id_utilisateur
+     */
     public void setId_utilisateur(int id_utilisateur) {
         this.id_utilisateur = id_utilisateur;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getPrenom() {
         return prenom;
     }
 
+    /**
+     *
+     * @param prenom
+     * @return
+     */
     public int setPrenom(String prenom) {
         if(prenom.length()>ConfigGlobale.longueurChampTexteGenerique){
             return -1;
@@ -71,10 +110,19 @@ public class Utilisateur {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNom() {
         return nom;
     }
 
+    /**
+     *
+     * @param nom
+     * @return
+     */
     public int setNom(String nom) {
         if(nom.length()>ConfigGlobale.longueurChampTexteGenerique){
             return -1;
@@ -85,10 +133,19 @@ public class Utilisateur {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDateNaissance() {
         return dateNaissance;
     }
 
+    /**
+     *
+     * @param dateNaissance
+     * @return
+     */
     public int setDateNaissance(String dateNaissance) {
         if(dateNaissance.matches(ConfigGlobale.regexValidationDate)){
             this.dateNaissance = dateNaissance;
@@ -99,10 +156,19 @@ public class Utilisateur {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public String getAdresse() {
         return adresse;
     }
 
+    /**
+     *
+     * @param adresse
+     * @return
+     */
     public int setAdresse(String adresse) {
         if(adresse.length()>ConfigGlobale.longueurAdresse){
             return -1;
@@ -113,10 +179,19 @@ public class Utilisateur {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public String getCodePostal() {
         return codePostal;
     }
 
+    /**
+     *
+     * @param codePostal
+     * @return
+     */
     public int setCodePostal(String codePostal) {
         if(codePostal.length()>ConfigGlobale.longueurCodePostal){
             return -1;
@@ -127,10 +202,19 @@ public class Utilisateur {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public String getVille() {
         return ville;
     }
 
+    /**
+     *
+     * @param ville
+     * @return
+     */
     public int setVille(String ville) {
         if(ville.length()>ConfigGlobale.longueurChampTexteGenerique){
             return -1;
@@ -141,10 +225,19 @@ public class Utilisateur {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public String getCarteBancaire() {
         return carteBancaire;
     }
 
+    /**
+     *
+     * @param carteBancaire
+     * @return
+     */
     public int setCarteBancaire(String carteBancaire) {
         if(carteBancaire.length()>ConfigGlobale.longueurCB){
             return -1;
@@ -155,10 +248,19 @@ public class Utilisateur {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDateValiditeCarteBancaire() {
         return dateValiditeCarteBancaire;
     }
 
+    /**
+     *
+     * @param dateValiditeCarteBancaire
+     * @return
+     */
     public int setDateValiditeCarteBancaire(String dateValiditeCarteBancaire) {
         if(dateValiditeCarteBancaire.matches(ConfigGlobale.regexValidationDate)){
             this.dateValiditeCarteBancaire = dateValiditeCarteBancaire;
@@ -169,10 +271,19 @@ public class Utilisateur {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public String getRib() {
         return rib;
     }
 
+    /**
+     *
+     * @param rib
+     * @return
+     */
     public int setRib(String rib) {
         if(rib.length()>ConfigGlobale.longueurRIB){
             return -1;
@@ -183,10 +294,19 @@ public class Utilisateur {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public String getIban() {
         return iban;
     }
 
+    /**
+     *
+     * @param iban
+     * @return
+     */
     public int setIban(String iban) {
         if(iban.length()>ConfigGlobale.longueurIBAN){
             return -1;
@@ -197,10 +317,19 @@ public class Utilisateur {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDateCreation() {
         return dateCreation;
     }
 
+    /**
+     *
+     * @param dateCreation
+     * @return
+     */
     public int setDateCreation(String dateCreation) {
         if(dateCreation.matches(ConfigGlobale.regexValidationDate)){
             this.dateCreation = dateCreation;
@@ -211,10 +340,19 @@ public class Utilisateur {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public String getLogin() {
         return login;
     }
 
+    /**
+     *
+     * @param login
+     * @return
+     */
     public int setLogin(String login) {
         if(login.length()>ConfigGlobale.longueurChampTexteGenerique){
             return -1;
@@ -225,10 +363,19 @@ public class Utilisateur {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public String getPassword() {
         return password;
     }
 
+    /**
+     *
+     * @param password
+     * @return
+     */
     public int setPassword(String password) {
         if(password.length()>ConfigGlobale.longueurChampTexteGenerique){
             return -1;
@@ -239,18 +386,34 @@ public class Utilisateur {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public int getFk_id_carte() {
         return fk_id_carte;
     }
 
+    /**
+     *
+     * @param fk_id_carte
+     */
     public void setFk_id_carte(int fk_id_carte) {
         this.fk_id_carte = fk_id_carte;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getFk_id_velo() {
         return fk_id_velo;
     }
 
+    /**
+     *
+     * @param fk_id_velo
+     */
     public void setFk_id_velo(int fk_id_velo) {
         this.fk_id_velo = fk_id_velo;
     }
@@ -260,10 +423,18 @@ public class Utilisateur {
         return this.prenom+" "+this.nom;
     }
     
+    /**
+     *
+     * @return
+     */
     public String toStringLight(){
         return "Utilisateur "+this.id_utilisateur+" : "+this.prenom+" "+this.nom+", ne(e) le "+this.dateNaissance+", adresse : "+this.adresse+" "+this.codePostal+" "+this.ville+" compte cree le : "+this.dateCreation;
     }
     
+    /**
+     *
+     * @return
+     */
     public String toStringSecret(){
         return "Utilisateur "+this.id_utilisateur+", numero CN : "+this.carteBancaire+", date de validite CB : "+this.dateValiditeCarteBancaire+", rib : "+this.rib+", iban : "+this.iban+", login : "+this.login+", password : "+this.password+".";
     }

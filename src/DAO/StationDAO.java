@@ -17,6 +17,10 @@ import java.util.ArrayList;
  */
 public class StationDAO {
 
+    /**
+     * Retourne toutes les stations de la DB
+     * @return ArrayList<Station>
+     */
     public static ArrayList<Station> getAllStation() {
 
         Statement stat;
@@ -50,6 +54,11 @@ public class StationDAO {
 
     }
 
+    /**
+     * Retourne une station de la DB en fonction de son ID
+     * @param id_station
+     * @return Station
+     */
     public static Station getStationById(int id_station) {
 
         Station station = null;
@@ -81,6 +90,10 @@ public class StationDAO {
     }
 	
 
+    /**
+     * Met à jour une station dans la DB
+     * @param station
+     */
     public static void updateStation(Station station) {
 
         PreparedStatement stat;
@@ -107,6 +120,10 @@ public class StationDAO {
 
     }
 
+    /**
+     * Supprime une station dans la DB
+     * @param station
+     */
     public static void deleteStation(Station station) {
 
         Statement stat;
@@ -125,6 +142,10 @@ public class StationDAO {
         
     }
 
+    /**
+     * Insère une station dans la DB
+     * @param station
+     */
     public static void insertStation(Station station) {
 
         PreparedStatement stat;

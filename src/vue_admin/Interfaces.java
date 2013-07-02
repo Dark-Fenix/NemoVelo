@@ -18,50 +18,98 @@ public class Interfaces {
     private InterfaceAdminGestionVelos interGestionVelos = new InterfaceAdminGestionVelos();
     private InterfaceAdminGestionStations interGestionStations = new InterfaceAdminGestionStations();
 
+    /**
+     *
+     * @return
+     */
     public InterfaceAdminGestionUtilisateurs getInterGestionUsers() {
         return interGestionUsers;
     }
 
+    /**
+     *
+     * @param interGestionUsers
+     */
     public void setInterGestionUsers(InterfaceAdminGestionUtilisateurs interGestionUsers) {
         this.interGestionUsers = interGestionUsers;
     }
 
+    /**
+     *
+     * @return
+     */
     public InterfaceAdminGestionBornes getInterGestionBornes() {
         return interGestionBornes;
     }
 
+    /**
+     *
+     * @param interGestionBornes
+     */
     public void setInterGestionBornes(InterfaceAdminGestionBornes interGestionBornes) {
         this.interGestionBornes = interGestionBornes;
     }
 
+    /**
+     *
+     * @return
+     */
     public InterfaceAdminGestionComptes getInterGestionComptes() {
         return interGestionComptes;
     }
 
+    /**
+     *
+     * @param interGestionComptes
+     */
     public void setInterGestionComptes(InterfaceAdminGestionComptes interGestionComptes) {
         this.interGestionComptes = interGestionComptes;
     }
 
+    /**
+     *
+     * @return
+     */
     public InterfaceAdminGestionCartes getInterGestionCartes() {
         return interGestionCartes;
     }
 
+    /**
+     *
+     * @param interGestionCartes
+     */
     public void setInterGestionCartes(InterfaceAdminGestionCartes interGestionCartes) {
         this.interGestionCartes = interGestionCartes;
     }
 
+    /**
+     *
+     * @return
+     */
     public InterfaceAdminGestionVelos getInterGestionVelos() {
         return interGestionVelos;
     }
 
+    /**
+     *
+     * @param interGestionVelos
+     */
     public void setInterGestionVelos(InterfaceAdminGestionVelos interGestionVelos) {
         this.interGestionVelos = interGestionVelos;
     }
 
+    /**
+     *
+     * @return
+     */
     public InterfaceAdminGestionStations getInterGestionStations() {
         return interGestionStations;
     }
 
+    /**
+     *
+     * @param interGestionStations
+     */
     public void setInterGestionStations(InterfaceAdminGestionStations interGestionStations) {
         this.interGestionStations = interGestionStations;
     }

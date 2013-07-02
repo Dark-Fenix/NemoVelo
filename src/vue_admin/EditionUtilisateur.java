@@ -16,6 +16,10 @@ public class EditionUtilisateur extends javax.swing.JPanel {
 
     private Utilisateur user;
     
+    /**
+     *
+     * @param user
+     */
     public EditionUtilisateur(Utilisateur user) {
         this.user = user;
         initComponents();

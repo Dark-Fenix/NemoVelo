@@ -15,6 +15,10 @@ public class EditionCompte extends javax.swing.JPanel {
     
     private Compte compte;
     
+    /**
+     *
+     * @param compte
+     */
     public EditionCompte(Compte compte) {
         this.compte = compte;
         initComponents();

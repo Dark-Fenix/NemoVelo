@@ -10,8 +10,15 @@ package vue_user_borne;
 */
 public class RendreVelo extends javax.swing.JFrame {
 
+    /**
+     *
+     */
     public ControleurRendrevelo ctrlRV;
 
+    /**
+     *
+     * @param aThis
+     */
     public RendreVelo(ControleurRendrevelo aThis) {
         initComponents();
         ctrlRV = aThis;

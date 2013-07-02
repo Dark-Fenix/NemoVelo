@@ -10,8 +10,15 @@ package vue_user_borne;
 */
 public class LouerVelo extends javax.swing.JFrame {
 
+    /**
+     *
+     */
     public ControleurLouerVelo ctrlLV;
  
+    /**
+     *
+     * @param aThis
+     */
     public LouerVelo(ControleurLouerVelo aThis) {
         initComponents();
         ctrlLV = aThis; 

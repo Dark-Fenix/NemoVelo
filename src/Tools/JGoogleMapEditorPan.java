@@ -15,11 +15,26 @@ public class JGoogleMapEditorPan extends JEditorPane {
     private int zoomFactor = 15;
     private String ApiKey = ConfigGlobale.ApiKey;
     private String roadmap = "roadmap";
+    /**
+     *
+     */
     public final String viewTerrain = "terrain";
+    /**
+     *
+     */
     public final String viewSatellite = "satellite";
+    /**
+     *
+     */
     public final String viewHybrid = "hybrid";
+    /**
+     *
+     */
     public final String viewRoadmap = "roadmap";
 
+    /**
+     *
+     */
     public JGoogleMapEditorPan() {
         HTMLEditorKit kit = new HTMLEditorKit();
         HTMLDocument htmlDoc = (HTMLDocument) kit.createDefaultDocument();
@@ -29,22 +44,50 @@ public class JGoogleMapEditorPan extends JEditorPane {
         this.setDocument(htmlDoc);
     }
 
+    /**
+     *
+     * @param zoom
+     */
     public void setZoom(int zoom) {
         this.zoomFactor = zoom;
     }
 
+    /**
+     *
+     * @param key
+     */
     public void setApiKey(String key) {
         this.ApiKey = key;
     }
 
+    /**
+     *
+     * @param roadMap
+     */
     public void setRoadmap(String roadMap) {
         this.roadmap = roadMap;
     }
 
+    /**
+     *
+     * @param latitude
+     * @param longitude
+     * @param width
+     * @param height
+     * @throws Exception
+     */
     public void showCoordinate(String latitude, String longitude, int width, int height) throws Exception {
         this.setMap(latitude, longitude, width, height);
     }
 
+    /**
+     *
+     * @param city
+     * @param country
+     * @param width
+     * @param height
+     * @throws Exception
+     */
     public void showLocation(String city, String country, int width, int height) throws Exception {
         this.setMap(city, country, width, height);
     }

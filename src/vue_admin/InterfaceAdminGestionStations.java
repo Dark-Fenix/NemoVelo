@@ -18,6 +18,9 @@ import java.util.Iterator;
 */
 public class InterfaceAdminGestionStations extends javax.swing.JPanel {
 
+    /**
+     *
+     */
     public InterfaceAdminGestionStations() {
         initComponents();
         RemplissageListeStations();
@@ -31,6 +34,9 @@ public class InterfaceAdminGestionStations extends javax.swing.JPanel {
     }
 
 
+    /**
+     *
+     */
     public final void RemplissageListeStations(){
         DefaultListModel liste = new DefaultListModel();
         for (Iterator<Station> it = ConfigGlobale.stations.iterator(); it.hasNext();) {
@@ -41,6 +47,11 @@ public class InterfaceAdminGestionStations extends javax.swing.JPanel {
     }
         
     
+    /**
+     *
+     * @param panelDeBase
+     * @param newPanel
+     */
     public void swapPanel(JComponent panelDeBase, JComponent newPanel){
         panelDeBase.removeAll();
         panelDeBase.add(newPanel);

@@ -13,11 +13,21 @@ import javax.swing.table.TableModel;
 */
 public class StationVoisine extends javax.swing.JFrame {
 
+    /**
+     *
+     */
     public ControleurStationVoisine ctrlSV;
 
+    /**
+     *
+     */
     public StationVoisine() {
         initComponents();
     }
+    /**
+     *
+     * @param aThis
+     */
     public StationVoisine(ControleurStationVoisine aThis) {
         initComponents();
         ctrlSV = aThis;
@@ -157,7 +167,7 @@ public class StationVoisine extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonLouerActionPerformed
 
     /**
-     * @param args the command line arguments
+     * @return  
      */
     /*public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {

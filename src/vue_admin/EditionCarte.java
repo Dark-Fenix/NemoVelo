@@ -158,6 +158,7 @@ public class EditionCarte extends javax.swing.JPanel {
         else {
             Mapper.modifierCarte(this.carte);
         }
+        Interfaces.getInterGestionCartes().RemplissageListeCartes();
     }//GEN-LAST:event_boutonValiderMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

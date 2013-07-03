@@ -357,6 +357,7 @@ public class EditionUtilisateur extends javax.swing.JPanel {
         else {
             Mapper.modifierUtilisateur(this.user);
         }
+        Interfaces.getInterGestionUsers().RemplissageListeUtilisateurs();
     }//GEN-LAST:event_boutonValiderMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

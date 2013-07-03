@@ -188,6 +188,7 @@ public class EditionVelo extends javax.swing.JPanel {
         else {
             Mapper.modifierVelo(this.velo);
         }
+        Interfaces.getInterGestionVelos().RemplissageListeVelos();
     }//GEN-LAST:event_boutonValiderMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

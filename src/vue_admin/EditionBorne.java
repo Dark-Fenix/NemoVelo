@@ -201,6 +201,7 @@ public class EditionBorne extends javax.swing.JPanel {
         else {
             Mapper.modifierBorne(this.borne);
         }
+        Interfaces.getInterGestionBornes().RemplissageListeBornes();
     }//GEN-LAST:event_boutonValiderMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

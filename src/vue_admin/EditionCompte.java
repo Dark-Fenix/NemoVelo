@@ -174,6 +174,7 @@ public class EditionCompte extends javax.swing.JPanel {
         else {
             Mapper.modifierCompte(this.compte);
         }
+        Interfaces.getInterGestionComptes().RemplissageListeComptes();
     }//GEN-LAST:event_boutonValiderMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

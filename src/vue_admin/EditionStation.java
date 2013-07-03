@@ -206,6 +206,7 @@ public class EditionStation extends javax.swing.JPanel {
         else {
             Mapper.modifierStation(this.station);
         }
+        Interfaces.getInterGestionStations().RemplissageListeStations();
     }//GEN-LAST:event_boutonValiderMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

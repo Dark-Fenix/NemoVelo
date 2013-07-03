@@ -4,10 +4,10 @@
  */
 package vue_user_borne;
 
+import Config.ConfigGlobale;
 import classes.Borne;
 import classes.Utilisateur;
 import classes.Velo;
-import com.sun.org.apache.xpath.internal.FoundIndex;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -19,7 +19,7 @@ public class ControleurLouerVelo {
 
     public ControleurStation allView;
     public LouerVelo fntrLV;
-    public int idClient;
+    public int client;
     
     public ControleurLouerVelo(ControleurStation aThis) {
         allView = aThis;
@@ -30,7 +30,7 @@ public class ControleurLouerVelo {
     public void launchView(){
         fntrLV.setEnabled(true);
         fntrLV.setVisible(true);
-        fntrLV.simulationLecteurCarte();
+        fntrLV.Louer();
     }
     
     public void hideView(){
@@ -63,28 +63,28 @@ public class ControleurLouerVelo {
      * 
      * 
      */
-    public boolean locationVelo() {
+    public boolean locationVelo( Utilisateur user) {
         boolean veloFound = false;
         //deduire les bornes 
         //on recupere toute les bornes
-        ArrayList<Borne> listeCompleteBornes = new ArrayList<Borne>();
-        listeCompleteBornes = DAO.BorneDAO.getAllBorne();
+        //ArrayList<Borne> listeCompleteBornes = new ArrayList<Borne>();
+        //listeCompleteBornes = DAO.BorneDAO.getAllBorne();
  
-        //on choisie parmis toute les bornes celle qui nous appartienne à la station et qui sont viable
+        //on choisit parmi toute les bornes celles qui nous appartiennent à la station et qui sont viables
         ArrayList<Borne> listeBorneStation = new ArrayList<Borne>();
        
-        Iterator<Borne> itr = listeCompleteBornes.iterator();
+        Iterator<Borne> itr = ConfigGlobale.bornes.iterator();
         while (itr.hasNext()) {
           Borne borne = itr.next();
-          //on recupere chaque borne ayant comme clé étrangere l'id que notre station
-          if(borne.getFk_id_station() == allView.IDBORNE && borne.getEtat().equals("ok")){
+          //on recupère chaque borne ayant comme clé étrangere l'id que notre station
+          if(borne.getFk_id_station() == ConfigGlobale.IDSTATIONTEST && borne.getEtat().equals("ok")){
               listeBorneStation.add(borne);
           }
         }
         
         //on recupere les velos
-        ArrayList<Velo> listeCompleteVelo = new ArrayList<Velo>();
-        listeCompleteVelo  = DAO.VeloDAO.getAllVelo();
+//        ArrayList<Velo> listeCompleteVelo = new ArrayList<Velo>();
+//        listeCompleteVelo  = DAO.VeloDAO.getAllVelo();
         
         //deduire les velos de la station
         Velo veloValide = new Velo(); 
@@ -94,7 +94,7 @@ public class ControleurLouerVelo {
           Borne borne = itrBorne.next();
          
           //maintenant on verifie si il y a un velo dessus si oui est t'il en etat ou non
-          Iterator<Velo> itrVelo = listeCompleteVelo.iterator();
+          Iterator<Velo> itrVelo = ConfigGlobale.velos.iterator();
           while(itrVelo.hasNext() && !veloFound){
               Velo velo = itrVelo.next();
               if(velo.getFk_id_borne() == borne.getFk_id_station() && velo.getEtat().equals("ok") && velo.getFk_id_borne()!=99) {
@@ -107,18 +107,25 @@ public class ControleurLouerVelo {
         //Si on a trouver un vélo
         if(veloFound){
             //on reserve le velo en l'associant às un utilisateur
-            Utilisateur client = DAO.UtilisateurDAO.getUtilisateurById(idClient);
+            //Utilisateur client = DAO.UtilisateurDAO.getUtilisateurById(idClient);
             showConfirmMessage("Vous pouvez récuperer le vélo : " + veloValide.getId_velo() + " sur la borne : " + veloValide.getFk_id_borne());
             
-            //on met à jour les infos de nos 2 objets utilisateur et vélo
-            client.setFk_id_velo(veloValide.getId_velo());
-            int idborne = 0;
-            veloValide.setFk_id_borne(idborne);
+            veloValide.setFk_id_borne(-1);
+            DAO.Mapper.modifierVelo(veloValide);
+            user.setFk_id_velo(veloValide.getId_velo());
+            DAO.Mapper.modifierUtilisateur(user);
             
-            //on commit tout sa a la base de données
-            DAO.VeloDAO.updateVelo(veloValide);
-            DAO.UtilisateurDAO.updateUtilisateur(client);    
+            
+//            //on met à jour les infos de nos 2 objets utilisateur et vélo
+//            client.setFk_id_velo(veloValide.getId_velo());
+//            int idborne = 0;
+//            veloValide.setFk_id_borne(idborne);
+//            //on commit tout sa a la base de données
+//            DAO.Mapper.modifierVelo(veloValide);
+            
+            
         } else {
+            //TODO
             //station la plus proches
         }
         
@@ -129,8 +136,5 @@ public class ControleurLouerVelo {
         public void showConfirmMessage(String message){
             fntrLV.messageInfo(message);
         }
-
-        public void setIdClient(int id){
-            idClient = id;
-        } 
+ 
     }

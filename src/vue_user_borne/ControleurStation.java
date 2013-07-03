@@ -14,8 +14,7 @@ public class ControleurStation {
     private ControleurRendrevelo rendre;
     private ControleurStationVoisine voisin;
     
-    //numero de serie de la born id 1 = OJEZOGUJRE
-    public static int IDBORNE = 1;
+
     
     public ControleurStation(){
         home  = new ControleurHome(this);

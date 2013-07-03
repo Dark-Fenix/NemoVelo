@@ -41,6 +41,9 @@ public class ConfigGlobale {
     // Définition de la clé pour l'API Google Map
     public static String ApiKey = "";
     
+    // Numéro de série de la station 1 pour la démo car une seule borne de test
+    public static int IDSTATIONTEST = 1;
+    
     /**
      * Initialisation des listes d'objets métiers si nulles
      */

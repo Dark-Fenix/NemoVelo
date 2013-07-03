@@ -4,6 +4,8 @@
  */
 package vue_user_borne;
 
+import Config.ConfigGlobale;
+import classes.Utilisateur;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 
@@ -15,6 +17,8 @@ public class RendreVelo extends javax.swing.JFrame {
         initComponents();
         ctrlRV = aThis;
         this.setLocationRelativeTo(null);
+        
+        
     }
 
     /**
@@ -137,25 +141,24 @@ public class RendreVelo extends javax.swing.JFrame {
     private javax.swing.JLabel LabelRemerciement;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
-void simulationLecteurCarte() {
-        String idCarte = new String();
-        //Astuce pour éviter de faire une fenetre qui contrôle que ce n'est que des digits qui sont saisie
-        String regex = "[0-9]+";
-        do{
-            idCarte = JOptionPane.showInputDialog("Numéro carte abonnée ?");
-        }while(!idCarte.isEmpty() && !idCarte.matches(regex));
-         
-        //On vérifie que notre abonnée existe 
-        if(ctrlRV.idCarteExist(idCarte)){
+
+    void Rendre() {
+        // Début de la location
+        int idCarte = Integer.parseInt(JOptionPane.showInputDialog("Numéro carte abonnée ?"));
+        Utilisateur user = null;
+        for (Utilisateur s : ConfigGlobale.utilisateurs) {
+            if(s.getFk_id_carte()==idCarte){
+                user = s;
+                break;
+            }
+        }
+        if(user != null && user.getFk_id_velo()!=-1){
             LabelCarte.setForeground(Color.green);
-            ctrlRV.setIdClient(new Integer(idCarte));
-            ctrlRV.RendreVelo();
-            LabelCarte.setForeground(Color.black);
-            ctrlRV.AccueilPerformed();
+            ctrlRV.RendreVelo(user);
+            LabelCarte.setForeground(Color.blue);
         } else {
             LabelCarte.setForeground(Color.red);
-            LabelCarte.setForeground(Color.black);
-        }      
+        } 
     }
     
     public void messageInfo(String message){

@@ -17,8 +17,7 @@ public class RendreVelo extends javax.swing.JFrame {
         initComponents();
         ctrlRV = aThis;
         this.setLocationRelativeTo(null);
-        
-        
+
     }
 
     /**

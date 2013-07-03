@@ -6,16 +6,15 @@ package vue_user_borne;
 
 /**
  *
- * @author Aymerick
+ * @author Aurélie
  */
 public class ControleurStation {
+    
     private ControleurHome home;
     private ControleurLouerVelo louer;
     private ControleurRendrevelo rendre;
     private ControleurStationVoisine voisin;
-    
 
-    
     public ControleurStation(){
         home  = new ControleurHome(this);
         louer = new ControleurLouerVelo(this);

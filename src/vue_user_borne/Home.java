@@ -8,7 +8,6 @@ public class Home extends javax.swing.JFrame {
 
     public vue_user_borne.ControleurHome ctrlHome;
 
-
     public Home(ControleurHome aThis) {
         initComponents();
         ctrlHome = aThis;

@@ -152,16 +152,6 @@ public class StationVoisine extends javax.swing.JFrame {
         ctrlSV.LouerPerformed();
     }//GEN-LAST:event_ButtonLouerActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    /*public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new StationVoisine().setVisible(true);
-            }
-        });
-    }*/
     public DefaultTableModel getTabl(){
         return (DefaultTableModel) TableRecap.getModel();
     }

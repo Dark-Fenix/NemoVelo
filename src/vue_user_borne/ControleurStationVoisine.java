@@ -6,6 +6,10 @@ package vue_user_borne;
 
 import javax.swing.table.DefaultTableModel;
 
+/**
+ *
+ * @author Aurélie
+ */
 public class ControleurStationVoisine {
     public ControleurStation allView;
     public StationVoisine fntrSV;

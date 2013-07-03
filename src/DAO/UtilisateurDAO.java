@@ -48,7 +48,12 @@ public class UtilisateurDAO {
                 login = res.getString("login");
                 password = res.getString("password");
                 fk_id_carte = res.getInt("fk_id_carte");
-                fk_id_velo = res.getInt("fk_id_velo");
+                if(res.getInt("fk_id_velo")==0){
+                    fk_id_velo = -1;
+                }
+                else{
+                    fk_id_velo = res.getInt("fk_id_velo");
+                }
                 utilisateur = new Utilisateur(id_utilisateur, prenom, nom, dateNaissance, adresse, codePostal, ville, carteBancaire, dateValiditeCarteBancaire, rib, iban, dateCreation, login, password, fk_id_carte, fk_id_velo);
                 utilisateurs.add(utilisateur);
             }
@@ -139,7 +144,12 @@ public class UtilisateurDAO {
                 res.updateString("login", utilisateur.getLogin());
                 res.updateString("password", utilisateur.getPassword());
                 res.updateInt("fk_id_carte", utilisateur.getFk_id_carte());
-                res.updateInt("fk_id_velo", utilisateur.getFk_id_velo());
+                if(utilisateur.getFk_id_velo()==-1){
+                    res.updateNull("fk_id_velo");
+                }
+                else {
+                    res.updateInt("fk_id_velo", utilisateur.getFk_id_velo());
+                }
                 res.updateRow();	
             }
         } catch (SQLException e) {
@@ -199,7 +209,13 @@ public class UtilisateurDAO {
             stat.setString(12, utilisateur.getLogin());
             stat.setString(13, utilisateur.getPassword());
             stat.setInt(14, utilisateur.getFk_id_carte());
-            stat.setInt(15, utilisateur.getFk_id_velo());
+            if(utilisateur.getFk_id_velo()==-1){
+                stat.setNull(15, java.sql.Types.NULL);
+            }
+            else {
+                stat.setInt(15, utilisateur.getFk_id_velo());
+            }
+            
             stat.executeUpdate();
         } catch (SQLException e) {
             while (e != null) {

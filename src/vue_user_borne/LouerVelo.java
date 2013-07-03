@@ -158,7 +158,8 @@ public class LouerVelo extends javax.swing.JFrame {
         if(user != null && user.getFk_id_velo()==-1){
             LabelCarte.setForeground(Color.green);
             ctrlLV.locationVelo(user);
-            LabelCarte.setForeground(Color.blue);
+            LabelRecupVelo.setForeground(Color.green);
+            LabelRemerciement.setForeground(Color.green);
         } else {
             LabelCarte.setForeground(Color.red);
         }

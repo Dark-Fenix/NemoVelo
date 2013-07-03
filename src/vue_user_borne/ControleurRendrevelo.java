@@ -16,19 +16,19 @@ public class ControleurRendrevelo {
     public ControleurStation allView;
     public RendreVelo fntrRV;
     public int idClient;
-    
+
     public ControleurRendrevelo(ControleurStation aThis) {
         allView = aThis;
         fntrRV = new RendreVelo(this);
     }
-    
-    public void launchView(){
+
+    public void launchView() {
         fntrRV.setEnabled(true);
         fntrRV.setVisible(true);
         fntrRV.Rendre();
     }
-    
-    public void hideView(){
+
+    public void hideView() {
         fntrRV.setEnabled(false);
         fntrRV.setVisible(false);
     }
@@ -48,33 +48,40 @@ public class ControleurRendrevelo {
     }
 
     void RendreVelo(Utilisateur user) {
-        
+
         Velo velo = null;
-            for (Velo s : ConfigGlobale.velos) {
-            if(s.getId_velo()==user.getFk_id_velo()){
+        for (Velo s : ConfigGlobale.velos) {
+            if (s.getId_velo() == user.getFk_id_velo()) {
                 velo = s;
                 break;
             }
-            
+        }
+
         ArrayList<Borne> listeBorneStation = new ArrayList<Borne>();
         Iterator<Borne> itr = ConfigGlobale.bornes.iterator();
         while (itr.hasNext()) {
-          Borne borne = itr.next();
-          //on recupere chaque borne ayant comme clé étrangere l'id de notre station
-          if(borne.getFk_id_station() == ConfigGlobale.IDSTATIONTEST && borne.getEtat().equals("ok")){
-              listeBorneStation.add(borne);
-          }
-        }
-
-        for (Borne bornetemp : listeBorneStation){
-            for (Velo velotemp : ConfigGlobale.velos){
-                if (velotemp.getFk_id_borne()==bornetemp.getId_borne()){
-                    listeBorneStation.remove(bornetemp);
-                }
+            Borne borne = itr.next();
+            //on recupere chaque borne ayant comme clé étrangere l'id de notre station
+            if (borne.getFk_id_station() == ConfigGlobale.IDSTATIONTEST && borne.getEtat().equals("ok")) {
+                listeBorneStation.add(borne);
             }
         }
-        
-        if(!listeBorneStation.isEmpty()){
+
+        ArrayList<Borne> listeBornesPasDispos = new ArrayList<Borne>();
+        for (Velo velotemp : ConfigGlobale.velos) {
+            int idbornetemp = velotemp.getFk_id_borne();
+            Borne bornetemp = null;
+            for (Borne g : ConfigGlobale.bornes) {
+                if (g.getId_borne() == idbornetemp) {
+                    bornetemp = g;
+                    break;
+                }
+            }
+            listeBornesPasDispos.add(bornetemp);
+        }
+        listeBorneStation.removeAll(listeBornesPasDispos);
+
+        if (!listeBorneStation.isEmpty()) {
             //mise a jour des champs de la base de données
             showConfirmMessage("Vous pouvez rendre le vélo : " + velo.getId_velo() + " sur la borne : " + listeBorneStation.get(1).getId_borne());
             velo.setFk_id_borne(listeBorneStation.get(1).getId_borne());
@@ -82,12 +89,11 @@ public class ControleurRendrevelo {
             user.setFk_id_velo(-1);
             DAO.Mapper.modifierUtilisateur(user);
         } else {
-           //TODO station la plus proche
+            //TODO station la plus proche
         }
-}
     }
-    
-     public void showConfirmMessage(String message){
-            fntrRV.messageInfo(message);
-     }
+
+    public void showConfirmMessage(String message) {
+        fntrRV.messageInfo(message);
+    }
 }

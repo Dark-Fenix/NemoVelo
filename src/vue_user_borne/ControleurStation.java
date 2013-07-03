@@ -5,60 +5,41 @@
 package vue_user_borne;
 
 /**
-*
-* @author Aurelie
-*/
-public class Fenetre {
+ *
+ * @author Aymerick
+ */
+public class ControleurStation {
     private ControleurHome home;
     private ControleurLouerVelo louer;
     private ControleurRendrevelo rendre;
     private ControleurStationVoisine voisin;
     
-    /**
-     *
-     */
-    public Fenetre(){
+    //numero de serie de la born id 1 = OJEZOGUJRE
+    public static int IDBORNE = 1;
+    
+    public ControleurStation(){
         home  = new ControleurHome(this);
         louer = new ControleurLouerVelo(this);
         rendre = new ControleurRendrevelo(this);
         voisin = new ControleurStationVoisine(this);
     }
     
-    /**
-     *
-     */
     public void launch(){
         home.launchView();
     }
 
-    /**
-     *
-     * @return
-     */
     public ControleurHome getHome() {
         return home;
     }
 
-    /**
-     *
-     * @return
-     */
     public ControleurLouerVelo getLouer() {
         return louer;
     }
 
-    /**
-     *
-     * @return
-     */
     public ControleurRendrevelo getRendre() {
         return rendre;
     }
 
-    /**
-     *
-     * @return
-     */
     public ControleurStationVoisine getVoisin() {
         return voisin;
     }

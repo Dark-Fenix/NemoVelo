@@ -4,27 +4,12 @@
  */
 package vue_user_borne;
 
-import java.awt.Color;
-import vue_admin.InterfaceAdminGestion;
-
-/**
-*
-* @author Aurelie
-*/
 public class Home extends javax.swing.JFrame {
 
-    /**
-     *
-     */
     public vue_user_borne.ControleurHome ctrlHome;
 
 
-    /**
-     *
-     * @param aThis
-     */
     public Home(ControleurHome aThis) {
-        
         initComponents();
         ctrlHome = aThis;
         this.setLocationRelativeTo(null);
@@ -66,6 +51,7 @@ public class Home extends javax.swing.JFrame {
         getContentPane().add(LabelBienvenue);
         LabelBienvenue.setBounds(320, 20, 220, 50);
 
+        ButtonLouerHome.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ButtonLouerHome.setText("Louer un vélo");
         ButtonLouerHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,6 +61,7 @@ public class Home extends javax.swing.JFrame {
         getContentPane().add(ButtonLouerHome);
         ButtonLouerHome.setBounds(310, 110, 229, 106);
 
+        ButtonRendreHome.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ButtonRendreHome.setText("Rendre un vélo");
         ButtonRendreHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

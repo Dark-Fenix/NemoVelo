@@ -4,60 +4,33 @@
  */
 package vue_user_borne;
 
-/**
-*
-* @author Aurelie
-*/
 public class ControleurHome {
 
-    /**
-     *
-     */
-    public Fenetre allView;
-    /**
-     *
-     */
+    public ControleurStation allView;
     public Home fntrHome;
     
-    /**
-     *
-     * @param aThis
-     */
-    public ControleurHome(Fenetre aThis) {
+    public ControleurHome(ControleurStation aThis) {
         allView = aThis;
         fntrHome = new Home(this);
     }
 
-    /**
-     *
-     */
     public void launchView(){
         fntrHome.setEnabled(true);
         fntrHome.setVisible(true);
     }
     
-    /**
-     *
-     */
     public void hideView(){
         fntrHome.setEnabled(false);
         fntrHome.setVisible(false);
     }
 
-    /**
-     *
-     */
     public void louerPerformed() {
-        allView.getLouer().launchView();
         hideView();
+        allView.getLouer().launchView();
     }
 
-    /**
-     *
-     */
     public void rendrePerformed() {
-        allView.getRendre().launchView();
         hideView();
-    }
-    
+        allView.getRendre().launchView();
+    } 
 }

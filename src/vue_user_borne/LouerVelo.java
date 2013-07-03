@@ -4,21 +4,15 @@
  */
 package vue_user_borne;
 
-/**
-*
-* @author Aurelie
-*/
+import java.awt.Color;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 public class LouerVelo extends javax.swing.JFrame {
 
-    /**
-     *
-     */
     public ControleurLouerVelo ctrlLV;
  
-    /**
-     *
-     * @param aThis
-     */
     public LouerVelo(ControleurLouerVelo aThis) {
         initComponents();
         ctrlLV = aThis; 
@@ -45,8 +39,6 @@ public class LouerVelo extends javax.swing.JFrame {
         LabelRecupVelo = new javax.swing.JLabel();
         LabelRemerciement = new javax.swing.JLabel();
         LabelBienvenue = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
 
         LabelMenu.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         LabelMenu.setForeground(new java.awt.Color(136, 212, 29));
@@ -109,7 +101,7 @@ public class LouerVelo extends javax.swing.JFrame {
         LabelRecupVelo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         LabelRecupVelo.setText("2) Recupérez le velo : ");
         getContentPane().add(LabelRecupVelo);
-        LabelRecupVelo.setBounds(240, 220, 270, 29);
+        LabelRecupVelo.setBounds(240, 220, 370, 29);
 
         LabelRemerciement.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         LabelRemerciement.setText("3) Merci et bonne route !");
@@ -123,11 +115,6 @@ public class LouerVelo extends javax.swing.JFrame {
         LabelBienvenue.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(LabelBienvenue);
         LabelBienvenue.setBounds(300, 20, 250, 50);
-
-        jScrollPane1.setViewportView(jTextPane1);
-
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(510, 220, 40, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -152,7 +139,35 @@ public class LouerVelo extends javax.swing.JFrame {
     private javax.swing.JLabel LabelRecupVelo;
     private javax.swing.JLabel LabelRemerciement;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
+
+    void simulationLecteurCarte() {
+        String idCarte = new String();
+        //Astuce pour éviter de faire une fenetre qui contrôle que ce n'est que des digits qui sont saisie
+        String regex = "[0-9]+";
+        do{
+            idCarte = JOptionPane.showInputDialog("Numéro carte abonnée ?");
+        }while(!idCarte.isEmpty() && !idCarte.matches(regex));
+         
+        //On vérifie que notre abonnée existe 
+        if(ctrlLV.idCarteExist(idCarte)){
+            LabelCarte.setForeground(Color.green);
+            ctrlLV.setIdClient(new Integer(idCarte));
+            ctrlLV.locationVelo();
+            LabelCarte.setForeground(Color.black);
+            ctrlLV.AccueilPerformed();
+        } else {
+            LabelCarte.setForeground(Color.red);
+           /* try {
+                this.wait(5000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(LouerVelo.class.getName()).log(Level.SEVERE, null, ex);
+            }*/
+            LabelCarte.setForeground(Color.black);
+        }      
+    }
+    
+    public void messageInfo(String message){
+        JOptionPane.showMessageDialog(rootPane, message);
+    }
 }

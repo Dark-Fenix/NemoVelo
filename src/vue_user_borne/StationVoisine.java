@@ -7,27 +7,13 @@ package vue_user_borne;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
-/**
-*
-* @author Aurelie
-*/
 public class StationVoisine extends javax.swing.JFrame {
 
-    /**
-     *
-     */
     public ControleurStationVoisine ctrlSV;
 
-    /**
-     *
-     */
     public StationVoisine() {
         initComponents();
     }
-    /**
-     *
-     * @param aThis
-     */
     public StationVoisine(ControleurStationVoisine aThis) {
         initComponents();
         ctrlSV = aThis;
@@ -167,7 +153,7 @@ public class StationVoisine extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonLouerActionPerformed
 
     /**
-     * @return  
+     * @param args the command line arguments
      */
     /*public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {

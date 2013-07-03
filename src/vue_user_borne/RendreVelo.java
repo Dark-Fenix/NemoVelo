@@ -4,21 +4,13 @@
  */
 package vue_user_borne;
 
-/**
-*
-* @author Aurelie
-*/
+import java.awt.Color;
+import javax.swing.JOptionPane;
+
 public class RendreVelo extends javax.swing.JFrame {
 
-    /**
-     *
-     */
     public ControleurRendrevelo ctrlRV;
 
-    /**
-     *
-     * @param aThis
-     */
     public RendreVelo(ControleurRendrevelo aThis) {
         initComponents();
         ctrlRV = aThis;
@@ -145,4 +137,28 @@ public class RendreVelo extends javax.swing.JFrame {
     private javax.swing.JLabel LabelRemerciement;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+void simulationLecteurCarte() {
+        String idCarte = new String();
+        //Astuce pour éviter de faire une fenetre qui contrôle que ce n'est que des digits qui sont saisie
+        String regex = "[0-9]+";
+        do{
+            idCarte = JOptionPane.showInputDialog("Numéro carte abonnée ?");
+        }while(!idCarte.isEmpty() && !idCarte.matches(regex));
+         
+        //On vérifie que notre abonnée existe 
+        if(ctrlRV.idCarteExist(idCarte)){
+            LabelCarte.setForeground(Color.green);
+            ctrlRV.setIdClient(new Integer(idCarte));
+            ctrlRV.RendreVelo();
+            LabelCarte.setForeground(Color.black);
+            ctrlRV.AccueilPerformed();
+        } else {
+            LabelCarte.setForeground(Color.red);
+            LabelCarte.setForeground(Color.black);
+        }      
+    }
+    
+    public void messageInfo(String message){
+        JOptionPane.showMessageDialog(rootPane, message);
+    }
 }

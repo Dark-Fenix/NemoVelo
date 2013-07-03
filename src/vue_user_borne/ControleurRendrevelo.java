@@ -97,7 +97,7 @@ public class ControleurRendrevelo {
             //mise a jour des champs de la base de données
             //on reserve le velo en l'associant a un utilisateur
            
-            showConfirmMessage("Le client : " + idClient + " doit rendre le vélo : " + idVelo + " sur la borne :" + borneLibre.getId_borne());
+            showConfirmMessage("Vous pouvez rendre le vélo : " + idVelo + " sur la borne : " + borneLibre.getId_borne());
             
             //on met à jour les infos de nos 2 objets utilisateur et vélo
             Velo velo = DAO.VeloDAO.getVeloById(idVelo);

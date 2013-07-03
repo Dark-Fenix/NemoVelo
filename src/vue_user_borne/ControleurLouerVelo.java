@@ -11,6 +11,10 @@ import com.sun.org.apache.xpath.internal.FoundIndex;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+/**
+*
+* @author Aurélie
+*/
 public class ControleurLouerVelo {
 
     public ControleurStation allView;
@@ -104,7 +108,7 @@ public class ControleurLouerVelo {
         if(veloFound){
             //on reserve le velo en l'associant às un utilisateur
             Utilisateur client = DAO.UtilisateurDAO.getUtilisateurById(idClient);
-            showConfirmMessage("Le client : " + idClient + " doit recuperé le vélo : " + veloValide.getId_velo() + " sur la borne :" + veloValide.getFk_id_borne());
+            showConfirmMessage("Vous pouvez récuperer le vélo : " + veloValide.getId_velo() + " sur la borne : " + veloValide.getFk_id_borne());
             
             //on met à jour les infos de nos 2 objets utilisateur et vélo
             client.setFk_id_velo(veloValide.getId_velo());

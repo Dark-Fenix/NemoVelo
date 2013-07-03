@@ -4,6 +4,10 @@
  */
 package vue_user_borne;
 
+/**
+*
+* @author Aurélie
+*/
 public class ControleurHome {
 
     public ControleurStation allView;

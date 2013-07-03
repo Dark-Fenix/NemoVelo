@@ -4,7 +4,7 @@
  */
 package vue_admin;
 import Config.ConfigGlobale;
-import DAO.BorneDAO;
+import DAO.Mapper;
 import classes.Borne;
 import classes.Station;
 import java.util.logging.Level;
@@ -187,8 +187,7 @@ public class EditionBorne extends javax.swing.JPanel {
 
     private void boutonSupprimerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonSupprimerMouseClicked
         this.setVisible(false);
-        BorneDAO.deleteBorne(this.borne);
-        ConfigGlobale.bornes.remove(this.borne);
+        Mapper.supprimerBorne(this.borne);
         Interfaces.getInterGestionBornes().RemplissageListeBornes();
     }//GEN-LAST:event_boutonSupprimerMouseClicked
 
@@ -197,11 +196,10 @@ public class EditionBorne extends javax.swing.JPanel {
         this.borne.setEtat(txtEtat.getText());
         this.borne.setFk_id_station(Integer.parseInt(txtBorne.getText()));
         if(!ConfigGlobale.bornes.contains(this.borne)){
-            BorneDAO.insertBorne(this.borne);
-            ConfigGlobale.bornes.add(this.borne);
+            Mapper.ajouterBorne(this.borne);
         }
         else {
-            BorneDAO.updateBorne(this.borne);
+            Mapper.modifierBorne(this.borne);
         }
     }//GEN-LAST:event_boutonValiderMouseClicked
 

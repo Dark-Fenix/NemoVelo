@@ -4,7 +4,7 @@
  */
 package vue_admin;
 import Config.ConfigGlobale;
-import DAO.StationDAO;
+import DAO.Mapper;
 import classes.Station;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -191,8 +191,7 @@ public class EditionStation extends javax.swing.JPanel {
 
     private void boutonSupprimerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonSupprimerMouseClicked
         this.setVisible(false);
-        StationDAO.deleteStation(this.station);
-        ConfigGlobale.stations.remove(this.station);
+        Mapper.supprimerStation(this.station);
         Interfaces.getInterGestionStations().RemplissageListeStations();
     }//GEN-LAST:event_boutonSupprimerMouseClicked
 
@@ -202,11 +201,10 @@ public class EditionStation extends javax.swing.JPanel {
         this.station.setLatitude(txtLatitude.getText());
         this.station.setLongitude(txtLongitude.getText());
         if(!ConfigGlobale.stations.contains(this.station)){
-            StationDAO.insertStation(this.station);
-            ConfigGlobale.stations.add(this.station);
+            Mapper.ajouterStation(this.station);
         }
         else {
-            StationDAO.updateStation(this.station);
+            Mapper.modifierStation(this.station);
         }
     }//GEN-LAST:event_boutonValiderMouseClicked
 

@@ -4,7 +4,7 @@
  */
 package vue_admin;
 import Config.ConfigGlobale;
-import DAO.VeloDAO;
+import DAO.Mapper;
 import classes.Velo;
 
 /**
@@ -173,8 +173,7 @@ public class EditionVelo extends javax.swing.JPanel {
 
     private void boutonSupprimerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonSupprimerMouseClicked
         this.setVisible(false);
-        VeloDAO.deleteVelo(this.velo);
-        ConfigGlobale.velos.remove(this.velo);
+        Mapper.supprimerVelo(this.velo);
         Interfaces.getInterGestionVelos().RemplissageListeVelos();
     }//GEN-LAST:event_boutonSupprimerMouseClicked
 
@@ -184,11 +183,10 @@ public class EditionVelo extends javax.swing.JPanel {
         this.velo.setFk_id_borne(Integer.parseInt(txtBorne.getText()));
         this.velo.setKmParcourus(Double.parseDouble(txtKM.getText()));
         if(!ConfigGlobale.velos.contains(this.velo)){
-            VeloDAO.insertVelo(this.velo);
-            ConfigGlobale.velos.add(this.velo);
+            Mapper.ajouterVelo(this.velo);
         }
         else {
-            VeloDAO.updateVelo(this.velo);
+            Mapper.modifierVelo(this.velo);
         }
     }//GEN-LAST:event_boutonValiderMouseClicked
 

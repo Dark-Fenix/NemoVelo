@@ -42,6 +42,6 @@ public class ControleurStationVoisine {
     
     public void addLine(String nomBorne, String nbVeloDispo , String nbBorneDispo){
         DefaultTableModel mod = fntrSV.getTabl();
-        mod.addRow(new String[]{"Carré D'art","9","8"});
+        mod.addRow(new String[]{"Carré d'art","9","8"});
     }
 }

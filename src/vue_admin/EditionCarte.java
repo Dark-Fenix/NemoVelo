@@ -4,7 +4,7 @@
  */
 package vue_admin;
 import Config.ConfigGlobale;
-import DAO.CarteDAO;
+import DAO.Mapper;
 import classes.Carte;
 import classes.Utilisateur;
 
@@ -146,19 +146,17 @@ public class EditionCarte extends javax.swing.JPanel {
 
     private void boutonSupprimerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonSupprimerMouseClicked
         this.setVisible(false);
-        CarteDAO.deleteCarte(this.carte);
-        ConfigGlobale.cartes.remove(this.carte);
+        Mapper.supprimerCarte(this.carte);
         Interfaces.getInterGestionCartes().RemplissageListeCartes();
     }//GEN-LAST:event_boutonSupprimerMouseClicked
 
     private void boutonValiderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonValiderMouseClicked
         this.carte.setSerialNumber(txtSerialNumber.getText());
         if(!ConfigGlobale.cartes.contains(this.carte)){
-            CarteDAO.insertCarte(this.carte);
-            ConfigGlobale.cartes.add(this.carte);
+            Mapper.ajouterCarte(this.carte);
         }
         else {
-            CarteDAO.updateCarte(this.carte);
+            Mapper.modifierCarte(this.carte);
         }
     }//GEN-LAST:event_boutonValiderMouseClicked
 

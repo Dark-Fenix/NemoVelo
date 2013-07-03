@@ -4,7 +4,7 @@
  */
 package vue_admin;
 import Config.ConfigGlobale;
-import DAO.CompteDAO;
+import DAO.Mapper;
 import classes.Compte;
 
 /**
@@ -160,8 +160,7 @@ public class EditionCompte extends javax.swing.JPanel {
 
     private void boutonSupprimerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boutonSupprimerMouseClicked
         this.setVisible(false);
-        CompteDAO.deleteCompte(this.compte);
-        ConfigGlobale.comptes.remove(this.compte);
+        Mapper.supprimerCompte(this.compte);
         Interfaces.getInterGestionComptes().RemplissageListeComptes();
     }//GEN-LAST:event_boutonSupprimerMouseClicked
 
@@ -170,11 +169,10 @@ public class EditionCompte extends javax.swing.JPanel {
         this.compte.setSolde(Double.parseDouble(txtSolde.getText()));
         this.compte.setFk_id_utilisateur(Integer.parseInt(txtPossesseur.getText()));
         if(!ConfigGlobale.comptes.contains(this.compte)){
-            CompteDAO.insertCompte(this.compte);
-            ConfigGlobale.comptes.add(this.compte);
+            Mapper.ajouterCompte(this.compte);
         }
         else {
-            CompteDAO.updateCompte(this.compte);
+            Mapper.modifierCompte(this.compte);
         }
     }//GEN-LAST:event_boutonValiderMouseClicked
 
